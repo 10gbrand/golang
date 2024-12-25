@@ -1,0 +1,22 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.13.7/.schema/devbox.schema.json",
+  "packages": [
+    "go@latest",
+    "go-task@3.40.1"
+  ],
+  "env": {
+    "GOPATH": "$PWD",
+    "PATH":   "$PATH:$PWD/bin"
+  },
+  "shell": {
+    "init_hook": [
+      "echo 'Welcome to devbox!' > /dev/null",
+      "go install github.com/joho/godotenv/cmd/godotenv@latest"
+    ],
+    "scripts": {
+      "test": [
+        "echo \"Error: no test specified\" && exit 1"
+      ]
+    }
+  }
+}
