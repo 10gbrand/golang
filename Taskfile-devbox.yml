@@ -1,0 +1,43 @@
+version: '3'
+
+tasks:
+  setup:
+    desc: Setup devbox environment
+    cmds:
+      - devbox install
+      - devbox shell
+
+  run:
+    desc: Run the application using devbox
+    cmds:
+      - devbox run
+
+  test:
+    desc: Run tests using devbox
+    cmds:
+      - devbox run test
+
+  build:
+    desc: Build the project using devbox
+    cmds:
+      - devbox run build
+
+  clean:
+    desc: Purge devbox environment
+    cmds:
+      - devbox purge
+
+  services:
+    desc: Start devbox services
+    cmds:
+      - devbox services up
+
+  shell:
+    desc: Enter devbox shell
+    cmds:
+      - devbox shell
+  
+  generate-readme:
+    desc: generate devbox-readme.md
+    cmds:
+     - devbox generate readme devbox-readme.md

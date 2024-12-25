@@ -1,0 +1,11 @@
+version: '3'
+
+includes:
+  go: ./Taskfile-go.yml
+  devbox: ./Taskfile-devbox.yml
+
+tasks:
+  default:
+    cmds:
+      - echo "Welcome"
+      - task --list

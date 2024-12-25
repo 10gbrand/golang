@@ -1,0 +1,45 @@
+version: '3'
+
+vars:
+  BINARY_NAME: myapp
+
+tasks:
+  build:
+    desc: Build the Go project
+    cmds:
+      - go build -o {{.BINARY_NAME}} main.go
+
+  test:
+    desc: Run tests
+    cmds:
+      - go test ./...
+
+  lint:
+    desc: Lint the code
+    cmds:
+      - golangci-lint run
+
+  run:
+    desc: Run the application
+    cmds:
+      - go run main.go
+
+  clean:
+    desc: Clean build artifacts
+    cmds:
+      - rm -f {{.BINARY_NAME}}
+
+  dev:
+    desc: Run with hot reload
+    cmds:
+      - task: build
+      - ./{{.BINARY_NAME}}
+    sources:
+      - ./*.go
+      - ./**/*.go
+    method: watch
+
+  default:
+    desc: Display available tasks
+    cmds:
+      - task --list
