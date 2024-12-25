@@ -50,3 +50,9 @@ task -l
 Info om Taskfile:
 
 - [taskfile.dev](https://taskfile.dev/usage/)
+
+## Resurser
+
+[Go (Golang) Tutorial](https://www.youtube.com/embed/etSN4X_fCnM?si=i0AbB2zoNGiFmgDe)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/etSN4X_fCnM?si=i0AbB2zoNGiFmgDe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
