@@ -1,0 +1,270 @@
+{
+    "$schema": "../spring_style_schema.json",
+    "id": "j3f36e14-e3f5-43c1-84c0-50a9c80dc5c7",
+    "version": 8,
+    "name": "Mall",
+    "zoom": 0.861983335785597,
+    "pitch": 0,
+    "center": [
+        17.3145660472,
+        62.91542224
+    ],
+    "metadata": {
+        "maputnik:renderer": "mbgljs",
+        "springGroups": [
+            {
+                "id": "Restriktion",
+                "name": "Restriktion",
+                "collapsed": true,
+                "visible": false,
+                "springLayers": [
+                    {
+                        "id": "RestriktionNaturvardSveaskog",
+                        "name": "Naturvård Sveaskog",
+                        "visible": true
+                    },
+                    {
+                        "id": "Restriktion_Externa",
+                        "name": "Externa restr.",
+                        "visible": true
+                    }
+                ]
+            }
+        ],
+        "springStyleOrder": 1,
+        "springStyleVersion": "0.1"
+    },
+    "sprite": "http://localhost:4200/assets/springfield/geodatapackage/sprite/spring_sprites",
+    "glyphs": "http://localhost:4200/assets/springfield/geodatapackage/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+    "bearing": 0,
+    "sources": {       
+        "RestriktionExterna": {
+            "type": "geojson",
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/RestriktionExterna.geojson"
+        },
+        "RestriktionNaturvardSveaskog": {
+            "type": "geojson",
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/RestriktionNaturvardSveaskog.geojson"
+        },
+        "RestriktionYta": {
+            "type": "geojson",
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/RestriktionYta.geojson"
+        }
+    },
+    "layers": [
+        {
+            "id": "RestriktionNaturvardSveaskog",
+            "type": "fill",
+            "metadata": {
+                "maputnik:comment": "Restriktion_NaturvårdSveaskog",
+                "springLayer": "RestriktionNaturvardSveaskog"
+            },
+            "source": "RestriktionNaturvardSveaskog",
+            "minzoom": 12,
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "fill-outline-color": "rgba(255, 255, 0, 1)",
+                "fill-pattern": "restriktion/naturvard_sveaskog/205",
+                "fill-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    13.7,
+                    0,
+                    14,
+                    1
+                ]
+            }
+        },
+        {
+            "id": "Restriktion_Externa1",
+            "type": "fill",
+            "metadata": {
+                "maputnik:comment": "Restriktion_Externa",
+                "springLayer": "Restriktion_Externa"
+            },
+            "source": "RestriktionExterna",
+            "minzoom": 10,
+            "filter": [
+                "any",
+                [
+                    "==",
+                    "TYP",
+                    101
+                ],
+                [
+                    "==",
+                    "TYP",
+                    102
+                ],
+                [
+                    "==",
+                    "TYP",
+                    108
+                ],
+                [
+                    "==",
+                    "TYP",
+                    109
+                ],
+                [
+                    "==",
+                    "TYP",
+                    110
+                ],
+                [
+                    "==",
+                    "TYP",
+                    115
+                ],
+                [
+                    "==",
+                    "TYP",
+                    118
+                ]
+            ],
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "fill-pattern": [
+                    "match",
+                    [
+                        "get",
+                        "TYP"
+                    ],
+                    101,
+                    "restriktion/externa/100T/101",
+                    102,
+                    "restriktion/externa/100T/102",
+                    108,
+                    "restriktion/externa/100T/108",
+                    109,
+                    "restriktion/externa/100T/109",
+                    118,
+                    "restriktion/externa/100T/118",
+                    "restriktion/externa/100T/XXX"
+                ],
+                "fill-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    11.5,
+                    0,
+                    12,
+                    1
+                ]
+            }
+        },
+        {
+            "id": "Restriktion_Externa2",
+            "type": "fill",
+            "metadata": {
+                "maputnik:comment": "Restriktion_Externa",
+                "springLayer": "Restriktion_Externa"
+            },
+            "source": "RestriktionExterna",
+            "minzoom": 12,
+            "filter": [
+                "any",
+                [
+                    "==",
+                    "TYP",
+                    103
+                ],
+                [
+                    "==",
+                    "TYP",
+                    104
+                ],
+                [
+                    "==",
+                    "TYP",
+                    105
+                ],
+                [
+                    "==",
+                    "TYP",
+                    106
+                ],
+                [
+                    "==",
+                    "TYP",
+                    107
+                ],
+                [
+                    "==",
+                    "TYP",
+                    111
+                ],
+                [
+                    "==",
+                    "TYP",
+                    112
+                ],
+                [
+                    "==",
+                    "TYP",
+                    113
+                ],
+                [
+                    "==",
+                    "TYP",
+                    114
+                ]
+            ],
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "fill-pattern": [
+                    "match",
+                    [
+                        "get",
+                        "TYP"
+                    ],
+                    103,
+                    "restriktion/externa/40T/103",
+                    104,
+                    "restriktion/externa/40T/104",
+                    105,
+                    "restriktion/externa/40T/105",
+                    106,
+                    "restriktion/externa/40T/106",
+                    107,
+                    "restriktion/externa/40T/107",
+                    112,
+                    "restriktion/externa/40T/112",
+                    113,
+                    "restriktion/externa/40T/113",
+                    114,
+                    "restriktion/externa/40T/114",
+                    "restriktion/externa/40T/XXX"
+                ],
+                "fill-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    13.7,
+                    0,
+                    14,
+                    0.8
+                ]
+            }
+        }
+    ]
+}

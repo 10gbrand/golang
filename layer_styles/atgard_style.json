@@ -1,0 +1,213 @@
+{
+  "$schema": "../spring_style_schema.json",
+  "id": "j3f36e14-e3f5-43c1-84c0-50a9c80dc5c7",
+  "version": 8,
+  "name": "Mall",
+  "zoom": 0.861983335785597,
+  "pitch": 0,
+  "center": [
+    17.3145660472,
+    62.91542224
+  ],
+  "metadata": {
+    "maputnik:renderer": "mbgljs",
+    "springGroups": [
+        {
+            "id": "Atgard",
+            "name": "Åtgärd",
+            "collapsed": true,
+            "visible": true,
+            "springLayers": [
+                {
+                    "id": "Atgard_planerad",
+                    "name": "Planerad",
+                    "visible": true
+                },
+                {
+                    "id": "Atgard_utford",
+                    "name": "Utförd",
+                    "visible": true
+                },
+                {
+                    "id": "Atgard_taktisk",
+                    "name": "Taktiska",
+                    "visible": true
+                }
+            ]
+        }
+    ],
+    "springStyleOrder": 1,
+    "springStyleVersion": "0.1"
+  },
+    "sprite": "http://localhost:4200/assets/springfield/geodatapackage/sprite/spring_sprites",
+  "glyphs": "http://localhost:4200/assets/springfield/geodatapackage/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "bearing": 0,
+  "sources": {
+    "Atgard": {
+            "type": "geojson",
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Atgard.geojson"
+        }
+  },
+  "layers": [
+    {
+        "id": "Atgard_taktisk",
+        "type": "fill",
+        "metadata": {
+            "maputnik:comment": "Åtgärd_taktisk",
+            "springLayer": "Atgard_taktisk"
+        },
+        "source": "Atgard",
+        "minzoom": 10,
+        "filter": [
+            "all",
+            [
+                "==",
+                "planeringsstatus",
+                "Taktisk"
+            ]
+        ],
+        "layout": {
+            "visibility": "visible"
+        },
+        "paint": {
+            "fill-pattern": "atgard/taktisk/taktisk",
+            "fill-opacity": [
+                "interpolate",
+                [
+                    "linear"
+                ],
+                [
+                    "zoom"
+                ],
+                14.5,
+                0,
+                15,
+                0.8
+            ]
+        }
+    },
+    {
+        "id": "Atgard_planerad",
+        "type": "fill",
+        "metadata": {
+            "maputnik:comment": "Åtgärd_planerad",
+            "springLayer": "Atgard_planerad"
+        },
+        "source": "Atgard",
+        "minzoom": 12,
+        "filter": [
+            "any",
+            [
+                "==",
+                "planeringsstatus",
+                "Under planering"
+            ],
+            [
+                "==",
+                "planeringsstatus",
+                "Tillgängligt"
+            ],
+            [
+                "==",
+                "planeringsstatus",
+                "Färdigplanerat"
+            ],
+            [
+                "==",
+                "planeringsstatus",
+                "Returnerad"
+            ]
+        ],
+        "layout": {
+            "visibility": "visible"
+        },
+        "paint": {
+            "fill-pattern": [
+                "match",
+                [
+                    "get",
+                    "grupp"
+                ],
+                "Avverkning",
+                "atgard/planerad/avverkning",
+                "Röjning",
+                "atgard/planerad/rojning",
+                "Inventering",
+                "atgard/planerad/inventering",
+                "Marberedning",
+                "atgard/planerad/markberedning",
+                "Produktionshöjande",
+                "atgard/planerad/produktionshojande",
+                "Föryngring",
+                "atgard/planerad/foryngring",
+                "atgard/planerad/ovrig"
+            ],
+            "fill-opacity": [
+                "interpolate",
+                [
+                    "linear"
+                ],
+                [
+                    "zoom"
+                ],
+                14.5,
+                0,
+                15,
+                0.8
+            ]
+        }
+    },
+    {
+        "id": "Atgard_utford",
+        "type": "fill",
+        "metadata": {
+            "maputnik:comment": "Åtgärd_utförd",
+            "springLayer": "Atgard_utford"
+        },
+        "source": "Atgard",
+        "minzoom": 12,
+        "filter": [
+            "any"
+        ],
+        "layout": {
+            "visibility": "visible"
+        },
+        "paint": {
+            "fill-pattern": [
+                "match",
+                [
+                    "get",
+                    "grupp"
+                ],
+                "Avverkning",
+                "atgard/utford/avverkning",
+                "Röjning",
+                "atgard/utford/rojning",
+                "Inventering",
+                "atgard/utford/inventering",
+                "Marberedning",
+                "atgard/utford/markberedning",
+                "Produktionshöjande",
+                "atgard/utford/produktionshojande",
+                "Föryngring",
+                "atgard/utford/foryngring",
+                "atgard/utford/ovrig"
+            ],
+            "fill-translate-anchor": "map",
+            "fill-opacity": [
+                "interpolate",
+                [
+                    "linear"
+                ],
+                [
+                    "zoom"
+                ],
+                14.5,
+                0,
+                15,
+                0.8
+            ]
+        }
+    }
+  ]
+}

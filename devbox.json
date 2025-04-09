@@ -4,7 +4,8 @@
     "go@latest",
     "go-task@3.40.1",
     "gopls@latest",
-    "go-outline@latest"
+    "go-outline@latest",
+    "cobra-cli@latest"
   ],
   "env": {
     "GOPATH": "$PWD",

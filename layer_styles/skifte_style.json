@@ -1,0 +1,106 @@
+{
+    "$schema": "../spring_style_schema.json",
+    "id": "j3f36e14-e3f5-43c1-84c0-50a9c80dc5c7",
+    "version": 8,
+    "name": "Mall",
+    "zoom": 0.861983335785597,
+    "pitch": 0,
+    "center": [
+        17.3145660472,
+        62.91542224
+    ],
+    "metadata": {
+        "maputnik:renderer": "mbgljs",
+        "springGroups": [
+            {
+                "id": "Skifte",
+                "name": "Skifte",
+                "collapsed": true,
+                "visible": true,
+                "springLayers": [
+                    {
+                        "id": "Skifte",
+                        "name": "Skifte",
+                        "visible": true
+                    }
+                ]
+            }
+        ],
+        "springStyleOrder": 1,
+        "springStyleVersion": "0.1"
+    },
+      "sprite": "http://localhost:4200/assets/springfield/geodatapackage/sprite/spring_sprites",
+    "glyphs": "http://localhost:4200/assets/springfield/geodatapackage/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+    "bearing": 0,
+    "sources": {
+        "Skifte": {
+            "type": "geojson",
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Skifte.geojson"
+        }
+    },
+    "layers": [
+        {
+            "id": "Skifte",
+            "type": "fill",
+            "metadata": {
+                "maputnik:comment": "Skifte",
+                "springLayer": "Skifte"
+            },
+            "source": "Skifte",
+            "layout": {
+                "visibility": "visible"
+            },
+            "maxzoom": 12,
+            "minzoom": 0,
+            "paint": {
+                "fill-color": [
+                    "match",
+                    [
+                        "get",
+                        "TYP"
+                    ],
+                    "EGENFV",
+                    "rgba(0, 230, 0, 1)",
+                    "SALDMARK",
+                    "rgba(255, 0, 197, 1)",
+                    "RESSALD",
+                    "rgba(255, 0, 0, 1)",
+                    "rgba(170, 170, 170, 1)"
+                ],
+                "fill-opacity": 0.5
+            }
+        },
+        {
+            "id": "Skifte_linje",
+            "type": "line",
+            "metadata": {
+                "maputnik:comment": "Skifte",
+                "springLayer": "Skifte"
+            },
+            "source": "Skifte",
+            "layout": {
+                "visibility": "visible"
+            },
+            "maxzoom": 24,
+            "minzoom": 12,
+            "paint": {
+                "line-color": [
+                    "match",
+                    [
+                        "get",
+                        "TYP"
+                    ],
+                    "EGENFV",
+                    "rgba(0, 230, 0, 1)",
+                    "SALDMARK",
+                    "rgba(255, 0, 197, 1)",
+                    "RESSALD",
+                    "rgba(255, 0, 0, 1)",
+                    "rgba(170, 170, 170, 1)"
+                ],
+                "line-width": 3,
+                "line-opacity": 0.7
+            }
+        }
+    ]
+}

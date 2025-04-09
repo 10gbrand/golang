@@ -1,0 +1,28 @@
+{
+    "$schema": "./spring_style_schema.json",
+    "version": 8,
+    "name": "Springfield_geonote_style",
+    "id": "b4izew5ub",
+    "metadata": {
+        "maputnik:renderer": "mbgljs",
+        "springStyleVersion": "2",
+        "springStyleOrder": 2,
+        "springGroups": ["@springGroups@"]
+    },
+    "light": {
+        "anchor": "viewport"
+    },
+    "center": [
+        15.4515,
+        62.275
+    ],
+    "zoom": 5,
+    "sources": {
+        "@sources@": {}
+    },
+    "sprite": "http://localhost:4200/assets/springfield/geonote/sprite/spring_sprites",
+    "glyphs": "http://localhost:4200/assets/springfield/geonote/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+    "layers": [
+        "@layers@"
+    ]
+}

@@ -1,0 +1,313 @@
+{
+  "$schema": "../spring_style_schema.json",
+  "id": "c45b62092d23486bbd59831eca62e7b4",
+  "name": "Mall",
+  "version": 8,
+  "metadata": {
+    "maputnik:renderer": "",
+    "springGroups": [
+      {
+        "id": "geonoteHansyn",
+        "name": "Geonote hänsyn",
+        "collapsed": true,
+        "visible": true,
+        "springLayers": [
+          {
+            "id": "geonoteHansynTxt",
+            "name": "Hänsyn text",
+            "visible": true
+          },
+          {
+            "id": "geonoteHansyn",
+            "name": "Hänsyn",
+            "visible": true
+          }
+        ]
+      }
+    ],
+    "springStyleOrder": 1,
+    "springStyleVersion": "0.1"
+  },
+  "zoom": 0.861983335785597,
+  "pitch": 0,
+  "center": [
+    17.3145660472,
+    62.91542224
+  ],
+  "sprite": "http://localhost:4200/assets/springfield/geonote/sprite/spring_sprites",
+  "glyphs": "http://localhost:4200/assets/springfield/geonote/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "bearing": 0,
+  "sources": {
+    "geonotes": {
+      "type": "geojson",
+      "data": "http://localhost:4200/assets/springfield/geonote/geonotes.geojson"
+    }
+  },
+  "layers": [
+    {
+      "id": "geonoteHansynyta",
+      "type": "fill",
+      "metadata": {
+        "maputnik:comment": "geonoteHansyn",
+        "springLayer": "geonoteHansyn"
+      },
+      "source": "geonotes",
+      "minzoom": 10,
+      "paint": {
+        "fill-color": "rgba(56, 168, 0, 1)",
+        "fill-outline-color": "rgba(163, 255, 115, 1)",
+        "fill-opacity": 0.5
+      },
+      "filter": [
+        "all",
+        [
+          "match",
+          [
+            "geometry-type"
+          ],
+          [
+            "Polygon",
+            "MultiPolygon"
+          ],
+          true,
+          false
+        ],
+        [
+          "==",
+          [
+            "get",
+            "category"
+          ],
+          "urn:sveaskog:spring:geonote:hansyn"
+        ]
+      ]
+    },
+    {
+      "id": "geonoteHansyn_linje_outline",
+      "type": "line",
+      "metadata": {
+        "maputnik:comment": "geonoteHansyn gul offset",
+        "springLayer": "geonoteHansyn"
+      },
+      "source": "geonotes",
+      "minzoom": 11,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(250, 250, 0, 1)",
+        "line-offset": -3,
+        "line-width": 3,
+        "line-opacity": 0.7
+      },
+      "filter": [
+        "all",
+        [
+          "match",
+          [
+            "geometry-type"
+          ],
+          [
+            "Polygon",
+            "MultiPolygon",
+            "LineString",
+            "MultiLineString"
+          ],
+          true,
+          false
+        ],
+        [
+          "==",
+          [
+            "get",
+            "category"
+          ],
+          "urn:sveaskog:spring:geonote:hansyn"
+        ]
+      ]
+    },
+    {
+      "id": "geonoteHansyn_linje_outline_2",
+      "type": "line",
+      "metadata": {
+        "maputnik:comment": "geonoteHansyn gul offset för linjer",
+        "springLayer": "geonoteHansyn"
+      },
+      "source": "geonotes",
+      "minzoom": 11,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(250, 250, 0, 1)",
+        "line-offset": 3,
+        "line-width": 3,
+        "line-opacity": 0.7
+      },
+      "filter": [
+        "all",
+        [
+          "match",
+          [
+            "geometry-type"
+          ],
+          [
+            "LineString",
+            "MultiLineString"
+          ],
+          true,
+          false
+        ],
+        [
+          "==",
+          [
+            "get",
+            "category"
+          ],
+          "urn:sveaskog:spring:geonote:hansyn"
+        ]
+      ]
+    },
+    {
+      "id": "geonoteHansyn_linje",
+      "type": "line",
+      "metadata": {
+        "maputnik:comment": "geonoteHansyn grön center för linjer",
+        "springLayer": "geonoteHansyn"
+      },
+      "source": "geonotes",
+      "minzoom": 11,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(56, 168, 0, 1)",
+        "line-width": 3,
+        "line-opacity": 1
+      },
+      "filter": [
+        "all",
+        [
+          "match",
+          [
+            "geometry-type"
+          ],
+          [
+            "LineString",
+            "MultiLineString"
+          ],
+          true,
+          false
+        ],
+        [
+          "==",
+          [
+            "get",
+            "category"
+          ],
+          "urn:sveaskog:spring:geonote:hansyn"
+        ]
+      ]
+    },
+    {
+      "id": "geonoteHansynpkt_bakgrund",
+      "type": "circle",
+      "metadata": {
+        "maputnik:comment": "Hänsyn_punkt",
+        "springLayer": "geonoteHansyn"
+      },
+      "source": "geonotes",
+      "minzoom": 12,
+      "paint": {
+        "circle-color": "#FFD700",
+        "circle-radius": 8,
+        "circle-opacity": 0.7
+      },
+      "filter": [
+        "all",
+        [
+          "match",
+          [
+            "geometry-type"
+          ],
+          [
+            "Point",
+            "MultiPolygon"
+          ],
+          true,
+          false
+        ],
+        [
+          "==",
+          [
+            "get",
+            "category"
+          ],
+          "urn:sveaskog:spring:geonote:hansyn"
+        ]
+      ]
+    },
+    {
+      "id": "geonoteHansynpkt",
+      "type": "symbol",
+      "metadata": {
+        "maputnik:comment": "Hänsyn_punkt",
+        "springLayer": "geonoteHansyn"
+      },
+      "source": "geonotes",
+      "minzoom": 12,
+      "layout": {
+        "icon-image": "hansyn/hansynpunkt",
+        "icon-size": 0.35
+      },
+      "paint": {
+        "icon-opacity": 1
+      },
+      "filter": [
+        "all",
+        [
+          "match",
+          [
+            "geometry-type"
+          ],
+          [
+            "Point",
+            "MultiPolygon"
+          ],
+          true,
+          false
+        ],
+        [
+          "==",
+          [
+            "get",
+            "category"
+          ],
+          "urn:sveaskog:spring:geonote:hansyn"
+        ]
+      ]
+    },
+    {
+      "id": "geonoteHansynTxt",
+      "type": "symbol",
+      "metadata": {
+        "maputnik:comment": "geonoteHansynTxt",
+        "springLayer": "geonoteHansynTxt"
+      },
+      "source": "geonotes",
+      "minzoom": 16,
+      "layout": {
+        "text-field": [
+          "get",
+          "category"
+        ],
+        "text-size": 12
+      },
+      "paint": {
+        "text-color": "#ffffff",
+        "text-halo-color": "rgba(0, 0, 0, 1)",
+        "text-halo-width": 2
+      }
+    }
+  ]
+}

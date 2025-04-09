@@ -1,0 +1,262 @@
+{
+  "$schema": "../spring_style_schema.json",
+  "id": "c680a866f65249249c0376fddd9c0614",
+  "name": "Mall",
+  "version": 8,
+  "metadata": {
+    "maputnik:renderer": "mbgljs",
+    "springGroups": [
+      {
+        "id": "opt_basvag",
+        "name": "Optimerad basväg",
+        "collapsed": true,
+        "visible": true,
+        "springLayers": [
+          {
+            "id": "geonote_basvag_opt",
+            "name": "Basväg",
+            "visible": true
+          },
+          {
+            "id": "geonote_avlagg_opt",
+            "name": "Avlägg",
+            "visible": true
+          }
+        ]
+      }
+    ],
+    "springStyleOrder": 1,
+    "springStyleVersion": "0.1"
+  },
+  "zoom": 0.861983335785597,
+  "pitch": 0,
+  "center": [
+    17.3145660472,
+    62.91542224
+  ],
+  "sprite": "http://localhost:4200/assets/springfield/geonote/sprite/spring_sprites",
+  "glyphs": "http://localhost:4200/assets/springfield/geonote/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "bearing": 0,
+  "sources": {
+    "geonotes": {
+      "type": "geojson",
+      "data": "http://localhost:4200/assets/springfield/geonote/geonotes.geojson"
+    }
+  },
+  "layers": [
+    {
+      "id": "geonote_basvag_opt_background_l",
+      "type": "line",
+      "metadata": {
+        "maputnik:comment": "geonote_basvag urn:sveaskog:atgplan:drivningsinfotyp:basvag",
+        "springLayer": "geonote_basvag_opt"
+      },
+      "source": "geonotes",
+      "minzoom": 13,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(128, 250, 216, 1)",
+        "line-opacity": 1,
+        "line-width": 2,
+        "line-offset": 4
+      },
+      "filter": [
+        "all",
+        [
+          "match",
+          [
+            "geometry-type"
+          ],
+          [
+            "LineString",
+            "MultiLineString"
+          ],
+          true,
+          false
+        ]
+      ]
+    },
+    {
+        "id": "geonote_basvag_opt_background_r",
+        "type": "line",
+        "metadata": {
+          "maputnik:comment": "geonote_basvag urn:sveaskog:atgplan:drivningsinfotyp:basvag",
+          "springLayer": "geonote_basvag_opt"
+        },
+        "source": "geonotes",
+        "minzoom": 13,
+        "layout": {
+          "visibility": "visible"
+        },
+        "paint": {
+          "line-color": "rgba(128, 250, 216, 1)",
+          "line-opacity": 1,
+          "line-width": 2,
+          "line-offset": -4
+        },
+        "filter": [
+          "all",
+          [
+            "match",
+            [
+              "geometry-type"
+            ],
+            [
+              "LineString",
+              "MultiLineString"
+            ],
+            true,
+            false
+          ]
+        ]
+      },
+    {
+      "id": "geonote_basvag_opt_offset_l",
+      "type": "line",
+      "metadata": {
+        "maputnik:comment": "geonote_basvag urn:sveaskog:atgplan:drivningsinfotyp:basvag",
+        "springLayer": "geonote_basvag_opt"
+      },
+      "source": "geonotes",
+      "minzoom": 13,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-dasharray": [
+          4,
+          2
+        ],
+        "line-color": "rgba(234, 140, 41, 1)",
+        "line-opacity": 1,
+        "line-width": 2,
+        "line-offset": 2
+      },
+      "filter": [
+        "all",
+        [
+          "match",
+          [
+            "geometry-type"
+          ],
+          [
+            "LineString",
+            "MultiLineString"
+          ],
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "id": "geonote_basvag_opt_offset_r",
+      "type": "line",
+      "metadata": {
+        "maputnik:comment": "geonote_basvag urn:sveaskog:atgplan:drivningsinfotyp:basvag",
+        "springLayer": "geonote_basvag_opt"
+      },
+      "source": "geonotes",
+      "minzoom": 13,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-dasharray": [
+          4,
+          2
+        ],
+        "line-color": "rgba(234, 140, 41, 1)",
+        "line-opacity": 1,
+        "line-width": 2,
+        "line-offset": -2
+      },
+      "filter": [
+        "all",
+        [
+          "match",
+          [
+            "geometry-type"
+          ],
+          [
+            "LineString",
+            "MultiLineString"
+          ],
+          true,
+          false
+        ]
+      ]
+    },
+    {
+        "id": "geonote_avlagg_opt_background",
+        "type": "line",
+        "metadata": {
+          "maputnik:comment": "geonote_avlagg urn:sveaskog:atgplan:drivningsinfotyp:avlagg",
+          "springLayer": "geonote_avlagg_opt"
+        },
+        "source": "geonotes",
+        "minzoom": 13,
+        "layout": {
+          "visibility": "visible"
+        },
+        "paint": {
+          "line-color": "rgba(128, 250, 216, 1)",
+          "line-opacity": 1,
+          "line-width": 2
+        },
+        "filter": [
+          "all",
+          [
+            "match",
+            [
+              "geometry-type"
+            ],
+            [
+              "LineString",
+              "MultiLineString"
+            ],
+            true,
+            false
+          ]
+        ]
+      },
+    {
+        "id": "geonote_avlagg_opt_dot",
+        "type": "line",
+        "metadata": {
+          "maputnik:comment": "geonote_avlagg urn:sveaskog:atgplan:drivningsinfotyp:avlagg",
+          "springLayer": "geonote_avlagg_opt"
+        },
+        "source": "geonotes",
+        "minzoom": 13,
+        "layout": {
+          "visibility": "visible"
+        },
+        "paint": {
+          "line-dasharray": [
+          2,
+          4
+        ],
+          "line-color": "rgba(234, 140, 41, 1)",
+          "line-opacity": 1,
+          "line-width": 4
+        },
+        "filter": [
+          "all",
+          [
+            "match",
+            [
+              "geometry-type"
+            ],
+            [
+              "LineString",
+              "MultiLineString"
+            ],
+            true,
+            false
+          ]
+        ]
+      }
+  ]
+}

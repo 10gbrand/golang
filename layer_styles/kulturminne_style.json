@@ -1,0 +1,144 @@
+{
+  "$schema": "../spring_style_schema.json",
+  "id": "j3f36e14-e3f5-43c1-64c0-50a9c80dc5c7",
+  "version": 8,
+  "name": "Mall",
+  "zoom": 0.861983335785597,
+  "pitch": 0,
+  "center": [
+    17.3145660472,
+    62.91542224
+  ],
+  "metadata": {
+    "maputnik:renderer": "mbgljs",
+    "springGroups": [
+        {
+            "id": "Kulturminne",
+            "name": "Kulturminne",
+            "collapsed": true,
+            "visible": false,
+            "springLayers": [
+                {
+                    "id": "Kulturminnepkt",
+                    "name": "Kulturminne pkt",
+                    "visible": true
+                },
+                {
+                    "id": "Kulturminnelinje",
+                    "name": "Kulturminne linje",
+                    "visible": true
+                },
+                {
+                    "id": "Kulturminneyta",
+                    "name": "Kulturminne yta",
+                    "visible": true
+                }
+            ]
+        }
+    ],
+    "springStyleOrder": 1,
+    "springStyleVersion": "0.1"
+  },
+    "sprite": "http://localhost:4200/assets/springfield/geodatapackage/sprite/spring_sprites",
+  "glyphs": "http://localhost:4200/assets/springfield/geodatapackage/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "bearing": 0,
+  "sources": {
+    "Kulturminnepkt": {
+        "type": "geojson",
+        "data": "http://localhost:4200/assets/springfield/geodatapackage/Kulturminne_punkt.geojson"
+    },
+    "Kulturminnelinje": {
+        "type": "geojson",
+        "data": "http://localhost:4200/assets/springfield/geodatapackage/Kulturminne_linje.geojson"
+    },
+    "Kulturminneyta": {
+        "type": "geojson",
+        "data": "http://localhost:4200/assets/springfield/geodatapackage/Kulturminne_yta.geojson"
+    }
+  },
+  "layers": [
+    {
+        "id": "Kulturminneyta",
+        "type": "fill",
+        "metadata": {
+            "maputnik:comment": "Kulturminneyta",
+            "springLayer": "Kulturminneyta"
+        },
+        "source": "Kulturminneyta",
+        "minzoom": 12,
+        "paint": {
+            "fill-pattern": "fornminne_kultur/kulturminneyta",
+            "fill-outline-color": "rgba(255, 0, 0, 1)",
+            "fill-opacity": [
+                "interpolate",
+                [
+                    "linear"
+                ],
+                [
+                    "zoom"
+                ],
+                12,
+                0,
+                15,
+                1
+            ]
+        }
+    },
+    {
+        "id": "Kulturminnelinje",
+        "type": "line",
+        "metadata": {
+            "maputnik:comment": "Kulturminnelinje",
+            "springLayer": "Kulturminnelinje"
+        },
+        "source": "Kulturminnelinje",
+        "minzoom": 12,
+        "paint": {
+            "line-pattern": "fornminne_kultur/kulturminnelinje",
+            "line-width": 75,
+            "line-opacity": [
+                "interpolate",
+                [
+                    "linear"
+                ],
+                [
+                    "zoom"
+                ],
+                12,
+                0,
+                15,
+                1
+            ]
+        }
+    },
+    {
+        "id": "Kulturminnepkt",
+        "type": "symbol",
+        "metadata": {
+            "maputnik:comment": "Kulturminnepkt",
+            "springLayer": "Kulturminnepkt"
+        },
+        "source": "Kulturminnepkt",
+        "minzoom": 12,
+        "layout": {
+            "icon-image": "fornminne_kultur/kulturminnepunkt",
+            "icon-size": 0.35
+        },
+        "paint": {
+            "icon-opacity": [
+                "interpolate",
+                [
+                    "linear"
+                ],
+                [
+                    "zoom"
+                ],
+                12,
+                0,
+                15,
+                1
+            ]
+        }
+    }
+  ]
+}

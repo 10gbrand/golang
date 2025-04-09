@@ -1,0 +1,176 @@
+{
+    "$schema": "../spring_style_schema.json",
+    "id": "j3f36e14-e3f5-43c1-84c0-50a9c80dc5c7",
+    "version": 8,
+    "name": "Mall",
+    "zoom": 0.861983335785597,
+    "pitch": 0,
+    "center": [
+        17.3145660472,
+        62.91542224
+    ],
+    "metadata": {
+        "maputnik:renderer": "mbgljs",
+        "springGroups": [
+            {
+                "id": "Hansyn",
+                "name": "Hänsyn",
+                "collapsed": true,
+                "visible": true,
+                "springLayers": [
+                    {
+                        "id": "Hansynpkt",
+                        "name": "Hänsyn pkt",
+                        "visible": true
+                    },
+                    {
+                        "id": "Hansynlinje",
+                        "name": "Hänsyn linje",
+                        "visible": true
+                    },
+                    {
+                        "id": "Hansynyta",
+                        "name": "Hänsyn yta",
+                        "visible": true
+                    }
+                ]
+            }
+        ],
+        "springStyleOrder": 1,
+        "springStyleVersion": "0.1"
+    },
+    "sprite": "http://localhost:4200/assets/springfield/geodatapackage/sprite/spring_sprites",
+    "glyphs": "http://localhost:4200/assets/springfield/geodatapackage/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+    "bearing": 0,
+    "sources": {
+        "Hansynyta": {
+            "type": "geojson",
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Hansynyta.geojson"
+        },
+        "Hansynlinje": {
+            "type": "geojson",
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Hansynlinje.geojson"
+        },
+        "Hansynpkt": {
+            "type": "geojson",
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Hansynpunkt.geojson"
+        }
+    },
+    "layers": [
+        {
+            "id": "Hansynyta",
+            "type": "fill",
+            "metadata": {
+                "maputnik:comment": "Hänsyn_yta",
+                "springLayer": "Hansynyta"
+            },
+            "source": "Hansynyta",
+            "minzoom": 15,
+            "paint": {
+                "fill-color": "rgba(56, 168, 0, 1)",
+                "fill-outline-color": "rgba(163, 255, 115, 1)",
+                "fill-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0.7,
+                    16,
+                    0.1
+                ]
+            }
+        },
+        {
+            "id": "Hansynyta-linje",
+            "type": "line",
+            "metadata": {
+                "maputnik:comment": "Hänsyn_yta",
+                "springLayer": "Hansynyta"
+            },
+            "source": "Hansynyta",
+            "minzoom": 15,
+            "paint": {
+                "line-color": "rgba(163, 255, 115, 1)",
+                "line-opacity": 1
+            }
+        },
+        {
+            "id": "Hansynlinje",
+            "type": "line",
+            "metadata": {
+                "maputnik:comment": "Hänsyn_linje",
+                "springLayer": "Hansynlinje"
+            },
+            "source": "Hansynlinje",
+            "minzoom": 15,
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "line-pattern": "hansyn/hansynlinje",
+                "line-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0.7,
+                    16,
+                    1
+                ],
+                "line-width": 70
+            }
+        },
+        {
+            "id": "Hansynlinje-linje",
+            "type": "line",
+            "metadata": {
+                "maputnik:comment": "Hänsyn_yta",
+                "springLayer": "Hansynlinje"
+            },
+            "source": "Hansynlinje",
+            "minzoom": 15,
+            "paint": {
+                "line-color": "rgba(56, 168, 0, 1)",
+                "line-width": 4,
+                "line-opacity": 1
+            }
+        },
+        {
+            "id": "Hansynpkt",
+            "type": "symbol",
+            "metadata": {
+                "maputnik:comment": "Hänsyn_punkt",
+                "springLayer": "Hansynpkt"
+            },
+            "source": "Hansynpkt",
+            "minzoom": 15,
+            "layout": {
+                "icon-image": "hansyn/hansynpunkt",
+                "icon-size": 0.35
+            },
+            "paint": {
+                "icon-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0.7,
+                    16,
+                    1
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,310 @@
+{
+  "$schema": "../spring_style_schema.json",
+  "id": "0b11a362d0e44047a2ef65a3850fc867",
+  "name": "Mall",
+  "version": 8,
+  "metadata": {
+    "maputnik:renderer": "mbgljs",
+    "springGroups": [
+      {
+        "id": "geonote_basvag",
+        "name": "Geonote basväg",
+        "collapsed": true,
+        "visible": true,
+        "springLayers": [
+          {
+            "id": "geonote_basvag",
+            "name": "Basväg",
+            "visible": true
+          },
+          {
+            "id": "geonote_avlagg_line",
+            "name": "Avlägg",
+            "visible": true
+          }
+        ]
+      }
+    ],
+    "springStyleOrder": 1,
+    "springStyleVersion": "0.1"
+  },
+  "zoom": 0.861983335785597,
+  "pitch": 0,
+  "center": [
+    17.3145660472,
+    62.91542224
+  ],
+  "sprite": "http://localhost:4200/assets/springfield/geonote/sprite/spring_sprites",
+  "glyphs": "http://localhost:4200/assets/springfield/geonote/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "bearing": 0,
+  "sources": {
+    "geonotes": {
+      "type": "geojson",
+      "data": "http://localhost:4200/assets/springfield/geonote/geonotes.geojson"
+    }
+  },
+  "layers": [
+    {
+      "id": "geonote_basvag_background_l",
+      "type": "line",
+      "metadata": {
+        "maputnik:comment": "geonote_basvag urn:sveaskog:atgplan:drivningsinfotyp:basvag",
+        "springLayer": "geonote_basvag"
+      },
+      "source": "geonotes",
+      "minzoom": 13,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(250, 250, 0, 1)",
+        "line-opacity": 1,
+        "line-width": 2,
+        "line-offset": 4
+      },
+      "filter": [
+        "all",
+        [
+          "match",
+          [
+            "geometry-type"
+          ],
+          [
+            "LineString",
+            "MultiLineString"
+          ],
+          true,
+          false
+        ],
+        [
+          "==",
+          [
+            "get",
+            "group"
+          ],
+          "urn:sveaskog:atgplan:drivningsinfotyp:basvag"
+        ]
+      ]
+    },
+    {
+        "id": "geonote_basvag_background_r",
+        "type": "line",
+        "metadata": {
+          "maputnik:comment": "geonote_basvag urn:sveaskog:atgplan:drivningsinfotyp:basvag",
+          "springLayer": "geonote_basvag"
+        },
+        "source": "geonotes",
+        "minzoom": 13,
+        "layout": {
+          "visibility": "visible"
+        },
+        "paint": {
+          "line-color": "rgba(250, 250, 0, 1)",
+          "line-opacity": 1,
+          "line-width": 2,
+          "line-offset": -4
+        },
+        "filter": [
+          "all",
+          [
+            "match",
+            [
+              "geometry-type"
+            ],
+            [
+              "LineString",
+              "MultiLineString"
+            ],
+            true,
+            false
+          ],
+          [
+            "==",
+            [
+              "get",
+              "group"
+            ],
+            "urn:sveaskog:atgplan:drivningsinfotyp:basvag"
+          ]
+        ]
+      },
+    {
+      "id": "geonote_basvag_offset_l",
+      "type": "line",
+      "metadata": {
+        "maputnik:comment": "geonote_basvag urn:sveaskog:atgplan:drivningsinfotyp:basvag",
+        "springLayer": "geonote_basvag"
+      },
+      "source": "geonotes",
+      "minzoom": 13,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-dasharray": [
+          4,
+          2
+        ],
+        "line-color": "rgba(234, 140, 41, 1)",
+        "line-opacity": 1,
+        "line-width": 2,
+        "line-offset": 2
+      },
+      "filter": [
+        "all",
+        [
+          "match",
+          [
+            "geometry-type"
+          ],
+          [
+            "LineString",
+            "MultiLineString"
+          ],
+          true,
+          false
+        ],
+        [
+          "==",
+          [
+            "get",
+            "group"
+          ],
+          "urn:sveaskog:atgplan:drivningsinfotyp:basvag"
+        ]
+      ]
+    },
+    {
+      "id": "geonote_basvag_offset_r",
+      "type": "line",
+      "metadata": {
+        "maputnik:comment": "geonote_basvag urn:sveaskog:atgplan:drivningsinfotyp:basvag",
+        "springLayer": "geonote_basvag"
+      },
+      "source": "geonotes",
+      "minzoom": 13,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-dasharray": [
+          4,
+          2
+        ],
+        "line-color": "rgba(234, 140, 41, 1)",
+        "line-opacity": 1,
+        "line-width": 2,
+        "line-offset": -2
+      },
+      "filter": [
+        "all",
+        [
+          "match",
+          [
+            "geometry-type"
+          ],
+          [
+            "LineString",
+            "MultiLineString"
+          ],
+          true,
+          false
+        ],
+        [
+          "==",
+          [
+            "get",
+            "group"
+          ],
+          "urn:sveaskog:atgplan:drivningsinfotyp:basvag"
+        ]
+      ]
+    },
+    {
+        "id": "geonote_avlagg_line_background",
+        "type": "line",
+        "metadata": {
+          "maputnik:comment": "geonote_avlagg_line urn:sveaskog:atgplan:drivningsinfotyp:avlagg",
+          "springLayer": "geonote_avlagg_line"
+        },
+        "source": "geonotes",
+        "minzoom": 13,
+        "layout": {
+          "visibility": "visible"
+        },
+        "paint": {
+          "line-color": "rgba(250, 250, 0, 1)",
+          "line-opacity": 1,
+          "line-width": 2
+        },
+        "filter": [
+          "all",
+          [
+            "match",
+            [
+              "geometry-type"
+            ],
+            [
+              "LineString",
+              "MultiLineString"
+            ],
+            true,
+            false
+          ],
+          [
+            "==",
+            [
+              "get",
+              "group"
+            ],
+            "urn:sveaskog:atgplan:drivningsinfotyp:avlagg"
+          ]
+        ]
+      },
+    {
+        "id": "geonote_avlagg_line_dot",
+        "type": "line",
+        "metadata": {
+          "maputnik:comment": "geonote_avlagg_line urn:sveaskog:atgplan:drivningsinfotyp:avlagg",
+          "springLayer": "geonote_avlagg_line"
+        },
+        "source": "geonotes",
+        "minzoom": 13,
+        "layout": {
+          "visibility": "visible"
+        },
+        "paint": {
+          "line-dasharray": [
+          2,
+          4
+        ],
+          "line-color": "rgba(234, 140, 41, 1)",
+          "line-opacity": 1,
+          "line-width": 4
+        },
+        "filter": [
+          "all",
+          [
+            "match",
+            [
+              "geometry-type"
+            ],
+            [
+              "LineString",
+              "MultiLineString"
+            ],
+            true,
+            false
+          ],
+          [
+            "==",
+            [
+              "get",
+              "group"
+            ],
+            "urn:sveaskog:atgplan:drivningsinfotyp:avlagg"
+          ]
+        ]
+      }
+  ]
+}

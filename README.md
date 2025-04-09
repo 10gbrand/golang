@@ -15,6 +15,10 @@ testar golang
 
 ## Förutsättningar
 
+### WSL
+
+https://www.youtube.com/watch?app=desktop&v=poejKP1wTpc
+
 ### Jetify/Devbox
 
 För att automatiskt sätta upp miljön för denna kurs används jetify/Devbox.

@@ -1,0 +1,201 @@
+{
+  "$schema": "../spring_style_schema.json",
+  "id": "j3f36e14-e3f5-43c1-84c0-50a9c80dc5c7",
+  "version": 8,
+  "name": "Mall",
+  "zoom": 0.861983335785597,
+  "pitch": 0,
+  "center": [
+    17.3145660472,
+    62.91542224
+  ],
+  "metadata": {
+    "maputnik:renderer": "mbgljs",
+    "springGroups": [
+        {
+            "id": "Drivning",
+            "name": "Drivning",
+            "collapsed": true,
+            "visible": true,
+            "springLayers": [
+                {
+                    "id": "Vinterbilbasvag",
+                    "name": "Vinterbilbasväg",
+                    "visible": true
+                },
+                {
+                    "id": "Traktorvag",
+                    "name": "Traktorväg",
+                    "visible": true
+                },
+                {
+                    "id": "Drivningspkt",
+                    "name": "Drivning pkt",
+                    "visible": true
+                }
+            ]
+        }
+    ],
+    "springStyleOrder": 1,
+    "springStyleVersion": "0.1"
+  },
+    "sprite": "http://localhost:4200/assets/springfield/geodatapackage/sprite/spring_sprites",
+  "glyphs": "http://localhost:4200/assets/springfield/geodatapackage/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "bearing": 0,
+  "sources": {
+    "Traktorvag": {
+            "type": "geojson",
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Traktorvag.geojson"
+        },
+        "Vinterbilbasvag": {
+            "type": "geojson",
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Vinterbilbasvag.geojson"
+        },
+        "Drivningspkt": {
+            "type": "geojson",
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Drivningspunkt.geojson"
+        }
+  },
+  "layers": [
+    {
+        "id": "Vag_vinterbilbasväg",
+        "type": "line",
+        "metadata": {
+            "maputnik:comment": "Väg_vinterbilbasväg",
+            "springLayer": "Vinterbilbasvag"
+        },
+        "source": "Vinterbilbasvag",
+        "minzoom": 12,
+        "layout": {
+            "visibility": "visible"
+        },
+        "paint": {
+            "line-gap-width": 2.5,
+            "line-dasharray": [
+                10,
+                1
+            ],
+            "line-color": [
+                "match",
+                [
+                    "get",
+                    "tillganglighet"
+                ],
+                "B",
+                "rgba(0, 0, 0, 1)",
+                "D",
+                "rgba(30, 30, 30, 1)",
+                "rgba(0, 0, 0, 1)"
+            ],
+            "line-width": 1.5,
+            "line-opacity": [
+                "interpolate",
+                [
+                    "linear"
+                ],
+                [
+                    "zoom"
+                ],
+                14.5,
+                0,
+                15,
+                1
+            ]
+        }
+    },
+    {
+        "id": "Vag_traktorväg",
+        "type": "line",
+        "metadata": {
+            "maputnik:comment": "Väg_traktorväg",
+            "springLayer": "Traktorvag"
+        },
+        "source": "Traktorvag",
+        "minzoom": 12,
+        "paint": {
+            "line-gap-width": 2.5,
+            "line-dasharray": [
+                5,
+                1
+            ],
+            "line-color": [
+                "match",
+                [
+                    "get",
+                    "tillganglighet"
+                ],
+                "A",
+                "rgba(0, 0, 0, 1)",
+                "B",
+                "rgba(230, 0, 0, 1)",
+                "C",
+                "rgba(255, 100, 0, 1)",
+                "D",
+                "rgba(0, 0, 0, 1)",
+                "rgba(0, 0, 0, 1)"
+            ],
+            "line-opacity": [
+                "interpolate",
+                [
+                    "linear"
+                ],
+                [
+                    "zoom"
+                ],
+                14.5,
+                0,
+                15,
+                1
+            ]
+        }
+    },
+    {
+        "id": "Drivningspkt",
+        "type": "symbol",
+        "metadata": {
+            "maputnik:comment": "Drivningspkt",
+            "springLayer": "Drivningspkt"
+        },
+        "source": "Drivningspkt",
+        "minzoom": 14,
+        "layout": {
+            "icon-image": [
+                "match",
+                [
+                    "get",
+                    "typ"
+                ],
+                "Larmpunkt",
+                "drivningspunkt/3_larmpunkt",
+                "Avlägg",
+                "drivningspunkt/1_avlagg",
+                "Drivningstext",
+                "drivningspunkt/5_drivningstext",
+                "Överfart",
+                "drivningspunkt/2_overfart",
+                "Kojplats",
+                "drivningspunkt/4_kojplats",
+                "drivningspunkt/fel_drivning"
+            ],
+            "icon-optional": false,
+            "icon-size": 0.4,
+            "visibility": "visible"
+        },
+        "paint": {
+            "icon-opacity": [
+                "interpolate",
+                [
+                    "linear"
+                ],
+                [
+                    "zoom"
+                ],
+                14.5,
+                0,
+                15,
+                1
+            ]
+        }
+    }
+  ]
+}

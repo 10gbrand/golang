@@ -1,0 +1,174 @@
+{
+  "$schema": "../spring_style_schema.json",
+  "id": "j3f36e14-e3f5-43c1-84c0-50a9c80dc5c7",
+  "version": 8,
+  "name": "Mall",
+  "zoom": 0.861983335785597,
+  "pitch": 0,
+  "center": [
+    17.3145660472,
+    62.91542224
+  ],
+  "metadata": {
+    "maputnik:renderer": "mbgljs",
+    "springGroups": [
+        {
+            "id": "Fornlamning",
+            "name": "Fornlamning",
+            "collapsed": true,
+            "visible": false,
+            "springLayers": [
+                {
+                    "id": "Fornlamningyta",
+                    "name": "Fornlämning yta",
+                    "visible": true
+                },
+                {
+                    "id": "Fornlamninglinje",
+                    "name": "Fornlämning linje",
+                    "visible": true
+                },
+                {
+                    "id": "Fornlamningpkt",
+                    "name": "Fornlämning pkt",
+                    "visible": true
+                }
+            ]
+        }
+    ],
+    "springStyleOrder": 1,
+    "springStyleVersion": "0.1"
+  },
+    "sprite": "http://localhost:4200/assets/springfield/geodatapackage/sprite/spring_sprites",
+  "glyphs": "http://localhost:4200/assets/springfield/geodatapackage/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "bearing": 0,
+  "sources": {
+    "Fornlamningpkt": {
+            "type": "geojson",
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Fornminne_punkt.geojson"
+        },
+        "Fornlamninglinje": {
+            "type": "geojson",
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Fornminne_linje.geojson"
+        },
+        "Fornlamningyta": {
+            "type": "geojson",
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Fornminne_yta.geojson"
+        }
+  },
+  "layers": [
+    {
+        "id": "Fornlamningyta",
+        "type": "fill",
+        "metadata": {
+            "maputnik:comment": "Fornlämning_yta",
+            "springLayer": "Fornlamningyta"
+        },
+        "source": "Fornlamningyta",
+        "minzoom": 12,
+        "layout": {
+            "visibility": "visible"
+        },
+        "paint": {
+            "fill-pattern": "fornminne_kultur/fornlamningyta",
+            "fill-outline-color": "rgba(230, 0, 0, 1)",
+            "fill-opacity": [
+                "interpolate",
+                [
+                    "linear"
+                ],
+                [
+                    "zoom"
+                ],
+                12,
+                0.7,
+                15,
+                1
+            ]
+        }
+    },
+    {
+        "id": "Fornlamninglinje-linje",
+        "type": "line",
+        "metadata": {
+            "maputnik:comment": "Fornlämning_linje",
+            "springLayer": "Fornlamninglinje"
+        },
+        "source": "Fornlamninglinje",
+        "minzoom": 12,
+        "paint": {
+            "line-width": 4,
+            "line-opacity": [
+                "interpolate",
+                [
+                    "linear"
+                ],
+                [
+                    "zoom"
+                ],
+                12,
+                0.7,
+                15,
+                1
+            ],
+            "line-color": "rgba(253, 0, 0, 1)"
+        }
+    },
+    {
+        "id": "Fornlamninglinje",
+        "type": "line",
+        "metadata": {
+            "maputnik:comment": "Fornlämning_linje",
+            "springLayer": "Fornlamninglinje"
+        },
+        "source": "Fornlamninglinje",
+        "minzoom": 12,
+        "paint": {
+            "line-pattern": "fornminne_kultur/fornlamninglinje",
+            "line-width": 75,
+            "line-opacity": [
+                "interpolate",
+                [
+                    "linear"
+                ],
+                [
+                    "zoom"
+                ],
+                12,
+                0.7,
+                15,
+                1
+            ]
+        }
+    },
+    {
+        "id": "Fornlamningpkt",
+        "type": "symbol",
+        "metadata": {
+            "maputnik:comment": "Fornlämning_punkt",
+            "springLayer": "Fornlamningpkt"
+        },
+        "source": "Fornlamningpkt",
+        "minzoom": 12,
+        "layout": {
+            "icon-image": "fornminne_kultur/fornlamningpunkt",
+            "icon-size": 0.35
+        },
+        "paint": {
+            "icon-opacity": [
+                "interpolate",
+                [
+                    "linear"
+                ],
+                [
+                    "zoom"
+                ],
+                12,
+                0,
+                15,
+                1
+            ]
+        }
+    }
+  ]
+}

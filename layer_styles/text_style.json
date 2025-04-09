@@ -1,0 +1,80 @@
+{
+  "$schema": "../spring_style_schema.json",
+  "id": "j3f36e14-e3f5-43c1-84c0-50a9c80dc5c7",
+  "version": 8,
+  "name": "Mall",
+  "zoom": 0.861983335785597,
+  "pitch": 0,
+  "center": [
+    17.3145660472,
+    62.91542224
+  ],
+  "metadata": {
+    "maputnik:renderer": "mbgljs",
+    "springGroups": [],
+    "springStyleOrder": 1,
+    "springStyleVersion": "0.1"
+  },
+    "sprite": "http://localhost:4200/assets/springfield/geodatapackage/sprite/spring_sprites",
+  "glyphs": "http://localhost:4200/assets/springfield/geodatapackage/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "bearing": 0,
+  "sources": {
+    "Avdelning": {
+            "type": "geojson",
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Avdelning.geojson"
+        }
+  },
+  "layers": [
+    {
+        "id": "Text_Avdelning",
+        "type": "symbol",
+        "metadata": {
+            "maputnik:comment": "Avdelningstext",
+            "springLayer": "Avdelning_text"
+        },
+        "source": "Avdelning",
+        "minzoom": 16,
+        "layout": {
+            "text-field": [
+                "format",
+                [
+                    "get",
+                    "beteckning"
+                ],
+                {
+                    "font-scale": 1.2
+                },
+                "\n",
+                [
+                    "concat",
+                    "Målklass: ",
+                    [
+                        "get",
+                        "malklass"
+                    ]
+                ],
+                "\n",
+                [
+                    "concat",
+                    "Utvkl: ",
+                    [
+                        "get",
+                        "utvecklingsklass"
+                    ]
+                ]
+            ],
+            "text-size": 12,
+            "text-font": [
+                "Open Sans Regular"
+            ],
+            "visibility": "visible",
+            "text-pitch-alignment": "auto"
+        },
+        "paint": {
+            "text-color": "#ffffff",
+            "text-halo-color": "rgba(0, 0, 0, 1)",
+            "text-halo-width": 2
+        }
+    }
+  ]
+}

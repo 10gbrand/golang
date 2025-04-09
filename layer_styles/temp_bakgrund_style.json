@@ -1,0 +1,43 @@
+{
+    "$schema": "../spring_style_schema.json",
+    "id": "e2624da52cdb485a9648c0ddacbd81c4",
+    "name": "Mall",
+    "version": 8,
+    "metadata": {
+        "maputnik:renderer": "",
+        "springGroups": [],
+        "springStyleOrder": 1,
+        "springStyleVersion": "0.1"
+    },
+    "zoom": 0.861983335785597,
+    "pitch": 0,
+    "center": [
+        17.3145660472,
+        62.91542224
+    ],
+    "sprite": "http://localhost:4200/assets/springfield/geodatapackage/sprite/spring_sprites",
+    "glyphs": "http://localhost:4200/assets/springfield/geodatapackage/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+    "bearing": 0,
+    "sources": {
+        "temp_bakgrund": {
+            "type": "raster",
+            "tiles": [
+                "https://kartor.sveaskog.se/tokenproxy/metriatiles/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=metria:orto_farg&STYLE=sverige&FORMAT=image/jpeg&TILEMATRIXSET=EPSG:3857&TILEMATRIX=EPSG:3857:{z}&TILEROW={y}&TILECOL={x}"
+            ]
+        }
+    },
+    "layers": [
+        {
+            "id": "temp_bakgrund",
+            "type": "raster",
+            "metadata": {
+                "maputnik:comment": "Ortofoto"
+            },
+            "source": "temp_bakgrund",
+            "maxzoom": 24,
+            "layout": {
+                "visibility": "visible"
+            }
+        }
+    ]
+}

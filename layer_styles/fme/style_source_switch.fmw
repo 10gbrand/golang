@@ -1,0 +1,1045 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <WORKSPACE
+#    Command line to run this workspace:
+#        "C:\Program Files\FME_2023_1_1_1\fme.exe" C:\Temp\style_source_switch.fmw
+#          --DataPathToReplace "<quote>http:<solidus><solidus>localhost:4200<solidus>assets<solidus>springfield<solidus>"
+#          --DataPath "<quote><solidus>"
+#          --VectorTypeToReplace ""type": "geojson""
+#          --VectorType ""type": "vector""
+#          --VectorSufixToReplace ".geojson""
+#          --VectorSufix ".fgb""
+#          --RasterPathToReplace ""tiles": [ "http://localhost:4200/tiles/"
+#          --RasterPath ""url": "/"
+#          --RasterSufixToReplace "/{z}/{x}/{y}.png""
+#          --RasterSufix ".tif""
+#          --inputDir "\\wsl.localhost\Ubuntu\home\mate01\git\ogcStyleTools\style-src\style\layer_styles\result"
+#          --outputDir "\\wsl.localhost\Ubuntu\home\mate01\git\ogcStyleTools\style-src\style\layer_styles\result\out"
+#          --FME_LAUNCH_VIEWER_APP "YES"
+#    
+#!   A0_PREVIEW_IMAGE="data:image/png;base64,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"
+#!   ARCGIS_COMPATIBILITY="ARCGIS_AUTO"
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BEGIN_PYTHON=""
+#!   BEGIN_TCL=""
+#!   CATEGORY=""
+#!   DESCRIPTION=""
+#!   DESTINATION="NONE"
+#!   DESTINATION_ROUTING_FILE=""
+#!   DOC_EXTENTS="6014.43 435.377"
+#!   DOC_TOP_LEFT="-171.877 -1481.64"
+#!   END_PYTHON=""
+#!   END_TCL=""
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="23774"
+#!   FME_BULK_MODE_THRESHOLD="2000"
+#!   FME_DOCUMENT_GUID="ddbb7c62-2a2e-47f7-b0b2-b9f63b11a44c"
+#!   FME_DOCUMENT_PRIORGUID=""
+#!   FME_GEOMETRY_HANDLING="Enhanced"
+#!   FME_IMPLICIT_CSMAP_REPROJECTION_MODE="Auto"
+#!   FME_NAMES_ENCODING="UTF-8"
+#!   FME_REPROJECTION_ENGINE="FME"
+#!   FME_SERVER_SERVICES=""
+#!   FME_STROKE_MAX_DEVIATION="0"
+#!   HISTORY=""
+#!   IGNORE_READER_FAILURE="No"
+#!   LAST_SAVE_BUILD="FME(R) 2023.2.1.0 (20240104 - Build 23774 - WIN64)"
+#!   LAST_SAVE_DATE="2025-04-07T17:07:46"
+#!   LOG_FILE=""
+#!   LOG_MAX_RECORDED_FEATURES="200"
+#!   MARKDOWN_DESCRIPTION=""
+#!   MARKDOWN_USAGE=""
+#!   MAX_LOG_FEATURES="200"
+#!   MULTI_WRITER_DATASET_ORDER="BY_ID"
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY="38"
+#!   REDIRECT_TERMINATORS="NONE"
+#!   SAVE_ON_PROMPT_AND_RUN="Yes"
+#!   SHOW_ANNOTATIONS="true"
+#!   SHOW_INFO_NODES="true"
+#!   SOURCE="NONE"
+#!   SOURCE_ROUTING_FILE=""
+#!   TERMINATE_REJECTED="YES"
+#!   TITLE=""
+#!   USAGE=""
+#!   USE_MARKDOWN=""
+#!   VIEW_POSITION="-68.7507 0"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   ZOOM_SCALE="100"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! <READER_DATASETS>
+#! <DATASET
+#!   NAME="FeatureReader"
+#!   OVERRIDE="--FeatureReaderDataset_FeatureReader"
+#!   DATASET="@Value(path_windows)"
+#! />
+#! </READER_DATASETS>
+#! <WRITER_DATASETS>
+#! <DATASET
+#!   NAME="FeatureWriter"
+#!   OVERRIDE="--FeatureWriterDataset_FeatureWriter"
+#!   DATASET="\\wsl.localhost\Ubuntu\home\mate01\git\ogcStyleTools\style-src\style\layer_styles\result\out\@Value(path_filename)"
+#! />
+#! </WRITER_DATASETS>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_ATTR DataPathToReplace &quot;&quot; DataPathToReplace"
+#!   DEFAULT_VALUE="&lt;quote&gt;http:&lt;solidus&gt;&lt;solidus&gt;localhost:4200&lt;solidus&gt;assets&lt;solidus&gt;springfield&lt;solidus&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_ATTR DataPath &quot;&quot; DataPath"
+#!   DEFAULT_VALUE="&lt;quote&gt;&lt;solidus&gt;"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI STRING_OR_ATTR VectorTypeToReplace VectorTypeToReplace"
+#!   DEFAULT_VALUE="&quot;type&quot;: &quot;geojson&quot;"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI STRING_OR_ATTR VectorType VectorType"
+#!   DEFAULT_VALUE="&quot;type&quot;: &quot;vector&quot;"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI STRING_OR_ATTR VectorSufixToReplace VectorSufixToReplace"
+#!   DEFAULT_VALUE=".geojson&quot;"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI STRING_OR_ATTR VectorSufix VectorSufix"
+#!   DEFAULT_VALUE=".fgb&quot;"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI STRING_OR_ATTR RasterPathToReplace RasterPathToReplace"
+#!   DEFAULT_VALUE="&quot;tiles&quot;: [ &quot;http://localhost:4200/tiles/"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI STRING_OR_ATTR RasterPath RasterPath"
+#!   DEFAULT_VALUE="&quot;url&quot;: &quot;/"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI STRING_OR_ATTR RasterSufixToReplace RasterSufixToReplace"
+#!   DEFAULT_VALUE="/{z}/{x}/{y}.png&quot;"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI STRING_OR_ATTR RasterSufix RasterSufix"
+#!   DEFAULT_VALUE=".tif&quot;"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI MULTIDIRECTORY_OR_ATTR inputDir INCLUDE_WEB_BROWSER inputDir"
+#!   DEFAULT_VALUE="\\wsl.localhost\Ubuntu\home\mate01\git\ogcStyleTools\style-src\style\layer_styles\result"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI MULTIDIRECTORY_OR_ATTR outputDir INCLUDE_WEB_BROWSER outputDir"
+#!   DEFAULT_VALUE="\\wsl.localhost\Ubuntu\home\mate01\git\ogcStyleTools\style-src\style\layer_styles\result\out"
+#!   IS_STAND_ALONE="true"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <USER_PARAMETERS
+#!   FORM="eyJwYXJhbWV0ZXJzIjpbeyJkZWZhdWx0VmFsdWUiOiI8cXVvdGU+aHR0cDo8c29saWR1cz48c29saWR1cz5sb2NhbGhvc3Q6NDIwMDxzb2xpZHVzPmFzc2V0czxzb2xpZHVzPnNwcmluZ2ZpZWxkPHNvbGlkdXM+IiwiZWRpdG9yIjoicmVnZXgiLCJuYW1lIjoiRGF0YVBhdGhUb1JlcGxhY2UiLCJwcm9tcHQiOiJEYXRhUGF0aFRvUmVwbGFjZSIsInJlZ2V4U2V0dGluZ3MiOnsiY2FzZVNlbnNpdGl2ZSI6eyJwYXJhbWV0ZXIiOiJDQVNFIn0sImNvbnRhaW5zIjp0cnVlLCJ1c2VSZWdleCI6eyJpZiI6W3siJGVxdWFscyI6eyJwYXJhbWV0ZXIiOiJSRUdFWFAiLCJ2YWx1ZSI6IllFUyJ9LCJ0aGVuIjp0cnVlfV19fSwicmVxdWlyZWQiOnRydWUsInNob3dFZGl0QnV0dG9uIjpmYWxzZSwic2hvd1Byb21wdCI6dHJ1ZSwic3VwcG9ydGVkVmFsdWVUeXBlcyI6WyJleHByZXNzaW9uIiwiZ2xvYmFsUGFyYW1ldGVyIl0sInR5cGUiOiJ0ZXh0IiwidmFsdWVUeXBlIjoic3RyaW5nRW5jb2RlZCJ9LHsiZGVmYXVsdFZhbHVlIjoiPHF1b3RlPjxzb2xpZHVzPiIsImVkaXRvciI6InJlZ2V4IiwibmFtZSI6IkRhdGFQYXRoIiwicHJvbXB0IjoiRGF0YVBhdGgiLCJyZWdleFNldHRpbmdzIjp7ImNhc2VTZW5zaXRpdmUiOnsicGFyYW1ldGVyIjoiQ0FTRSJ9LCJjb250YWlucyI6dHJ1ZSwidXNlUmVnZXgiOnsiaWYiOlt7IiRlcXVhbHMiOnsicGFyYW1ldGVyIjoiUkVHRVhQIiwidmFsdWUiOiJZRVMifSwidGhlbiI6dHJ1ZX1dfX0sInJlcXVpcmVkIjp0cnVlLCJzaG93RWRpdEJ1dHRvbiI6ZmFsc2UsInNob3dQcm9tcHQiOnRydWUsInN1cHBvcnRlZFZhbHVlVHlwZXMiOlsiZXhwcmVzc2lvbiIsImdsb2JhbFBhcmFtZXRlciJdLCJ0eXBlIjoidGV4dCIsInZhbHVlVHlwZSI6InN0cmluZ0VuY29kZWQifSx7ImRlZmF1bHRWYWx1ZSI6IlwidHlwZVwiOiBcImdlb2pzb25cIiIsIm5hbWUiOiJWZWN0b3JUeXBlVG9SZXBsYWNlIiwicHJvbXB0IjoiVmVjdG9yVHlwZVRvUmVwbGFjZSIsInJlcXVpcmVkIjp0cnVlLCJzaG93RWRpdEJ1dHRvbiI6ZmFsc2UsInNob3dQcm9tcHQiOnRydWUsInN1cHBvcnRlZFZhbHVlVHlwZXMiOlsiZXhwcmVzc2lvbiIsImdsb2JhbFBhcmFtZXRlciJdLCJ0eXBlIjoidGV4dCIsInZhbHVlVHlwZSI6InN0cmluZyJ9LHsiZGVmYXVsdFZhbHVlIjoiXCJ0eXBlXCI6IFwidmVjdG9yXCIiLCJuYW1lIjoiVmVjdG9yVHlwZSIsInByb21wdCI6IlZlY3RvclR5cGUiLCJyZXF1aXJlZCI6dHJ1ZSwic2hvd0VkaXRCdXR0b24iOmZhbHNlLCJzaG93UHJvbXB0Ijp0cnVlLCJzdXBwb3J0ZWRWYWx1ZVR5cGVzIjpbImV4cHJlc3Npb24iLCJnbG9iYWxQYXJhbWV0ZXIiXSwidHlwZSI6InRleHQiLCJ2YWx1ZVR5cGUiOiJzdHJpbmcifSx7ImRlZmF1bHRWYWx1ZSI6Ii5nZW9qc29uXCIiLCJuYW1lIjoiVmVjdG9yU3VmaXhUb1JlcGxhY2UiLCJwcm9tcHQiOiJWZWN0b3JTdWZpeFRvUmVwbGFjZSIsInJlcXVpcmVkIjp0cnVlLCJzaG93RWRpdEJ1dHRvbiI6ZmFsc2UsInNob3dQcm9tcHQiOnRydWUsInN1cHBvcnRlZFZhbHVlVHlwZXMiOlsiZXhwcmVzc2lvbiIsImdsb2JhbFBhcmFtZXRlciJdLCJ0eXBlIjoidGV4dCIsInZhbHVlVHlwZSI6InN0cmluZyJ9LHsiZGVmYXVsdFZhbHVlIjoiLmZnYlwiIiwibmFtZSI6IlZlY3RvclN1Zml4IiwicHJvbXB0IjoiVmVjdG9yU3VmaXgiLCJyZXF1aXJlZCI6dHJ1ZSwic2hvd0VkaXRCdXR0b24iOmZhbHNlLCJzaG93UHJvbXB0Ijp0cnVlLCJzdXBwb3J0ZWRWYWx1ZVR5cGVzIjpbImV4cHJlc3Npb24iLCJnbG9iYWxQYXJhbWV0ZXIiXSwidHlwZSI6InRleHQiLCJ2YWx1ZVR5cGUiOiJzdHJpbmcifSx7ImRlZmF1bHRWYWx1ZSI6IlwidGlsZXNcIjogWyBcImh0dHA6Ly9sb2NhbGhvc3Q6NDIwMC90aWxlcy8iLCJuYW1lIjoiUmFzdGVyUGF0aFRvUmVwbGFjZSIsInByb21wdCI6IlJhc3RlclBhdGhUb1JlcGxhY2UiLCJyZXF1aXJlZCI6dHJ1ZSwic2hvd0VkaXRCdXR0b24iOmZhbHNlLCJzaG93UHJvbXB0Ijp0cnVlLCJzdXBwb3J0ZWRWYWx1ZVR5cGVzIjpbImV4cHJlc3Npb24iLCJnbG9iYWxQYXJhbWV0ZXIiXSwidHlwZSI6InRleHQiLCJ2YWx1ZVR5cGUiOiJzdHJpbmcifSx7ImRlZmF1bHRWYWx1ZSI6IlwidXJsXCI6IFwiLyIsIm5hbWUiOiJSYXN0ZXJQYXRoIiwicHJvbXB0IjoiUmFzdGVyUGF0aCIsInJlcXVpcmVkIjp0cnVlLCJzaG93RWRpdEJ1dHRvbiI6ZmFsc2UsInNob3dQcm9tcHQiOnRydWUsInN1cHBvcnRlZFZhbHVlVHlwZXMiOlsiZXhwcmVzc2lvbiIsImdsb2JhbFBhcmFtZXRlciJdLCJ0eXBlIjoidGV4dCIsInZhbHVlVHlwZSI6InN0cmluZyJ9LHsiZGVmYXVsdFZhbHVlIjoiL3t6fS97eH0ve3l9LnBuZ1wiIiwibmFtZSI6IlJhc3RlclN1Zml4VG9SZXBsYWNlIiwicHJvbXB0IjoiUmFzdGVyU3VmaXhUb1JlcGxhY2UiLCJyZXF1aXJlZCI6dHJ1ZSwic2hvd0VkaXRCdXR0b24iOmZhbHNlLCJzaG93UHJvbXB0Ijp0cnVlLCJzdXBwb3J0ZWRWYWx1ZVR5cGVzIjpbImV4cHJlc3Npb24iLCJnbG9iYWxQYXJhbWV0ZXIiXSwidHlwZSI6InRleHQiLCJ2YWx1ZVR5cGUiOiJzdHJpbmcifSx7ImRlZmF1bHRWYWx1ZSI6Ii50aWZcIiIsIm5hbWUiOiJSYXN0ZXJTdWZpeCIsInByb21wdCI6IlJhc3RlclN1Zml4IiwicmVxdWlyZWQiOnRydWUsInNob3dFZGl0QnV0dG9uIjpmYWxzZSwic2hvd1Byb21wdCI6dHJ1ZSwic3VwcG9ydGVkVmFsdWVUeXBlcyI6WyJleHByZXNzaW9uIiwiZ2xvYmFsUGFyYW1ldGVyIl0sInR5cGUiOiJ0ZXh0IiwidmFsdWVUeXBlIjoic3RyaW5nIn0seyJhY2Nlc3NNb2RlIjoicmVhZCIsImRlZmF1bHRWYWx1ZSI6IlxcXFx3c2wubG9jYWxob3N0XFxVYnVudHVcXGhvbWVcXG1hdGUwMVxcZ2l0XFxvZ2NTdHlsZVRvb2xzXFxzdHlsZS1zcmNcXHN0eWxlXFxsYXllcl9zdHlsZXNcXHJlc3VsdCIsImluY2x1ZGVXZWJCcm93c2VyIjp0cnVlLCJpdGVtc1RvU2VsZWN0IjoiZm9sZGVycyIsIm5hbWUiOiJpbnB1dERpciIsInByb21wdCI6ImlucHV0RGlyIiwicmVxdWlyZWQiOnRydWUsInNlbGVjdE11bHRpcGxlIjp0cnVlLCJzaG93UHJvbXB0Ijp0cnVlLCJzdXBwb3J0ZWRWYWx1ZVR5cGVzIjpbImV4cHJlc3Npb24iLCJnbG9iYWxQYXJhbWV0ZXIiXSwidHlwZSI6ImZpbGUiLCJ2YWxpZGF0ZUV4aXN0ZW5jZSI6ZmFsc2UsInZhbHVlVHlwZSI6InN0cmluZyJ9LHsiYWNjZXNzTW9kZSI6InJlYWQiLCJkZWZhdWx0VmFsdWUiOiJcXFxcd3NsLmxvY2FsaG9zdFxcVWJ1bnR1XFxob21lXFxtYXRlMDFcXGdpdFxcb2djU3R5bGVUb29sc1xcc3R5bGUtc3JjXFxzdHlsZVxcbGF5ZXJfc3R5bGVzXFxyZXN1bHRcXG91dCIsImluY2x1ZGVXZWJCcm93c2VyIjp0cnVlLCJpdGVtc1RvU2VsZWN0IjoiZm9sZGVycyIsIm5hbWUiOiJvdXRwdXREaXIiLCJwcm9tcHQiOiJvdXRwdXREaXIiLCJyZXF1aXJlZCI6dHJ1ZSwic2VsZWN0TXVsdGlwbGUiOnRydWUsInNob3dQcm9tcHQiOnRydWUsInN1cHBvcnRlZFZhbHVlVHlwZXMiOlsiZXhwcmVzc2lvbiIsImdsb2JhbFBhcmFtZXRlciJdLCJ0eXBlIjoiZmlsZSIsInZhbGlkYXRlRXhpc3RlbmNlIjpmYWxzZSwidmFsdWVUeXBlIjoic3RyaW5nIn1dfQ=="
+#! >
+#! <PARAMETER_INFO>
+#!     <INFO NAME="DataPathToReplace" 
+#!   DEFAULT_VALUE="&lt;quote&gt;http:&lt;solidus&gt;&lt;solidus&gt;localhost:4200&lt;solidus&gt;assets&lt;solidus&gt;springfield&lt;solidus&gt;"
+#!   SCOPE="DEPENDENT"
+#!   GENERATED_GUI_LINE="true"
+#!   GUI_LINE="GUI TEXT_EDIT_OR_ATTR DataPathToReplace &quot;&quot; DataPathToReplace"
+#! />
+#!     <INFO NAME="DataPath" 
+#!   DEFAULT_VALUE="&lt;quote&gt;&lt;solidus&gt;"
+#!   SCOPE="STAND_ALONE"
+#!   GENERATED_GUI_LINE="true"
+#!   GUI_LINE="GUI TEXT_EDIT_OR_ATTR DataPath &quot;&quot; DataPath"
+#! />
+#!     <INFO NAME="VectorTypeToReplace" 
+#!   DEFAULT_VALUE="&quot;type&quot;: &quot;geojson&quot;"
+#!   SCOPE="STAND_ALONE"
+#!   GENERATED_GUI_LINE="true"
+#!   GUI_LINE="GUI STRING_OR_ATTR VectorTypeToReplace VectorTypeToReplace"
+#! />
+#!     <INFO NAME="VectorType" 
+#!   DEFAULT_VALUE="&quot;type&quot;: &quot;vector&quot;"
+#!   SCOPE="STAND_ALONE"
+#!   GENERATED_GUI_LINE="true"
+#!   GUI_LINE="GUI STRING_OR_ATTR VectorType VectorType"
+#! />
+#!     <INFO NAME="VectorSufixToReplace" 
+#!   DEFAULT_VALUE=".geojson&quot;"
+#!   SCOPE="STAND_ALONE"
+#!   GENERATED_GUI_LINE="true"
+#!   GUI_LINE="GUI STRING_OR_ATTR VectorSufixToReplace VectorSufixToReplace"
+#! />
+#!     <INFO NAME="VectorSufix" 
+#!   DEFAULT_VALUE=".fgb&quot;"
+#!   SCOPE="STAND_ALONE"
+#!   GENERATED_GUI_LINE="true"
+#!   GUI_LINE="GUI STRING_OR_ATTR VectorSufix VectorSufix"
+#! />
+#!     <INFO NAME="RasterPathToReplace" 
+#!   DEFAULT_VALUE="&quot;tiles&quot;: [ &quot;http://localhost:4200/tiles/"
+#!   SCOPE="STAND_ALONE"
+#!   GENERATED_GUI_LINE="true"
+#!   GUI_LINE="GUI STRING_OR_ATTR RasterPathToReplace RasterPathToReplace"
+#! />
+#!     <INFO NAME="RasterPath" 
+#!   DEFAULT_VALUE="&quot;url&quot;: &quot;/"
+#!   SCOPE="STAND_ALONE"
+#!   GENERATED_GUI_LINE="true"
+#!   GUI_LINE="GUI STRING_OR_ATTR RasterPath RasterPath"
+#! />
+#!     <INFO NAME="RasterSufixToReplace" 
+#!   DEFAULT_VALUE="/{z}/{x}/{y}.png&quot;"
+#!   SCOPE="STAND_ALONE"
+#!   GENERATED_GUI_LINE="true"
+#!   GUI_LINE="GUI STRING_OR_ATTR RasterSufixToReplace RasterSufixToReplace"
+#! />
+#!     <INFO NAME="RasterSufix" 
+#!   DEFAULT_VALUE=".tif&quot;"
+#!   SCOPE="STAND_ALONE"
+#!   GENERATED_GUI_LINE="true"
+#!   GUI_LINE="GUI STRING_OR_ATTR RasterSufix RasterSufix"
+#! />
+#!     <INFO NAME="inputDir" 
+#!   DEFAULT_VALUE="\\wsl.localhost\Ubuntu\home\mate01\git\ogcStyleTools\style-src\style\layer_styles\result"
+#!   SCOPE="DEPENDENT"
+#!   GENERATED_GUI_LINE="true"
+#!   GUI_LINE="GUI MULTIDIRECTORY_OR_ATTR inputDir INCLUDE_WEB_BROWSER inputDir"
+#! />
+#!     <INFO NAME="outputDir" 
+#!   DEFAULT_VALUE="\\wsl.localhost\Ubuntu\home\mate01\git\ogcStyleTools\style-src\style\layer_styles\result\out"
+#!   SCOPE="STAND_ALONE"
+#!   GENERATED_GUI_LINE="true"
+#!   GUI_LINE="GUI MULTIDIRECTORY_OR_ATTR outputDir INCLUDE_WEB_BROWSER outputDir"
+#! />
+#! </PARAMETER_INFO>
+#! </USER_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#!   IDENTIFIER="11"
+#!   NAME="StringReplacer"
+#!   DESCRIPTION=""
+#!   TOP_LEFT="2243.273312733128 -1205.6381563815635"
+#!   ORDER="500000000000048"
+#!   PALETTE_COLOR="Color1"
+#!   BOTTOM_RIGHT="5146.926469264693 -1481.6381563815635"
+#!   BOUNDING_RECT="2243.273312733128 -1205.6381563815635 2903.6531565315649 276"
+#!   STICKY="true"
+#!   COLOUR="0.59999999999999998,0.80000000000000004,0.80000000000000004,1"
+#!   CONTENTS="5 13 12 10 8 9 7 14 "
+#! >
+#! </BOOKMARK>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="FeatureReader"
+#!   VERSION="14"
+#!   POSITION="1609.3910939109392 -1075.6381563815635"
+#!   BOUNDING_RECT="1609.3910939109392 -1075.6381563815635 430 71"
+#!   ORDER="500000000000045"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="23774"
+#! >
+#!     <OUTPUT_FEAT NAME="&lt;SCHEMA&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="path_unix" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_windows" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_rootname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_filename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_extension" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_directory_unix" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_directory_windows" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_feature_type_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute{}.fme_data_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute{}.native_data_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_format_short_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_format_long_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_schema_handling" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;OTHER&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="path_unix" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="path_windows" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="path_rootname" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="path_filename" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="path_extension" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="path_directory_unix" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="path_directory_windows" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="path_type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_feature_type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="INITIATOR"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="path_unix" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="path_windows" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="path_rootname" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="path_filename" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="path_extension" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="path_directory_unix" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="path_directory_windows" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="path_type" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="3"/>
+#!     <XFORM_ATTR ATTR_NAME="path_unix" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="path_windows" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="path_rootname" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="path_filename" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="path_extension" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="path_directory_unix" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="path_directory_windows" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="path_type" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="_reader_error" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_TYPES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRS_TO_EXPOSE" PARM_VALUE="text_line_data fme_feature_type"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_MODE" PARM_VALUE="Merge Initiator and Result"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_CONFLICT_RES" PARM_VALUE="Use Result"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_IGNORE_NULLS" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_PREFIX" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AVAILABLE_FEATURE_TYPES" PARM_VALUE="_FEATUREREADER_OPTIONAL_FTTR_"/>
+#!     <XFORM_PARM PARM_NAME="CACHE_TIMEOUT_HRS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="COMBINE_GEOM" PARM_VALUE="Use Result"/>
+#!     <XFORM_PARM PARM_NAME="CONSTRAINTS_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DATASET" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;path_windows&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="DYNGROUP_0" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ENABLE_CACHE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="FEATURETYPES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FORCE_REFRESH_OUTPUTS" PARM_VALUE="on_parm_change"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE="TEXTLINE"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_ATTRIBUTE_TYPES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_DIRECTIVES" PARM_VALUE="METAFILE,TEXTLINE"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_PARAMS" PARM_VALUE="TEXTLINE_EXPOSE_ATTRS_GROUP,&quot;OPTIONAL DISCLOSUREGROUP TEXTLINE_EXPOSE_FORMAT_ATTRS&quot;,TEXTLINE&lt;space&gt;Schema&lt;space&gt;Attributes,TEXTLINE_ENCODING,&quot;OPTIONAL STRING_OR_ENCODING fme-system%*&quot;,TEXTLINE&lt;space&gt;Character&lt;space&gt;Encoding:,TEXTLINE_TEXTLINE_EXPOSE_FORMAT_ATTRS,&quot;OPTIONAL LITERAL EXPOSED_ATTRS TEXTLINE%Source&quot;,TEXTLINE&lt;space&gt;Additional&lt;space&gt;Attributes&lt;space&gt;to&lt;space&gt;Expose:,TEXTLINE_READ_WHOLE_FILE_AT_ONCE,&quot;OPTIONAL ACTIVECHOICE YES,READ_BOTTOM_UP,SKIP_LINES,SKIP_FOOTER%NO&quot;,TEXTLINE&lt;space&gt;Read&lt;space&gt;Whole&lt;space&gt;File&lt;space&gt;at&lt;space&gt;Once:,TEXTLINE_CREATE_FEATURE_TABLES_FROM_DATA,&quot;OPTIONAL NO_EDIT TEXT&quot;,TEXTLINE&lt;space&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FTTR_SEPARATOR" PARM_VALUE="SPACE"/>
+#!     <XFORM_PARM PARM_NAME="GENERIC_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="INTERACT" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MAX_FEATURES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MERGE_HANDLING_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="ORDER_RESULTS" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUTPORTS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FEATURES_DISPLAY" PARM_VALUE="Schema and Data Features"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FEATURES_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_PORTS_MODE" PARM_VALUE="PORTS_FROM_FTTR"/>
+#!     <XFORM_PARM PARM_NAME="PORTS_FROM_FTTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="READER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="READ_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SELECTED_PORTS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SINGLE_PORT" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SUPPORTED_SPATIAL_INTERACTIONS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_CREATE_FEATURE_TABLES_FROM_DATA" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_ENCODING" PARM_VALUE="windows-1252"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_EXPOSE_ATTRS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_READ_WHOLE_FILE_AT_ONCE" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_TEXTLINE_EXPOSE_FORMAT_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="WHERE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureReader"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="3"
+#!   TYPE="Creator"
+#!   VERSION="6"
+#!   POSITION="-171.87671876718781 -1215.6371563715634"
+#!   BOUNDING_RECT="-171.87671876718781 -1215.6371563715634 430 71"
+#!   ORDER="500000000000046"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="23774"
+#! >
+#!     <OUTPUT_FEAT NAME="CREATED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATEND" PARM_VALUE="no"/>
+#!     <XFORM_PARM PARM_NAME="COORDS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CRE_ATTR" PARM_VALUE="_creation_instance"/>
+#!     <XFORM_PARM PARM_NAME="GEOM" PARM_VALUE="&lt;lt&gt;?xml&lt;space&gt;version=&lt;quote&gt;1.0&lt;quote&gt;&lt;space&gt;encoding=&lt;quote&gt;US_ASCII&lt;quote&gt;&lt;space&gt;standalone=&lt;quote&gt;no&lt;quote&gt;&lt;space&gt;?&lt;gt&gt;&lt;lt&gt;geometry&lt;space&gt;dimension=&lt;quote&gt;2&lt;quote&gt;&lt;gt&gt;&lt;lt&gt;null&lt;solidus&gt;&lt;gt&gt;&lt;lt&gt;&lt;solidus&gt;geometry&lt;gt&gt;"/>
+#!     <XFORM_PARM PARM_NAME="GEOMTYPE" PARM_VALUE="Geometry Object"/>
+#!     <XFORM_PARM PARM_NAME="NUM" PARM_VALUE="1"/>
+#!     <XFORM_PARM PARM_NAME="OAN_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Creator"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="5"
+#!   TYPE="StringReplacer"
+#!   VERSION="5"
+#!   POSITION="2331.273312733128 -1315.6381563815635"
+#!   BOUNDING_RECT="2331.273312733128 -1315.6381563815635 430 71"
+#!   ORDER="500000000000047"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="23774"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="path_unix" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_windows" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_rootname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_filename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_extension" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_directory_unix" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_directory_windows" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_feature_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="$(DataPathToReplace)"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE="$(DataPath)"/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="text_line_data"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="DataPath"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="7"
+#!   TYPE="StringReplacer"
+#!   VERSION="5"
+#!   POSITION="2846.9029690296902 -1315.6381563815635"
+#!   BOUNDING_RECT="2846.9029690296902 -1315.6381563815635 430 71"
+#!   ORDER="500000000000047"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="23774"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="path_unix" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_windows" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_rootname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_filename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_extension" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_directory_unix" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_directory_windows" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_feature_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="$(VectorTypeToReplace)"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE="$(VectorType)"/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="text_line_data"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="VectorType"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="9"
+#!   TYPE="StringReplacer"
+#!   VERSION="5"
+#!   POSITION="3368.7826878268779 -1315.6381563815635"
+#!   BOUNDING_RECT="3368.7826878268779 -1315.6381563815635 430 71"
+#!   ORDER="500000000000047"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="23774"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="path_unix" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_windows" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_rootname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_filename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_extension" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_directory_unix" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_directory_windows" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_feature_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="$(VectorSufixToReplace)"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE="$(VectorSufix)"/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="text_line_data"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="VectorSufix"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="12"
+#!   TYPE="StringReplacer"
+#!   VERSION="5"
+#!   POSITION="3915.662656626565 -1315.6381563815635"
+#!   BOUNDING_RECT="3915.662656626565 -1315.6381563815635 454 71"
+#!   ORDER="500000000000047"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="23774"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="path_unix" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_windows" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_rootname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_filename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_extension" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_directory_unix" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_directory_windows" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_feature_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="$(RasterPathToReplace)"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE="$(RasterPath)"/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="text_line_data"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="RasterPath"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="14"
+#!   TYPE="StringReplacer"
+#!   VERSION="5"
+#!   POSITION="4562.5436254362539 -1315.6381563815635"
+#!   BOUNDING_RECT="4562.5436254362539 -1315.6381563815635 430 71"
+#!   ORDER="500000000000047"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="23774"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="path_unix" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_windows" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_rootname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_filename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_extension" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_directory_unix" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_directory_windows" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_feature_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="$(RasterSufixToReplace)"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE="$(RasterSufix)"/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="text_line_data"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="RasterSufix"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="16"
+#!   TYPE="FeatureWriter"
+#!   VERSION="0"
+#!   POSITION="5412.5541255412563 -1255.6381563815635"
+#!   BOUNDING_RECT="5412.5541255412563 -1255.6381563815635 430 71"
+#!   ORDER="500000000000049"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="23774"
+#! >
+#!     <OUTPUT_FEAT NAME="SUMMARY"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_feature_types{}.count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_feature_types{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_total_features_written" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DATASET" PARM_VALUE="$(outputDir)&lt;backslash&gt;&lt;at&gt;Value&lt;openparen&gt;path_filename&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="DATASET_ATTR" PARM_VALUE="_dataset"/>
+#!     <XFORM_PARM PARM_NAME="DYNGROUP_0" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_TYPES_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_TYPE_LIST_ATTR" PARM_VALUE="_feature_types"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE="TEXTLINE"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_DIRECTIVES" PARM_VALUE="RUNTIME_MACROS,OVERWRITE_FILE&lt;comma&gt;YES&lt;comma&gt;END_OF_LINE&lt;comma&gt;System&lt;comma&gt;WRITE_LAST_EOL&lt;comma&gt;YES&lt;comma&gt;ENCODING&lt;comma&gt;UTF-8&lt;comma&gt;WRITE_UTF8_BOM&lt;comma&gt;YES&lt;comma&gt;MIME_TYPE&lt;comma&gt;text&lt;solidus&gt;plain&lt;comma&gt;DESTINATION_DATASETTYPE_VALIDATION&lt;comma&gt;Yes&lt;comma&gt;COORDINATE_SYSTEM_GRANULARITY&lt;comma&gt;FEATURE&lt;comma&gt;NETWORK_AUTHENTICATION&lt;comma&gt;,METAFILE,TEXTLINE"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_PARAMS" PARM_VALUE="TEXTLINE_NETWORK_AUTHENTICATION,&quot;OPTIONAL AUTHENTICATOR CONTAINER%ACTIVEDISCLOSUREGROUP%CONTAINER_TITLE%Use Network Authentication%PROMPT_TYPE%NETWORK&quot;,TEXTLINE&lt;space&gt;Use&lt;space&gt;Network&lt;space&gt;Authentication,TEXTLINE_WRITE_UTF8_BOM,&quot;OPTIONAL CHOICE YES%NO&quot;,TEXTLINE&lt;space&gt;Write&lt;space&gt;UTF&lt;space&gt;Byte&lt;space&gt;Order&lt;space&gt;Mark,TEXTLINE_ENCODING,&quot;OPTIONAL STRING_OR_ENCODING fme-system%fme-binary%*&quot;,TEXTLINE&lt;space&gt;Character&lt;space&gt;Encoding:,TEXTLINE_END_OF_LINE,&quot;OPTIONAL CHOICE System%Windows%Unix%Macintosh%Source%None&quot;,TEXTLINE&lt;space&gt;Line&lt;space&gt;Termination:,TEXTLINE_OVERWRITE_FILE,&quot;OPTIONAL CHOICE YES%NO&quot;,TEXTLINE&lt;space&gt;Overwrite&lt;space&gt;Existing&lt;space&gt;File:,TEXTLINE_MIME_TYPE,&quot;OPTIONAL STRING_OR_CHOICE application/json%application/octet-stream%application/xml%application/x-www-form-urlencoded%image/gif%image/jpeg%image/png%image/tiff%multipart/mixed%multipart/alternative%multipart/related%text/html%text/plain%text/xml&quot;,TEXTLINE&lt;space&gt;MIME&lt;space&gt;Type:,TEXTLINE_COORDINATE_SYSTEM_GRANULARITY,&quot;OPTIONAL NO_EDIT TEXT&quot;,TEXTLINE&lt;space&gt;,TEXTLINE_DESTINATION_DATASETTYPE_VALIDATION,&quot;OPTIONAL NO_EDIT TEXT&quot;,TEXTLINE&lt;space&gt;,TEXTLINE_WRITE_LAST_EOL,&quot;OPTIONAL CHOICE YES%NO&quot;,TEXTLINE&lt;space&gt;Write&lt;space&gt;Last&lt;space&gt;Line&lt;space&gt;Terminator:"/>
+#!     <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="GROUP_BY_MODE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="GROUP_PROCESSING_GROUP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="MORE_SUMMARY_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NO_OUTPUT_PORTS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUTPORTS_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_PORTS" PARM_VALUE="&quot;&quot;"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_PORTS_MODE" PARM_VALUE="NO_OUTPUT_PORTS"/>
+#!     <XFORM_PARM PARM_NAME="PER_EACH_INPUT" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SELECTED_PORTS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SUMMARY_ATTRS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_COORDINATE_SYSTEM_GRANULARITY" PARM_VALUE="FEATURE"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_DESTINATION_DATASETTYPE_VALIDATION" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_ENCODING" PARM_VALUE="UTF-8"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_END_OF_LINE" PARM_VALUE="System"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_MIME_TYPE" PARM_VALUE="text/plain"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_NETWORK_AUTHENTICATION" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_OVERWRITE_FILE" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_WRITE_LAST_EOL" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_WRITE_UTF8_BOM" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="TOTAL_FEATURES_WRITTEN_ATTR" PARM_VALUE="_total_features_written"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="WRITER_DIRECTIVES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="WRITER_FEATURE_TYPE_PARAMS" PARM_VALUE="text_line:text_line,ftp_feature_type_name,text_line,ftp_writer,TEXTLINE,ftp_geometry,text_line_none,ftp_dynamic_schema,no,ftp_dynamic_feature_type_name_type,DYN_SCHEMA_PROP_AUTO,ftp_dynamic_geometry_type,DYN_SCHEMA_PROP_AUTO,ftp_dynamic_schema_def_name_type,DYN_SCHEMA_PROP_AUTO,ftp_dynamic_schema_sources,&lt;lt&gt;lt&lt;gt&gt;Unused&lt;lt&gt;gt&lt;gt&gt;,ftp_attribute_source,1,ftp_user_attributes,text_line_data&lt;comma&gt;buffer"/>
+#!     <XFORM_PARM PARM_NAME="WRITER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="WRITER_METAFILE" PARM_VALUE="ATTRIBUTE_CASE,ANY,ATTRIBUTE_INVALID_CHARS,,ATTRIBUTE_LENGTH,60,ATTR_TYPE_MAP,char&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;fme_varchar&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;char&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;fme_varbinary&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;char&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;fme_char&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;char&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;fme_binary&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;buffer&lt;comma&gt;fme_buffer&lt;comma&gt;buffer&lt;comma&gt;fme_binarybuffer&lt;comma&gt;buffer&lt;comma&gt;fme_xml&lt;comma&gt;buffer&lt;comma&gt;fme_json&lt;comma&gt;char&lt;openparen&gt;20&lt;closeparen&gt;&lt;comma&gt;fme_datetime&lt;comma&gt;char&lt;openparen&gt;12&lt;closeparen&gt;&lt;comma&gt;fme_time&lt;comma&gt;char&lt;openparen&gt;8&lt;closeparen&gt;&lt;comma&gt;fme_date&lt;comma&gt;&lt;quote&gt;number&lt;openparen&gt;31&lt;comma&gt;15&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;fme_real64&lt;comma&gt;&lt;quote&gt;number&lt;openparen&gt;15&lt;comma&gt;7&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;fme_real32&lt;comma&gt;&lt;quote&gt;number&lt;openparen&gt;11&lt;comma&gt;0&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;fme_int32&lt;comma&gt;&lt;quote&gt;number&lt;openparen&gt;11&lt;comma&gt;0&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;fme_uint32&lt;comma&gt;&lt;quote&gt;number&lt;openparen&gt;20&lt;comma&gt;0&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;fme_int64&lt;comma&gt;&lt;quote&gt;number&lt;openparen&gt;20&lt;comma&gt;0&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;fme_uint64&lt;comma&gt;logical&lt;comma&gt;fme_boolean&lt;comma&gt;&lt;quote&gt;number&lt;openparen&gt;6&lt;comma&gt;0&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;fme_int16&lt;comma&gt;&lt;quote&gt;number&lt;openparen&gt;6&lt;comma&gt;0&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;fme_uint16&lt;comma&gt;&lt;quote&gt;number&lt;openparen&gt;4&lt;comma&gt;0&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;fme_int8&lt;comma&gt;&lt;quote&gt;number&lt;openparen&gt;4&lt;comma&gt;0&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;fme_uint8&lt;comma&gt;&lt;quote&gt;number&lt;openparen&gt;width&lt;comma&gt;decimal&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;fme_decimal&lt;openparen&gt;width&lt;comma&gt;decimal&lt;closeparen&gt;&lt;quote&gt;,DEST_ILLEGAL_ATTR_LIST,,FEATURE_TYPE_CASE,ANY,FEATURE_TYPE_INVALID_CHARS,,FEATURE_TYPE_LENGTH,0,FEATURE_TYPE_LENGTH_INCLUDES_PREFIX,false,FEATURE_TYPE_RESERVED_WORDS,,FORMAT_METAFILE,$(FME_HOME_ENCODED)metafile&lt;backslash&gt;TEXTLINE.fmf,FORMAT_NAME,TEXTLINE,GEOM_MAP,text_line_none&lt;comma&gt;fme_no_geom&lt;comma&gt;text_line_none&lt;comma&gt;fme_point&lt;comma&gt;text_line_none&lt;comma&gt;fme_line&lt;comma&gt;text_line_none&lt;comma&gt;fme_polygon&lt;comma&gt;text_line_none&lt;comma&gt;fme_text&lt;comma&gt;text_line_none&lt;comma&gt;fme_ellipse&lt;comma&gt;text_line_none&lt;comma&gt;fme_arc&lt;comma&gt;text_line_none&lt;comma&gt;fme_rectangle&lt;comma&gt;text_line_none&lt;comma&gt;fme_rounded_rectangle&lt;comma&gt;text_line_none&lt;comma&gt;fme_collection&lt;comma&gt;text_line_none&lt;comma&gt;fme_raster&lt;comma&gt;text_line_none&lt;comma&gt;fme_surface&lt;comma&gt;text_line_none&lt;comma&gt;fme_solid&lt;comma&gt;text_line_none&lt;comma&gt;fme_point_cloud&lt;comma&gt;text_line_none&lt;comma&gt;fme_voxel_grid&lt;comma&gt;text_line_none&lt;comma&gt;fme_feature_table,READER_ATTR_INDEX_TYPES,,READER_FORMAT_TYPE,DYNAMIC,READER_USES_DEF,no,SOURCE,no,SUPPORTS_FEAT_TYPE_FANOUT,no,SUPPORTS_MULTI_GEOM,yes,WORKBENCH_CANNED_SCHEMA,textline.sch,WRITER,TEXTLINE,WRITER_ATTR_INDEX_TYPES,,WRITER_DEFLINE_PARMS,,WRITER_DEF_LINE_TEMPLATE,&lt;opencurly&gt;FME_GEN_GROUP_NAME&lt;closecurly&gt;,WRITER_FORMAT_PARAMETER,READER_FEATURE_TYPE_EDITING&lt;comma&gt;NO&lt;comma&gt;WRITER_FEATURE_TYPE_EDITING&lt;comma&gt;NO&lt;comma&gt;MIME_TYPE&lt;comma&gt;text&lt;solidus&gt;plain&lt;comma&gt;FEATURE_TYPE_DEFAULT_NAME&lt;comma&gt;text_line&lt;comma&gt;READER_DATASET_HINT&lt;comma&gt;&lt;quote&gt;Select&lt;space&gt;the&lt;space&gt;Text&lt;space&gt;file&lt;openparen&gt;s&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;WRITER_DATASET_HINT&lt;comma&gt;&lt;quote&gt;Specify&lt;space&gt;a&lt;space&gt;name&lt;space&gt;for&lt;space&gt;the&lt;space&gt;Text&lt;space&gt;file&lt;quote&gt;,WRITER_FORMAT_TYPE,DYNAMIC,WRITER_HAS_DEFLINE_ATTRS,yes,WRITER_USES_DEF,no"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureWriter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="23"
+#!   TYPE="FeatureReader"
+#!   VERSION="14"
+#!   POSITION="413.87871878718784 -1046.2610626106257"
+#!   BOUNDING_RECT="413.87871878718784 -1046.2610626106257 435.14169325772946 71"
+#!   ORDER="500000000000054"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="23774"
+#! >
+#!     <OUTPUT_FEAT NAME="&lt;SCHEMA&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_feature_type_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute{}.fme_data_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute{}.native_data_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_format_short_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_format_long_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_schema_handling" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="PATH"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="path_unix" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="path_windows" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="path_rootname" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="path_filename" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="path_extension" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="path_directory_unix" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="path_directory_windows" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="path_type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="&lt;OTHER&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <OUTPUT_FEAT NAME="INITIATOR"/>
+#!     <FEAT_COLLAPSED COLLAPSED="3"/>
+#!     <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="4"/>
+#!     <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="_reader_error" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTES" PARM_VALUE="PATH,&quot;path_unix,path_windows,path_rootname,path_filename,path_extension,path_directory_unix,path_directory_windows,path_type,fme_geometry{0}&quot;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_TYPES" PARM_VALUE="PATH,&quot;buffer,buffer,buffer,buffer,buffer,buffer,buffer,varchar(10),fme_no_geom&quot;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRS_TO_EXPOSE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_MODE" PARM_VALUE="Only Use Result"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_CONFLICT_RES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_IGNORE_NULLS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_PREFIX" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AVAILABLE_FEATURE_TYPES" PARM_VALUE="_FEATUREREADER_OPTIONAL_FTTR_%PATH"/>
+#!     <XFORM_PARM PARM_NAME="CACHE_TIMEOUT_HRS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="COMBINE_GEOM" PARM_VALUE="Use Result"/>
+#!     <XFORM_PARM PARM_NAME="CONSTRAINTS_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DATASET" PARM_VALUE="$(inputDir)"/>
+#!     <XFORM_PARM PARM_NAME="DYNGROUP_0" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ENABLE_CACHE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="FEATURETYPES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FORCE_REFRESH_OUTPUTS" PARM_VALUE="on_parm_change"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE="PATH"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_ATTRIBUTE_TYPES" PARM_VALUE="PATH,"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_DIRECTIVES" PARM_VALUE="METAFILE,PATH"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_PARAMS" PARM_VALUE="PATH_EXPOSE_ATTRS_GROUP,&quot;OPTIONAL DISCLOSUREGROUP PATH_EXPOSE_FORMAT_ATTRS&quot;,PATH&lt;space&gt;Schema&lt;space&gt;Attributes,PATH_PATH_EXPOSE_FORMAT_ATTRS,&quot;OPTIONAL LITERAL EXPOSED_ATTRS PATH%Source&quot;,PATH&lt;space&gt;Additional&lt;space&gt;Attributes&lt;space&gt;to&lt;space&gt;Expose:,PATH_NETWORK_AUTHENTICATION,&quot;OPTIONAL AUTHENTICATOR CONTAINER%ACTIVEDISCLOSUREGROUP%CONTAINER_TITLE%Use Network Authentication%PROMPT_TYPE%NETWORK&quot;,PATH&lt;space&gt;Use&lt;space&gt;Network&lt;space&gt;Authentication,PATH_RETRIEVE_FILE_PROPERTIES,&quot;OPTIONAL CHOICE YES%NO&quot;,PATH&lt;space&gt;Retrieve&lt;space&gt;file&lt;space&gt;properties:,PATH_USE_NON_STRING_ATTR,&quot;OPTIONAL NO_EDIT TEXT&quot;,PATH&lt;space&gt;,PATH_TYPE,&quot;OPTIONAL LOOKUP_CHOICE Any,ANY%Directory,DIRECTORY%File,FILE&quot;,PATH&lt;space&gt;Allowed&lt;space&gt;Path&lt;space&gt;Type:,PATH_RECURSE_DIRECTORIES,&quot;OPTIONAL CHOICE YES%NO&quot;,PATH&lt;space&gt;Recurse&lt;space&gt;Into&lt;space&gt;Subfolders:,PATH_GLOB_PATTERN,&quot;OPTIONAL TEXT_ENCODED&quot;,PATH&lt;space&gt;Path&lt;space&gt;Filter:,PATH_HIDDEN_FILES,&quot;OPTIONAL LOOKUP_CHOICE Include,INCLUDE%Exclude,EXCLUDE&quot;,PATH&lt;space&gt;Hidden&lt;space&gt;Files&lt;space&gt;and&lt;space&gt;Folders:,PATH_NO_EMPTY_PROPERTIES,&quot;OPTIONAL NO_EDIT TEXT&quot;,PATH&lt;space&gt;,PATH_OFFSET_DATETIME,&quot;OPTIONAL NO_EDIT TEXT&quot;,PATH&lt;space&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FTTR_SEPARATOR" PARM_VALUE="SPACE"/>
+#!     <XFORM_PARM PARM_NAME="GENERIC_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="INTERACT" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MAX_FEATURES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MERGE_HANDLING_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ORDER_RESULTS" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUTPORTS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FEATURES_DISPLAY" PARM_VALUE="Schema and Data Features"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FEATURES_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_PORTS_MODE" PARM_VALUE="PORTS_FROM_FTTR"/>
+#!     <XFORM_PARM PARM_NAME="PATH_EXPOSE_ATTRS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PATH_GLOB_PATTERN" PARM_VALUE="*"/>
+#!     <XFORM_PARM PARM_NAME="PATH_HIDDEN_FILES" PARM_VALUE="INCLUDE"/>
+#!     <XFORM_PARM PARM_NAME="PATH_NETWORK_AUTHENTICATION" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PATH_NO_EMPTY_PROPERTIES" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="PATH_OFFSET_DATETIME" PARM_VALUE="yes"/>
+#!     <XFORM_PARM PARM_NAME="PATH_PATH_EXPOSE_FORMAT_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PATH_RECURSE_DIRECTORIES" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="PATH_RETRIEVE_FILE_PROPERTIES" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="PATH_TYPE" PARM_VALUE="ANY"/>
+#!     <XFORM_PARM PARM_NAME="PATH_USE_NON_STRING_ATTR" PARM_VALUE="yes"/>
+#!     <XFORM_PARM PARM_NAME="PORTS_FROM_FTTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="READER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="READ_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SELECTED_PORTS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SINGLE_PORT" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SUPPORTED_SPATIAL_INTERACTIONS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="WHERE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureReader_2"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="19"
+#!   TYPE="Tester"
+#!   VERSION="3"
+#!   POSITION="1007.4469844698447 -1215.6371563715634"
+#!   BOUNDING_RECT="1007.4469844698447 -1215.6371563715634 454 71"
+#!   ORDER="500000000000055"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="23774"
+#! >
+#!     <OUTPUT_FEAT NAME="PASSED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="path_unix" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_windows" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_rootname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_filename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_extension" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_directory_unix" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_directory_windows" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="FAILED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="path_unix" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="path_windows" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="path_rootname" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="path_filename" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="path_extension" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="path_directory_unix" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="path_directory_windows" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="path_type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="BOOL_OP" PARM_VALUE="OR"/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_MSG" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_TEST" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PRESERVE_FEATURE_ORDER" PARM_VALUE="Per Output Port"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE" PARM_VALUE="TEST &lt;at&gt;Value&lt;openparen&gt;path_type&lt;closeparen&gt; = file"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_MODE" PARM_VALUE="TEST"/>
+#!     <XFORM_PARM PARM_NAME="TEST_PREVIEW_GROUP" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Tester"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="24"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="23"
+#!   SOURCE_PORT_DESC="fo 0 CREATED"
+#!   TARGET_PORT_DESC="fi 0 INITIATOR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0.30196078431372547,0.30196078431372547,0.30196078431372547,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="8"
+#!   SOURCE_NODE="5"
+#!   TARGET_NODE="7"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0.30196078431372547,0.30196078431372547,0.30196078431372547,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="10"
+#!   SOURCE_NODE="7"
+#!   TARGET_NODE="9"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0.30196078431372547,0.30196078431372547,0.30196078431372547,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="13"
+#!   SOURCE_NODE="9"
+#!   TARGET_NODE="12"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0.30196078431372547,0.30196078431372547,0.30196078431372547,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="15"
+#!   SOURCE_NODE="12"
+#!   TARGET_NODE="14"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0.30196078431372547,0.30196078431372547,0.30196078431372547,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="18"
+#!   SOURCE_NODE="14"
+#!   TARGET_NODE="16"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 text_line"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0.30196078431372547,0.30196078431372547,0.30196078431372547,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="22"
+#!   SOURCE_NODE="19"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="fo 0 PASSED"
+#!   TARGET_PORT_DESC="fi 0 INITIATOR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0.30196078431372547,0.30196078431372547,0.30196078431372547,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="20"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="fo 1 &lt;lt&gt;OTHER&lt;gt&gt;"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0.30196078431372547,0.30196078431372547,0.30196078431372547,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="21"
+#!   SOURCE_NODE="23"
+#!   TARGET_NODE="19"
+#!   SOURCE_PORT_DESC="fo 1 PATH"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0.30196078431372547,0.30196078431372547,0.30196078431372547,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </WORKSPACE>
+
+FME_PYTHON_VERSION 38
+ARCGIS_COMPATIBILITY ARCGIS_AUTO
+# ============================================================================
+DEFAULT_MACRO DataPathToReplace <quote>http:<solidus><solidus>localhost:4200<solidus>assets<solidus>springfield<solidus>
+
+DEFAULT_MACRO DataPath <quote><solidus>
+
+DEFAULT_MACRO VectorTypeToReplace "type": "geojson"
+
+DEFAULT_MACRO VectorType "type": "vector"
+
+DEFAULT_MACRO VectorSufixToReplace .geojson"
+
+DEFAULT_MACRO VectorSufix .fgb"
+
+DEFAULT_MACRO RasterPathToReplace "tiles": [ "http://localhost:4200/tiles/
+
+DEFAULT_MACRO RasterPath "url": "/
+
+DEFAULT_MACRO RasterSufixToReplace /{z}/{x}/{y}.png"
+
+DEFAULT_MACRO RasterSufix .tif"
+
+DEFAULT_MACRO inputDir \\wsl.localhost\Ubuntu\home\mate01\git\ogcStyleTools\style-src\style\layer_styles\result
+
+DEFAULT_MACRO outputDir \\wsl.localhost\Ubuntu\home\mate01\git\ogcStyleTools\style-src\style\layer_styles\result\out
+
+# ============================================================================
+INCLUDE [ if {{$(DataPathToReplace$encode)} == {}} { puts_real {Parameter 'DataPathToReplace' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(DataPath$encode)} == {}} { puts_real {Parameter 'DataPath' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(VectorTypeToReplace$encode)} == {}} { puts_real {Parameter 'VectorTypeToReplace' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(VectorType$encode)} == {}} { puts_real {Parameter 'VectorType' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(VectorSufixToReplace$encode)} == {}} { puts_real {Parameter 'VectorSufixToReplace' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(VectorSufix$encode)} == {}} { puts_real {Parameter 'VectorSufix' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(RasterPathToReplace$encode)} == {}} { puts_real {Parameter 'RasterPathToReplace' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(RasterPath$encode)} == {}} { puts_real {Parameter 'RasterPath' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(RasterSufixToReplace$encode)} == {}} { puts_real {Parameter 'RasterSufixToReplace' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(RasterSufix$encode)} == {}} { puts_real {Parameter 'RasterSufix' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(inputDir$encode)} == {}} { puts_real {Parameter 'inputDir' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(outputDir$encode)} == {}} { puts_real {Parameter 'outputDir' must be given a value.}; exit 1; }; ]
+#! START_HEADER
+#! START_WB_HEADER
+READER_TYPE MULTI_READER
+WRITER_TYPE MULTI_WRITER
+WRITER_KEYWORD MULTI_DEST
+MULTI_DEST_DATASET null
+#! END_WB_HEADER
+#! START_WB_HEADER
+#! END_WB_HEADER
+#! END_HEADER
+
+LOG_FILENAME "$(FME_MF_DIR)style_source_switch.log"
+LOG_APPEND NO
+LOG_TIMINGS YES
+LOG_FILTER_MASK -1
+LOG_MAX_FEATURES 200
+LOG_MAX_RECORDED_FEATURES 200
+FME_REPROJECTION_ENGINE FME
+FME_IMPLICIT_CSMAP_REPROJECTION_MODE Auto
+FME_GEOMETRY_HANDLING Enhanced
+FME_STROKE_MAX_DEVIATION 0
+FME_NAMES_ENCODING UTF-8
+FME_BULK_MODE_THRESHOLD 2000
+LAST_SAVE_BUILD "FME 2023.2.1.0 (20240104 - Build 23774 - WIN64)"
+# -------------------------------------------------------------------------
+
+MULTI_READER_CONTINUE_ON_READER_FAILURE No
+
+# -------------------------------------------------------------------------
+
+MACRO WORKSPACE_NAME style_source_switch
+MACRO FME_VIEWER_APP fmedatainspector
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+# -------------------------------------------------------------------------
+Tcl2 proc Creator_CoordSysRemover {} {   global FME_CoordSys;   set FME_CoordSys {}; }
+MACRO Creator_XML     NOT_ACTIVATED
+MACRO Creator_CLASSIC NOT_ACTIVATED
+MACRO Creator_2D3D    2D_GEOMETRY
+MACRO Creator_COORDS  <Unused>
+INCLUDE [ if { {Geometry Object} == {Geometry Object} } {            puts {MACRO Creator_XML *} } ]
+INCLUDE [ if { {Geometry Object} == {2D Coordinate List} } {            puts {MACRO Creator_2D3D 2D_GEOMETRY};            puts {MACRO Creator_CLASSIC *} } ]
+INCLUDE [ if { {Geometry Object} == {3D Coordinate List} } {            puts {MACRO Creator_2D3D 3D_GEOMETRY};            puts {MACRO Creator_CLASSIC *} } ]
+INCLUDE [ if { {Geometry Object} == {2D Min/Max Box} } {            set comment {                We need to turn the COORDS which are                    minX minY maxX maxY                into a full polygon list of coordinates            };            set splitCoords [split [string trim {<Unused>}]];            if { [llength $splitCoords] > 4} {               set trimmedCoords {};               foreach item $splitCoords { if { $item != {} } {lappend trimmedCoords $item} };               set splitCoords $trimmedCoords;            };            if { [llength $splitCoords] != 4 } {                error {Creator: Coordinate list is expected to be a space delimited list of four numbers as 'minx miny maxx maxy' - `<Unused>' is invalid};            };            set minX [lindex $splitCoords 0];            set minY [lindex $splitCoords 1];            set maxX [lindex $splitCoords 2];            set maxY [lindex $splitCoords 3];            puts "MACRO Creator_COORDS $minX $minY $minX $maxY $maxX $maxY $maxX $minY $minX $minY";            puts {MACRO Creator_2D3D 2D_GEOMETRY};            puts {MACRO Creator_CLASSIC *} } ]
+FACTORY_DEF {$(Creator_XML)} CreationFactory    FACTORY_NAME { Creator_XML_Creator }    CREATE_AT_END { no }    OUTPUT { FEATURE_TYPE _____CREATED______        @Geometry(FROM_ENCODED_STRING,<lt>?xml<space>version=<quote>1.0<quote><space>encoding=<quote>US_ASCII<quote><space>standalone=<quote>no<quote><space>?<gt><lt>geometry<space>dimension=<quote>2<quote><gt><lt>null<solidus><gt><lt><solidus>geometry<gt>) }
+FACTORY_DEF {$(Creator_CLASSIC)} CreationFactory    FACTORY_NAME { Creator_CLASSIC_Creator }    $(Creator_2D3D) { $(Creator_COORDS) }    CREATE_AT_END { no }    OUTPUT { FEATURE_TYPE _____CREATED______ }
+FACTORY_DEF {*} TeeFactory    FACTORY_NAME { Creator_Cloner }    INPUT FEATURE_TYPE _____CREATED______        @Tcl2(Creator_CoordSysRemover)        @CoordSys()    NUMBER_OF_COPIES { 1 }    COPY_NUMBER_ATTRIBUTE { "_creation_instance" }    OUTPUT { FEATURE_TYPE Creator_CREATED        fme_feature_type Creator         }
+FACTORY_DEF * BranchingFactory   FACTORY_NAME "Creator_CREATED Brancher -1 24"   INPUT FEATURE_TYPE Creator_CREATED   TARGET_FACTORY "$(WB_CURRENT_CONTEXT)_CREATOR_BRANCH_TARGET"   MAXIMUM_COUNT None   OUTPUT PASSED FEATURE_TYPE *
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(WB_CURRENT_CONTEXT)_CREATOR_BRANCH_TARGET"   INPUT FEATURE_TYPE *  OUTPUT FEATURE_TYPE *
+# -------------------------------------------------------------------------
+MACRO FeatureReader_2_OUTPUT_PORTS_ENCODED PATH
+MACRO FeatureReader_2_DIRECTIVES EXPOSE_ATTRS_GROUP,,GLOB_PATTERN,*,HIDDEN_FILES,INCLUDE,NETWORK_AUTHENTICATION,,NO_EMPTY_PROPERTIES,YES,OFFSET_DATETIME,yes,PATH_EXPOSE_FORMAT_ATTRS,,RECURSE_DIRECTORIES,NO,RETRIEVE_FILE_PROPERTIES,NO,TYPE,ANY,USE_NON_STRING_ATTR,yes
+# Always provide an INTERACTION, otherwise the factory defaults to ENVELOPE_INTERSECTS
+INCLUDE [if { ( {<Unused>} == {<Unused>} ) || ( {($INTERACT)} == {} ) } {             puts {MACRO FCTQUERY_INTERACTION_LINE FCTQUERY_INTERACTION NONE};          } else {             puts {MACRO FCTQUERY_INTERACTION_LINE FCTQUERY_INTERACTION "<Unused>"};          }         ]
+# Consolidate the attribute merge options to what the factory expects
+DEFAULT_MACRO FeatureReader_2_COMBINE_ATTRS
+INCLUDE [       if { {RESULT_ONLY} == {MERGE} } {          puts "MACRO FeatureReader_2_COMBINE_ATTRS <Unused>";       } else {          puts "MACRO FeatureReader_2_COMBINE_ATTRS RESULT_ONLY";       };    ]
+INCLUDE [    puts {DEFAULT_MACRO FeatureReaderDataset_FeatureReader_2 @EvaluateExpression(FDIV,STRING_ENCODED,$(inputDir$encode),FeatureReader_2)}; ]
+FACTORY_DEF {*} QueryFactory    FACTORY_NAME { FeatureReader_2 }    INPUT  FEATURE_TYPE Creator_CREATED    $(FCTQUERY_INTERACTION_LINE)    COMBINE_ATTRIBUTES  { $(FeatureReader_2_COMBINE_ATTRS) }    IGNORE_NULLS        { <Unused> }    QUERYFCT_ATTRIBUTE_PREFIX { <Unused> }    COMBINE_GEOMETRY    { RESULT_ONLY }    ENABLE_CACHE        { NO }    QUERYFCT_TABLE_SEPARATOR { SPACE }    READER_TYPE         { PATH  }    READER_DATASET      { "$(FeatureReaderDataset_FeatureReader_2)" }    QUERYFCT_IDS        { "" }    READER_DIRECTIVES   { METAFILE,PATH }    QUERYFCT_OUTPUT     { "BASED_ON_CONNECTIONS" }    CONTINUE_ON_READER_ERROR YES    ORDER_RESULTS { "No" }    QUERYFCT_RESULT_TAGS { $(FeatureReader_2_OUTPUT_PORTS_ENCODED) }    QUERYFCT_SET_FME_FEATURE_TYPE YES    READER_PARAMS_WWJD     { $(FeatureReader_2_DIRECTIVES) }    TREAT_READER_PARAM_AMPERSANDS_AS_LITERALS YES    OUTPUT { READER_ERROR FEATURE_TYPE FeatureReader_2_<REJECTED>           }    OUTPUT PATH FEATURE_TYPE FeatureReader_2_PATH
+DEFAULT_MACRO _WB_BYPASS_TERMINATION No
+FACTORY_DEF * TeeFactory FACTORY_NAME FeatureReader_2_<Rejected> INPUT FEATURE_TYPE FeatureReader_2_<REJECTED>  NO_LOGGING   OUTPUT FAILED FEATURE_TYPE * @Abort(ENCODED, FeatureReader_2<space>output<space>a<space><lt>Rejected<gt><space>feature.<space><space>To<space>continue<space>translation<space>when<space>features<space>are<space>rejected<comma><space>change<space><apos>Workspace<space>Parameters<apos><space><gt><space>Translation<space><gt><space><apos>Rejected<space>Feature<space>Handling<apos><space>to<space><apos>Continue<space>Translation<apos>)
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} TestFactory    FACTORY_NAME { Tester }    INPUT  FEATURE_TYPE FeatureReader_2_PATH    TEST { "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>path_type<closeparen>,Tester)" = file ENCODED }    BOOLEAN_OPERATOR { OR }    COMPOSITE_TEST_EXPR { "<Unused>" }    PRESERVE_FEATURE_ORDER { PER_OUTPUT_PORT }    OUTPUT { PASSED FEATURE_TYPE Tester_PASSED         }
+# -------------------------------------------------------------------------
+MACRO FeatureReader_OUTPUT_PORTS_ENCODED 
+MACRO FeatureReader_DIRECTIVES CREATE_FEATURE_TABLES_FROM_DATA,Yes,ENCODING,windows-1252,EXPOSE_ATTRS_GROUP,,READ_WHOLE_FILE_AT_ONCE,YES,TEXTLINE_EXPOSE_FORMAT_ATTRS,
+# Always provide an INTERACTION, otherwise the factory defaults to ENVELOPE_INTERSECTS
+INCLUDE [if { ( {<Unused>} == {<Unused>} ) || ( {($INTERACT)} == {} ) } {             puts {MACRO FCTQUERY_INTERACTION_LINE FCTQUERY_INTERACTION NONE};          } else {             puts {MACRO FCTQUERY_INTERACTION_LINE FCTQUERY_INTERACTION "<Unused>"};          }         ]
+# Consolidate the attribute merge options to what the factory expects
+DEFAULT_MACRO FeatureReader_COMBINE_ATTRS
+INCLUDE [       if { {MERGE} == {MERGE} } {          puts "MACRO FeatureReader_COMBINE_ATTRS PREFER_RESULT";       } else {          puts "MACRO FeatureReader_COMBINE_ATTRS MERGE";       };    ]
+INCLUDE [    puts {DEFAULT_MACRO FeatureReaderDataset_FeatureReader @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>path_windows<closeparen>,FeatureReader)}; ]
+FACTORY_DEF {*} QueryFactory    FACTORY_NAME { FeatureReader }    INPUT  FEATURE_TYPE Tester_PASSED    $(FCTQUERY_INTERACTION_LINE)    COMBINE_ATTRIBUTES  { $(FeatureReader_COMBINE_ATTRS) }    IGNORE_NULLS        { No }    QUERYFCT_ATTRIBUTE_PREFIX { <Unused> }    COMBINE_GEOMETRY    { RESULT_ONLY }    ENABLE_CACHE        { NO }    QUERYFCT_TABLE_SEPARATOR { SPACE }    READER_TYPE         { TEXTLINE  }    READER_DATASET      { "$(FeatureReaderDataset_FeatureReader)" }    QUERYFCT_IDS        { "" }    READER_DIRECTIVES   { METAFILE,TEXTLINE }    QUERYFCT_OUTPUT     { "BASED_ON_CONNECTIONS" }    CONTINUE_ON_READER_ERROR YES    ORDER_RESULTS { "No" }    QUERYFCT_RESULT_TAGS { $(FeatureReader_OUTPUT_PORTS_ENCODED) }    QUERYFCT_SET_FME_FEATURE_TYPE YES    READER_PARAMS_WWJD     { $(FeatureReader_DIRECTIVES) }    TREAT_READER_PARAM_AMPERSANDS_AS_LITERALS YES    OUTPUT { RESULT FEATURE_TYPE FeatureReader_<OTHER>           }    OUTPUT { READER_ERROR FEATURE_TYPE FeatureReader_<REJECTED>           }
+DEFAULT_MACRO _WB_BYPASS_TERMINATION No
+FACTORY_DEF * TeeFactory FACTORY_NAME FeatureReader_<Rejected> INPUT FEATURE_TYPE FeatureReader_<REJECTED>  NO_LOGGING   OUTPUT FAILED FEATURE_TYPE * @Abort(ENCODED, FeatureReader<space>output<space>a<space><lt>Rejected<gt><space>feature.<space><space>To<space>continue<space>translation<space>when<space>features<space>are<space>rejected<comma><space>change<space><apos>Workspace<space>Parameters<apos><space><gt><space>Translation<space><gt><space><apos>Rejected<space>Feature<space>Handling<apos><space>to<space><apos>Continue<space>Translation<apos>)
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} StringReplacerFactory    FACTORY_NAME { DataPath }    INPUT  FEATURE_TYPE FeatureReader_<OTHER>    USE_REGEX { NO }    CASE_SENSITIVE { NO }    SOURCE_ATTRIBUTES { text_line_data }    FIND_TEXT { "@EvaluateExpression(FDIV,STRING_ENCODED,$(DataPathToReplace),DataPath)" }    REPLACE_TEXT { "@EvaluateExpression(FDIV,STRING_ENCODED,$(DataPath),DataPath)" }    REPLACE_NO_MATCH { "_FME_NO_OP_" }    OUTPUT { OUTPUT FEATURE_TYPE DataPath_OUTPUT          }
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} StringReplacerFactory    FACTORY_NAME { VectorType }    INPUT  FEATURE_TYPE DataPath_OUTPUT    USE_REGEX { NO }    CASE_SENSITIVE { NO }    SOURCE_ATTRIBUTES { text_line_data }    FIND_TEXT { "@EvaluateExpression(FDIV,STRING_ENCODED,$(VectorTypeToReplace$encode),VectorType)" }    REPLACE_TEXT { "@EvaluateExpression(FDIV,STRING_ENCODED,$(VectorType$encode),VectorType)" }    REPLACE_NO_MATCH { "_FME_NO_OP_" }    OUTPUT { OUTPUT FEATURE_TYPE VectorType_OUTPUT          }
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} StringReplacerFactory    FACTORY_NAME { VectorSufix }    INPUT  FEATURE_TYPE VectorType_OUTPUT    USE_REGEX { NO }    CASE_SENSITIVE { NO }    SOURCE_ATTRIBUTES { text_line_data }    FIND_TEXT { "@EvaluateExpression(FDIV,STRING_ENCODED,$(VectorSufixToReplace$encode),VectorSufix)" }    REPLACE_TEXT { "@EvaluateExpression(FDIV,STRING_ENCODED,$(VectorSufix$encode),VectorSufix)" }    REPLACE_NO_MATCH { "_FME_NO_OP_" }    OUTPUT { OUTPUT FEATURE_TYPE VectorSufix_OUTPUT          }
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} StringReplacerFactory    FACTORY_NAME { RasterPath }    INPUT  FEATURE_TYPE VectorSufix_OUTPUT    USE_REGEX { NO }    CASE_SENSITIVE { NO }    SOURCE_ATTRIBUTES { text_line_data }    FIND_TEXT { "@EvaluateExpression(FDIV,STRING_ENCODED,$(RasterPathToReplace$encode),RasterPath)" }    REPLACE_TEXT { "@EvaluateExpression(FDIV,STRING_ENCODED,$(RasterPath$encode),RasterPath)" }    REPLACE_NO_MATCH { "_FME_NO_OP_" }    OUTPUT { OUTPUT FEATURE_TYPE RasterPath_OUTPUT          }
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} StringReplacerFactory    FACTORY_NAME { RasterSufix }    INPUT  FEATURE_TYPE RasterPath_OUTPUT    USE_REGEX { NO }    CASE_SENSITIVE { NO }    SOURCE_ATTRIBUTES { text_line_data }    FIND_TEXT { "@EvaluateExpression(FDIV,STRING_ENCODED,$(RasterSufixToReplace$encode),RasterSufix)" }    REPLACE_TEXT { "@EvaluateExpression(FDIV,STRING_ENCODED,$(RasterSufix$encode),RasterSufix)" }    REPLACE_NO_MATCH { "_FME_NO_OP_" }    OUTPUT { OUTPUT FEATURE_TYPE RasterSufix_OUTPUT          }
+# -------------------------------------------------------------------------
+INCLUDE [    puts {DEFAULT_MACRO FeatureWriterDataset_FeatureWriter @EvaluateExpression(FDIV,STRING_ENCODED,$(outputDir$encode)<backslash><at>Value<openparen>path_filename<closeparen>,FeatureWriter)}; ]
+FACTORY_DEF {*} WriterFactory    COMMAND_PARM_EVALUATION SINGLE_PASS    FEATURE_TABLE_SHIM_SUPPORT INPUT_SPEC_ONLY    FLUSH_WHEN_GROUPS_CHANGE { <Unused> }    FACTORY_NAME { FeatureWriter }    WRITER_TYPE { TEXTLINE }    WRITER_DATASET { "$(FeatureWriterDataset_FeatureWriter)" }    WRITER_SETTINGS { "RUNTIME_MACROS,OVERWRITE_FILE<comma>YES<comma>END_OF_LINE<comma>System<comma>WRITE_LAST_EOL<comma>YES<comma>ENCODING<comma>UTF-8<comma>WRITE_UTF8_BOM<comma>YES<comma>MIME_TYPE<comma>text<solidus>plain<comma>DESTINATION_DATASETTYPE_VALIDATION<comma>Yes<comma>COORDINATE_SYSTEM_GRANULARITY<comma>FEATURE<comma>NETWORK_AUTHENTICATION<comma>,METAFILE,TEXTLINE" }    WRITER_METAFILE { "ATTRIBUTE_CASE,ANY,ATTRIBUTE_INVALID_CHARS,,ATTRIBUTE_LENGTH,60,ATTR_TYPE_MAP,char<openparen>width<closeparen><comma>fme_varchar<openparen>width<closeparen><comma>char<openparen>width<closeparen><comma>fme_varbinary<openparen>width<closeparen><comma>char<openparen>width<closeparen><comma>fme_char<openparen>width<closeparen><comma>char<openparen>width<closeparen><comma>fme_binary<openparen>width<closeparen><comma>buffer<comma>fme_buffer<comma>buffer<comma>fme_binarybuffer<comma>buffer<comma>fme_xml<comma>buffer<comma>fme_json<comma>char<openparen>20<closeparen><comma>fme_datetime<comma>char<openparen>12<closeparen><comma>fme_time<comma>char<openparen>8<closeparen><comma>fme_date<comma><quote>number<openparen>31<comma>15<closeparen><quote><comma>fme_real64<comma><quote>number<openparen>15<comma>7<closeparen><quote><comma>fme_real32<comma><quote>number<openparen>11<comma>0<closeparen><quote><comma>fme_int32<comma><quote>number<openparen>11<comma>0<closeparen><quote><comma>fme_uint32<comma><quote>number<openparen>20<comma>0<closeparen><quote><comma>fme_int64<comma><quote>number<openparen>20<comma>0<closeparen><quote><comma>fme_uint64<comma>logical<comma>fme_boolean<comma><quote>number<openparen>6<comma>0<closeparen><quote><comma>fme_int16<comma><quote>number<openparen>6<comma>0<closeparen><quote><comma>fme_uint16<comma><quote>number<openparen>4<comma>0<closeparen><quote><comma>fme_int8<comma><quote>number<openparen>4<comma>0<closeparen><quote><comma>fme_uint8<comma><quote>number<openparen>width<comma>decimal<closeparen><quote><comma><quote>fme_decimal<openparen>width<comma>decimal<closeparen><quote>,DEST_ILLEGAL_ATTR_LIST,,FEATURE_TYPE_CASE,ANY,FEATURE_TYPE_INVALID_CHARS,,FEATURE_TYPE_LENGTH,0,FEATURE_TYPE_LENGTH_INCLUDES_PREFIX,false,FEATURE_TYPE_RESERVED_WORDS,,FORMAT_METAFILE,$(FME_HOME_ENCODED)metafile<backslash>TEXTLINE.fmf,FORMAT_NAME,TEXTLINE,GEOM_MAP,text_line_none<comma>fme_no_geom<comma>text_line_none<comma>fme_point<comma>text_line_none<comma>fme_line<comma>text_line_none<comma>fme_polygon<comma>text_line_none<comma>fme_text<comma>text_line_none<comma>fme_ellipse<comma>text_line_none<comma>fme_arc<comma>text_line_none<comma>fme_rectangle<comma>text_line_none<comma>fme_rounded_rectangle<comma>text_line_none<comma>fme_collection<comma>text_line_none<comma>fme_raster<comma>text_line_none<comma>fme_surface<comma>text_line_none<comma>fme_solid<comma>text_line_none<comma>fme_point_cloud<comma>text_line_none<comma>fme_voxel_grid<comma>text_line_none<comma>fme_feature_table,READER_ATTR_INDEX_TYPES,,READER_FORMAT_TYPE,DYNAMIC,READER_USES_DEF,no,SOURCE,no,SUPPORTS_FEAT_TYPE_FANOUT,no,SUPPORTS_MULTI_GEOM,yes,WORKBENCH_CANNED_SCHEMA,textline.sch,WRITER,TEXTLINE,WRITER_ATTR_INDEX_TYPES,,WRITER_DEFLINE_PARMS,,WRITER_DEF_LINE_TEMPLATE,<opencurly>FME_GEN_GROUP_NAME<closecurly>,WRITER_FORMAT_PARAMETER,READER_FEATURE_TYPE_EDITING<comma>NO<comma>WRITER_FEATURE_TYPE_EDITING<comma>NO<comma>MIME_TYPE<comma>text<solidus>plain<comma>FEATURE_TYPE_DEFAULT_NAME<comma>text_line<comma>READER_DATASET_HINT<comma><quote>Select<space>the<space>Text<space>file<openparen>s<closeparen><quote><comma>WRITER_DATASET_HINT<comma><quote>Specify<space>a<space>name<space>for<space>the<space>Text<space>file<quote>,WRITER_FORMAT_TYPE,DYNAMIC,WRITER_HAS_DEFLINE_ATTRS,yes,WRITER_USES_DEF,no" }    WRITER_FEATURE_TYPES { "text_line:text_line,ftp_feature_type_name,text_line,ftp_writer,TEXTLINE,ftp_geometry,text_line_none,ftp_dynamic_schema,no,ftp_dynamic_feature_type_name_type,DYN_SCHEMA_PROP_AUTO,ftp_dynamic_geometry_type,DYN_SCHEMA_PROP_AUTO,ftp_dynamic_schema_def_name_type,DYN_SCHEMA_PROP_AUTO,ftp_dynamic_schema_sources,<lt>lt<gt>Unused<lt>gt<gt>,ftp_attribute_source,1,ftp_user_attributes,text_line_data<comma>buffer" }    WRITER_PARAMS { "COORDINATE_SYSTEM_GRANULARITY,FEATURE,DESTINATION_DATASETTYPE_VALIDATION,Yes,ENCODING,UTF-8,END_OF_LINE,System,MIME_TYPE,text<solidus>plain,NETWORK_AUTHENTICATION,,OVERWRITE_FILE,YES,WRITE_LAST_EOL,YES,WRITE_UTF8_BOM,YES" }    DATASET_ATTR { "_dataset" }    FEATURE_TYPE_LIST_ATTR { "_feature_types" }    TOTAL_FEATURES_WRITTEN_ATTR { "_total_features_written" }    OUTPUT_PORTS { "" }    INPUT text_line FEATURE_TYPE RasterSufix_OUTPUT  @FeatureType(ENCODED,@EvaluateExpression(FDIV,STRING_ENCODED,text_line,FeatureWriter))
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * RoutingFactory FACTORY_NAME "Destination Feature Type Routing Correlator"   COMMAND_PARM_EVALUATION SINGLE_PASS   INPUT FEATURE_TYPE *   FEATURE_TYPE_ATTRIBUTE __wb_out_feat_type__   OUTPUT ROUTED FEATURE_TYPE *    OUTPUT NOT_ROUTED FEATURE_TYPE __nuke_me__ @Tcl2("FME_StatMessage 818059 [FME_GetAttribute fme_template_feature_type] 818060 818061 fme_warn")
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "Final Output Nuker"   INPUT FEATURE_TYPE __nuke_me__
+

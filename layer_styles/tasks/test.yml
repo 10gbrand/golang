@@ -1,0 +1,17 @@
+version: '3'
+
+tasks:
+  extract-layers:
+    desc: "Extract .layers from JSON files listed in a CSV file and append to a single output file"
+    vars:
+      FILES: '{{sh("awk -F, \'NR > 1 {print $1}\' style-src/style/layer_styles/files.csv")}}'
+      OUTPUT_FILE: "./output/all_layers.json"
+    cmds:
+      - echo "[" > {{.OUTPUT_FILE}}
+      - for: '{{splitList "\n" .FILES}}'
+        cmd: |
+          echo "Processing {{.ITEM}}"
+          cat {{.ITEM}} | jq '.layers' >> {{.OUTPUT_FILE}}
+          echo "," >> {{.OUTPUT_FILE}}
+      - sed -i '$ s/,$//' {{.OUTPUT_FILE}} # Remove the trailing comma
+      - echo "]" >> {{.OUTPUT_FILE}}

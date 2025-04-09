@@ -1,0 +1,95 @@
+{
+    "$schema": "../spring_style_schema.json",
+    "id": "a45b62092d23486bbd59831eca62e7b4",
+    "name": "Mall",
+    "version": 8,
+    "metadata": {
+        "maputnik:renderer": "",
+        "springGroups": [
+            {
+                "id": "geonoteOvrigt",
+                "name": "Geonote Övrigt",
+                "collapsed": true,
+                "visible": true,
+                "springLayers": [
+                    {
+                        "id": "geonoteOvrigtTxt",
+                        "name": "Övrig text",
+                        "visible": true
+                    },
+                    {
+                        "id": "geonoteOvrigt",
+                        "name": "Övrigt",
+                        "visible": true
+                    }
+                ]
+            }
+        ],
+        "springStyleOrder": 1,
+        "springStyleVersion": "0.1"
+    },
+    "zoom": 0.861983335785597,
+    "pitch": 0,
+    "center": [
+        17.3145660472,
+        62.91542224
+    ],
+    "sprite": "http://localhost:4200/assets/springfield/geonote/sprite/spring_sprites",
+    "glyphs": "http://localhost:4200/assets/springfield/geonote/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+    "bearing": 0,
+    "sources": {
+        "geonotes": {
+            "type": "geojson",
+            "data": "http://localhost:4200/assets/springfield/geonote/geonotes.geojson"
+        }
+    },
+    "layers": [
+        {
+            "id": "geonoteOvrigtYta",
+            "type": "fill",
+            "metadata": {
+                "maputnik:comment": "geonoteOvrigt",
+                "springLayer": "geonoteOvrigt"
+            },
+            "source": "geonotes",
+            "minzoom": 10,
+            "paint": {
+                "fill-color": "rgba(255, 255, 0, 1)",
+                "fill-opacity": 0.5
+            },
+            "filter": [
+    "all",
+    [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+    [
+        "!",
+        [
+            "in",
+            ["get", "category"],
+            ["literal", ["urn:sveaskog:spring:geonote:hansyn", "urn:sveaskog:spring:geonote:avdelning"]]
+        ]
+    ],
+    [
+        "!",
+        [
+            "in",
+            ["get", "group"],
+            ["literal", ["urn:sveaskog:atgplan:drivningsinfotyp:basvag", "urn:sveaskog:atgplan:drivningsinfotyp:avlagg"]]
+        ]
+    ]
+]
+
+
+        }
+    ]
+}

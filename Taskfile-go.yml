@@ -1,9 +1,19 @@
 version: '3'
 
 vars:
-  BINARY_NAME: myapp
+  BINARY_NAME: goOgcStyle
 
 tasks:
+  init-mod:
+    desc: initierar en ny modul
+    cmds:
+      - go mod init goOgcStyle
+  
+  cobra-cli-init:
+    desc: initierar en cobra-cli app
+    cmds: 
+      - cobra-cli init
+
   build:
     desc: Build the Go project
     cmds:

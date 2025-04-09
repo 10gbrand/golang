@@ -1,0 +1,300 @@
+{
+  "$schema": "../spring_style_schema.json",
+  "id": "j3f36e14-e3f5-43c1-84c0-50a9c80dc5c7",
+  "version": 8,
+  "name": "Mall",
+  "zoom": 0.861983335785597,
+  "pitch": 0,
+  "center": [
+    17.3145660472,
+    62.91542224
+  ],
+  "metadata": {
+    "maputnik:renderer": "mbgljs",
+    "springGroups": [
+        {
+            "id": "Avdelning",
+            "name": "Avdelning",
+            "collapsed": true,
+            "visible": true,
+            "springLayers": [
+                {
+                    "id": "Avdelning_text",
+                    "name": "Avdelning_text",
+                    "visible": true
+                },
+                {
+                    "id": "Avdelning_linjer",
+                    "name": "Avdelning linjer",
+                    "visible": true
+                },
+                {
+                    "id": "Utvecklingsklass",
+                    "name": "Utvecklingsklass",
+                    "visible": false
+                },
+                {
+                    "id": "Agoslag",
+                    "name": "Ägoslag",
+                    "visible": true
+                },
+                {
+                    "id": "Malklass",
+                    "name": "Målklass",
+                    "visible": false
+                }
+            ]
+        }
+    ],
+    "springStyleOrder": 1,
+    "springStyleVersion": "0.1"
+  },
+    "sprite": "http://localhost:4200/assets/springfield/geodatapackage/sprite/spring_sprites",
+  "glyphs": "http://localhost:4200/assets/springfield/geodatapackage/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "bearing": 0,
+  "sources": {
+    "Avdelning": {
+            "type": "geojson",
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Avdelning.geojson"
+        }
+  },
+  "layers": [
+    {
+        "id": "Avdelning_Utvecklingsklass",
+        "type": "fill",
+        "metadata": {
+            "maputnik:comment": "Utvecklingsklass",
+            "springLayer": "Utvecklingsklass"
+        },
+        "source": "Avdelning",
+        "minzoom": 10,
+        "filter": [
+            "all",
+            [
+                "==",
+                "agoslag",
+                "Skogsmark"
+            ]
+        ],
+        "layout": {
+            "visibility": "none"
+        },
+        "paint": {
+            "fill-color": [
+                "match",
+                [
+                    "get",
+                    "utvecklingsklass"
+                ],
+                "10",
+                "rgba(255, 255, 190, 1)",
+                "11",
+                "rgba(255, 255, 190, 1)",
+                "12",
+                "rgba(255, 255, 190, 1)",
+                "13",
+                "rgba(255, 255, 190, 1)",
+                "15",
+                "rgba(255, 255, 0, 1)",
+                "21",
+                "rgba(0, 197, 0, 1)",
+                "22",
+                "rgba(0, 112, 255, 1)",
+                "31",
+                "rgba(163, 255, 115, 1)",
+                "32",
+                "rgba(76, 230, 0, 1)",
+                "33",
+                "rgba(38, 115, 0, 1)",
+                "40",
+                "rgba(204, 204, 204, 1)",
+                "rgba(0, 0, 0, 0.5)"
+            ],
+            "fill-outline-color": "rgba(110, 110, 110, 1)",
+            "fill-opacity": [
+                "interpolate",
+                [
+                    "linear"
+                ],
+                [
+                    "zoom"
+                ],
+                11.5,
+                0,
+                12,
+                0.6,
+                15,
+                0.2
+            ]
+        }
+    },
+    {
+        "id": "Avdelning_Agoslag",
+        "type": "fill",
+        "metadata": {
+            "maputnik:comment": "Ägoslag",
+            "springLayer": "Agoslag"
+        },
+        "source": "Avdelning",
+        "minzoom": 12,
+        "filter": [
+            "all"
+        ],
+        "layout": {
+            "visibility": "visible"
+        },
+        "paint": {
+            "fill-pattern": [
+                "match",
+                [
+                    "get",
+                    "agoslag"
+                ],
+                "Berg",
+                "avdelning/agoslag/berg",
+                "Myr",
+                "avdelning/agoslag/myr",
+                "Skogsmark",
+                "avdelning/agoslag/skogsmark",
+                "Fjällbarrskog",
+                "avdelning/agoslag/fjallbarrskog",
+                "Betesmark",
+                "avdelning/agoslag/betesmark",
+                "Fjäll",
+                "avdelning/agoslag/fjall",
+                "Åker",
+                "avdelning/agoslag/aker",
+                "Annan_mark",
+                "avdelning/agoslag/annan_mark",
+                "Vatten",
+                "avdelning/agoslag/vatten",
+                "avdelning/agoslag/annan_mark"
+            ],
+            "fill-translate-anchor": "map",
+            "fill-opacity": [
+                "interpolate",
+                [
+                    "linear"
+                ],
+                [
+                    "zoom"
+                ],
+                14.5,
+                0,
+                15,
+                1
+            ]
+        }
+    },
+    {
+        "id": "Avdelning_Malklass",
+        "type": "fill",
+        "metadata": {
+            "maputnik:comment": "Målklass",
+            "springLayer": "Malklass"
+        },
+        "source": "Avdelning",
+        "minzoom": 14,
+        "filter": [
+            "all",
+            [
+                "==",
+                "agoslag",
+                "Skogsmark"
+            ],
+            [
+                "!=",
+                "malklass",
+                "PG"
+            ]
+        ],
+        "layout": {
+            "visibility": "visible"
+        },
+        "paint": {
+            "fill-color": [
+                "interpolate",
+                [
+                    "linear"
+                ],
+                [
+                    "zoom"
+                ],
+                17,
+                [
+                    "match",
+                    [
+                        "get",
+                        "malklass"
+                    ],
+                    "PG",
+                    "rgba(255, 153, 204, 1)",
+                    "PF",
+                    "rgba(204, 0, 102, 1)",
+                    "NS",
+                    "rgba(250, 0, 0, 1)",
+                    "NO",
+                    "rgba(200, 0, 0, 1)",
+                    "NO_NS",
+                    "rgba(255, 0, 0, 1)",
+                    "KVAL",
+                    "rgba(255, 0, 0, 1)",
+                    "rgba(0, 0, 0, 1)"
+                ]
+            ],
+            "fill-opacity": [
+                "interpolate",
+                [
+                    "linear"
+                ],
+                [
+                    "zoom"
+                ],
+                14.5,
+                0,
+                15,
+                0.5
+            ]
+        }
+    },
+    {
+        "id": "Avdelning_linje_fill",
+        "type": "fill",
+        "metadata": {
+            "maputnik:comment": "Avdelningsytor som komplement till streckade linjer",
+            "springLayer": "Avdelning_linjer"
+        },
+        "source": "Avdelning",
+        "minzoom": 12,
+        "layout": {
+            "visibility": "visible"
+        },
+        "paint": {
+            "fill-color": "rgba(255, 255, 255, 1)",
+            "fill-opacity": 0
+        }
+    },
+    {
+        "id": "Avdelning_linje",
+        "type": "line",
+        "metadata": {
+            "maputnik:comment": "Avdelningsgränser som vita streckade linjer",
+            "springLayer": "Avdelning_linjer"
+        },
+        "source": "Avdelning",
+        "minzoom": 12,
+        "layout": {
+            "visibility": "visible"
+        },
+        "paint": {
+            "line-dasharray": [
+                3,
+                2
+            ],
+            "line-color": "rgba(192,192,192, 1)",
+            "line-width": 2,
+            "line-opacity": 1
+        }
+    }
+  ]
+}

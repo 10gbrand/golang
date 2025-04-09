@@ -1,0 +1,310 @@
+{
+  "$schema": "../spring_style_schema.json",
+  "id": "j3f36e14-e3f5-43c1-84c0-50a9c80dc5c7",
+  "version": 8,
+  "name": "Mall",
+  "zoom": 0.861983335785597,
+  "pitch": 0,
+  "center": [
+    17.3145660472,
+    62.91542224
+  ],
+  "metadata": {
+    "maputnik:renderer": "mbgljs",
+    "springGroups": [
+        {
+            "id": "Bakgrundskarta",
+            "name": "Bakgrundskarta",
+            "collapsed": true,
+            "visible": true,
+            "visible_single": true,
+            "springLayers": [
+                {
+                    "id": "Tradhojd",
+                    "name": "Tradhojd",
+                    "visible": false
+                },
+                {
+                    "id": "Skuggadhojd",
+                    "name": "Skuggadhojd",
+                    "visible": false
+                },
+                {
+                    "id": "Skuggad_kronmodell",
+                    "name": "Skuggad_kronmodell",
+                    "visible": false
+                },
+                {
+                    "id": "Markskuggning",
+                    "name": "Markskuggning",
+                    "visible": false
+                },
+                {
+                    "id": "Markfuktighet_SLU",
+                    "name": "Markfuktighet_SLU",
+                    "visible": false
+                },
+                {
+                    "id": "Lutningsklass",
+                    "name": "Lutningsklass",
+                    "visible": false
+                },
+                {
+                    "id": "Kronslutenhet",
+                    "name": "Kronslutenhet",
+                    "visible": false
+                },
+                {
+                    "id": "Historiska_ortofoton_1975",
+                    "name": "Orto 1975",
+                    "visible": false
+                },
+                {
+                    "id": "Historiska_ortofoton_1960",
+                    "name": "Orto 1960",
+                    "visible": false
+                },
+                {
+                    "id": "Ortofoto",
+                    "name": "Ortofoto",
+                    "visible": true
+                },
+                {
+                    "id": "Vagkarta",
+                    "name": "Vagkarta",
+                    "visible": false
+                }
+            ]
+        }
+    ],
+    "springStyleOrder": 1,
+    "springStyleVersion": "0.1"
+  },
+    "sprite": "http://localhost:4200/assets/springfield/geodatapackage/sprite/spring_sprites",
+  "glyphs": "http://localhost:4200/assets/springfield/geodatapackage/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "bearing": 0,
+  "sources": {
+        "Ortofoto": {
+            "type": "raster",
+            "tiles": [
+                "http://localhost:4200/tiles/Ortofoto/{z}/{x}/{y}.png"
+            ],
+            "minzoom": 7,
+            "maxzoom": 24
+        },
+        "Historiska_ortofoton_1960": {
+            "type": "raster",
+            "tiles": [
+                "http://localhost:4200/tiles/Historiska_ortofoton_1960/{z}/{x}/{y}.png"
+            ],
+            "minzoom": 12,
+            "maxzoom": 24
+        },
+        "Historiska_ortofoton_1975": {
+            "type": "raster",
+            "tiles": [
+                "http://localhost:4200/tiles/Historiska_ortofoton_1975/{z}/{x}/{y}.png"
+            ],
+            "minzoom": 12,
+            "maxzoom": 24
+        },
+        "Kronslutenhet": {
+            "type": "raster",
+            "tiles": [
+                "http://localhost:4200/tiles/Kronslutenhet/{z}/{x}/{y}.png"
+            ],
+            "minzoom": 12,
+            "maxzoom": 24
+        },
+        "Lutningsklass": {
+            "type": "raster",
+            "tiles": [
+                "http://localhost:4200/tiles/Lutningsklass/{z}/{x}/{y}.png"
+            ],
+            "minzoom": 12,
+            "maxzoom": 24
+        },
+        "Markfuktighet_SLU": {
+            "type": "raster",
+            "tiles": [
+                "http://localhost:4200/tiles/Markfuktighet_SLU/{z}/{x}/{y}.png"
+            ],
+            "minzoom": 12,
+            "maxzoom": 24
+        },
+        "Markskuggning": {
+            "type": "raster",
+            "tiles": [
+                "http://localhost:4200/tiles/Markskuggning/{z}/{x}/{y}.png"
+            ],
+            "minzoom": 12,
+            "maxzoom": 24
+        },
+        "Skuggad_kronmodell": {
+            "type": "raster",
+            "tiles": [
+                "http://localhost:4200/tiles/Skuggad_kronmodell/{z}/{x}/{y}.png"
+            ],
+            "minzoom": 12,
+            "maxzoom": 24
+        },
+        "Skuggadhojd": {
+            "type": "raster",
+            "tiles": [
+                "http://localhost:4200/tiles/Skuggadhojd/{z}/{x}/{y}.png"
+            ],
+            "minzoom": 12,
+            "maxzoom": 24
+        },
+        "Tradhojd": {
+            "type": "raster",
+            "tiles": [
+                "http://localhost:4200/tiles/Tradhojd/{z}/{x}/{y}.png"
+            ],
+            "minzoom": 12,
+            "maxzoom": 24
+        },
+        "Vagkarta": {
+            "type": "raster",
+            "tiles": [
+                "http://localhost:4200/tiles/Vagkarta/{z}/{x}/{y}.png"
+            ],
+            "minzoom": 12,
+            "maxzoom": 24
+        }
+  },
+  "layers": [
+    {
+        "id": "Vagkarta",
+        "type": "raster",
+        "metadata": {
+            "maputnik:comment": "Vagkarta",
+            "springLayer": "Vagkarta"
+        },
+        "source": "Vagkarta",
+        "layout": {
+            "visibility": "none"
+        }
+    },
+    {
+        "id": "Ortofoto",
+        "type": "raster",
+        "metadata": {
+            "maputnik:comment": "Ortofoto",
+            "springLayer": "Ortofoto"
+        },
+        "source": "Ortofoto",
+        "layout": {
+            "visibility": "none"
+        }
+    },
+    {
+        "id": "Historiska_ortofoton_1960",
+        "type": "raster",
+        "metadata": {
+            "maputnik:comment": "Historiska_ortofoton_1960",
+            "springLayer": "Historiska_ortofoton_1960"
+        },
+        "source": "Historiska_ortofoton_1960",
+        "layout": {
+            "visibility": "none"
+        }
+    },
+    {
+        "id": "Historiska_ortofoton_1975",
+        "type": "raster",
+        "metadata": {
+            "maputnik:comment": "Historiska_ortofoton_1974",
+            "springLayer": "Historiska_ortofoton_1975"
+        },
+        "source": "Historiska_ortofoton_1975",
+        "layout": {
+            "visibility": "none"
+        }
+    },
+    {
+        "id": "Kronslutenhet",
+        "type": "raster",
+        "metadata": {
+            "maputnik:comment": "Kronslutenhet",
+            "springLayer": "Kronslutenhet"
+        },
+        "source": "Kronslutenhet",
+        "layout": {
+            "visibility": "none"
+        }
+    },
+    {
+        "id": "Lutningsklass",
+        "type": "raster",
+        "metadata": {
+            "maputnik:comment": "Lutningsklass",
+            "springLayer": "Lutningsklass"
+        },
+        "source": "Lutningsklass",
+        "layout": {
+            "visibility": "none"
+        }
+    },
+    {
+        "id": "Markfuktighet_SLU",
+        "type": "raster",
+        "metadata": {
+            "maputnik:comment": "Markfuktighet_SLU",
+            "springLayer": "Markfuktighet_SLU"
+        },
+        "source": "Markfuktighet_SLU",
+        "layout": {
+            "visibility": "none"
+        }
+    },
+    {
+        "id": "Markskuggning",
+        "type": "raster",
+        "metadata": {
+            "maputnik:comment": "Markskuggning",
+            "springLayer": "Markskuggning"
+        },
+        "source": "Markskuggning",
+        "layout": {
+            "visibility": "none"
+        }
+    },
+    {
+        "id": "Skuggad_kronmodell",
+        "type": "raster",
+        "metadata": {
+            "maputnik:comment": "Skuggad_kronmodell",
+            "springLayer": "Skuggad_kronmodell"
+        },
+        "source": "Skuggad_kronmodell",
+        "layout": {
+            "visibility": "none"
+        }
+    },
+    {
+        "id": "Skuggadhojd",
+        "type": "raster",
+        "metadata": {
+            "maputnik:comment": "Skuggadhojd",
+            "springLayer": "Skuggadhojd"
+        },
+        "source": "Skuggadhojd",
+        "layout": {
+            "visibility": "none"
+        }
+    },
+    {
+        "id": "Tradhojd",
+        "type": "raster",
+        "metadata": {
+            "maputnik:comment": "Tradhojd",
+            "springLayer": "Tradhojd"
+        },
+        "source": "Tradhojd",
+        "layout": {
+            "visibility": "none"
+        }
+    }
+  ]
+}
