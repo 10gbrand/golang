@@ -51,6 +51,18 @@ Info om Taskfile:
 
 - [taskfile.dev](https://taskfile.dev/usage/)
 
+### gopls
+
+go get -u github.com/ramya-rao-a/go-outline
+
+https://pkg.go.dev/golang.org/x/tools/gopls#section-readme
+
+### go-outliner
+
+go install github.com/ramya-rao-a/go-outline@latest
+
+https://github.com/ramya-rao-a/go-outline
+
 ## Resurser
 
 [Go (Golang) Tutorial](https://www.youtube.com/embed/etSN4X_fCnM?si=i0AbB2zoNGiFmgDe)

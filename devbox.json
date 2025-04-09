@@ -2,7 +2,9 @@
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.13.7/.schema/devbox.schema.json",
   "packages": [
     "go@latest",
-    "go-task@3.40.1"
+    "go-task@3.40.1",
+    "gopls@latest",
+    "go-outline@latest"
   ],
   "env": {
     "GOPATH": "$PWD",
