@@ -5,8 +5,8 @@
     17.3145660472,
     62.91542224
   ],
-  "glyphs": "http://localhost:4200/assets/springfield/geonote/font-glyphs/glyphs/{fontstack}/{range}.pbf",
-  "id": "j3f36e14-e3f5-43c1-84c0-50a9c80dc5c7",
+  "glyphs": "http://localhost:4200/assets/springfield/geodatapackage/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "id": "5cc9306f-bb7f-47a3-a792-c28b96e389a3",
   "layers": [
     {
       "filter": [
@@ -870,7 +870,7 @@
       "type": "geojson"
     }
   },
-  "sprite": "http://localhost:4200/assets/springfield/geonote/sprite/spring_sprites",
+  "sprite": "http://localhost:4200/assets/springfield/geodatapackage/sprite/spring_sprites",
   "version": 8,
   "zoom": 0.861983335785597
 }

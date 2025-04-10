@@ -8,6 +8,8 @@ import (
 	"path/filepath"
 	"sort"
 	"strconv"
+
+	"github.com/google/uuid" // Importera uuid-paketet
 )
 
 type CSVEntry struct {
@@ -41,7 +43,8 @@ func processTarget(target string, entries []CSVEntry) {
 	sortedForGroups := sortEntries(entries, false)
 	mergedSpringGroups := mergeSpringGroups(sortedForGroups)
 
-	baseData := getBaseJSON(sortedForLayers[0].SrcFile)
+	// Använd den fasta JSON-filen istället för sortedForLayers[0].SrcFile
+	baseData := getBaseJSON("mall4layer") // Ingen dynamisk fil, använder "mall4layer.json"
 	updateJSONStructure(baseData, mergedLayers, mergedSources, mergedSpringGroups)
 
 	writeOutput(target, baseData)
@@ -72,7 +75,7 @@ func readCSV(path string) ([]CSVEntry, error) {
 		return nil, err
 	}
 
-	var entries []CSVEntry // Korrekt typ: CSVEntry
+	var entries []CSVEntry
 	for i, record := range records {
 		if i == 0 { // Skip header
 			continue
@@ -176,6 +179,12 @@ func getBaseJSON(srcFile string) map[string]interface{} {
 }
 
 func writeOutput(target string, data map[string]interface{}) {
+	// Generera ett slumpmässigt GUID
+	randomID := uuid.New().String()
+
+	// Lägg till GUID i JSON-strukturen
+	data["id"] = randomID
+
 	outputPath := filepath.Join("layer_styles/def/result", target+".json")
 	err := os.MkdirAll(filepath.Dir(outputPath), os.ModePerm)
 	if err != nil {
