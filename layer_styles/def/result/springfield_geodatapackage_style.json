@@ -1,0 +1,1846 @@
+{
+  "$schema": "../spring_style_schema.json",
+  "bearing": 0,
+  "center": [
+    17.3145660472,
+    62.91542224
+  ],
+  "glyphs": "http://localhost:4200/assets/springfield/geodatapackage/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "id": "j3f36e14-e3f5-43c1-84c0-50a9c80dc5c7",
+  "layers": [
+    {
+      "id": "Vagkarta",
+      "layout": {
+        "visibility": "none"
+      },
+      "metadata": {
+        "maputnik:comment": "Vagkarta",
+        "springLayer": "Vagkarta"
+      },
+      "source": "Vagkarta",
+      "type": "raster"
+    },
+    {
+      "id": "Ortofoto",
+      "layout": {
+        "visibility": "none"
+      },
+      "metadata": {
+        "maputnik:comment": "Ortofoto",
+        "springLayer": "Ortofoto"
+      },
+      "source": "Ortofoto",
+      "type": "raster"
+    },
+    {
+      "id": "Historiska_ortofoton_1960",
+      "layout": {
+        "visibility": "none"
+      },
+      "metadata": {
+        "maputnik:comment": "Historiska_ortofoton_1960",
+        "springLayer": "Historiska_ortofoton_1960"
+      },
+      "source": "Historiska_ortofoton_1960",
+      "type": "raster"
+    },
+    {
+      "id": "Historiska_ortofoton_1975",
+      "layout": {
+        "visibility": "none"
+      },
+      "metadata": {
+        "maputnik:comment": "Historiska_ortofoton_1974",
+        "springLayer": "Historiska_ortofoton_1975"
+      },
+      "source": "Historiska_ortofoton_1975",
+      "type": "raster"
+    },
+    {
+      "id": "Kronslutenhet",
+      "layout": {
+        "visibility": "none"
+      },
+      "metadata": {
+        "maputnik:comment": "Kronslutenhet",
+        "springLayer": "Kronslutenhet"
+      },
+      "source": "Kronslutenhet",
+      "type": "raster"
+    },
+    {
+      "id": "Lutningsklass",
+      "layout": {
+        "visibility": "none"
+      },
+      "metadata": {
+        "maputnik:comment": "Lutningsklass",
+        "springLayer": "Lutningsklass"
+      },
+      "source": "Lutningsklass",
+      "type": "raster"
+    },
+    {
+      "id": "Markfuktighet_SLU",
+      "layout": {
+        "visibility": "none"
+      },
+      "metadata": {
+        "maputnik:comment": "Markfuktighet_SLU",
+        "springLayer": "Markfuktighet_SLU"
+      },
+      "source": "Markfuktighet_SLU",
+      "type": "raster"
+    },
+    {
+      "id": "Markskuggning",
+      "layout": {
+        "visibility": "none"
+      },
+      "metadata": {
+        "maputnik:comment": "Markskuggning",
+        "springLayer": "Markskuggning"
+      },
+      "source": "Markskuggning",
+      "type": "raster"
+    },
+    {
+      "id": "Skuggad_kronmodell",
+      "layout": {
+        "visibility": "none"
+      },
+      "metadata": {
+        "maputnik:comment": "Skuggad_kronmodell",
+        "springLayer": "Skuggad_kronmodell"
+      },
+      "source": "Skuggad_kronmodell",
+      "type": "raster"
+    },
+    {
+      "id": "Skuggadhojd",
+      "layout": {
+        "visibility": "none"
+      },
+      "metadata": {
+        "maputnik:comment": "Skuggadhojd",
+        "springLayer": "Skuggadhojd"
+      },
+      "source": "Skuggadhojd",
+      "type": "raster"
+    },
+    {
+      "id": "Tradhojd",
+      "layout": {
+        "visibility": "none"
+      },
+      "metadata": {
+        "maputnik:comment": "Tradhojd",
+        "springLayer": "Tradhojd"
+      },
+      "source": "Tradhojd",
+      "type": "raster"
+    },
+    {
+      "id": "Skifte",
+      "layout": {
+        "visibility": "visible"
+      },
+      "maxzoom": 12,
+      "metadata": {
+        "maputnik:comment": "Skifte",
+        "springLayer": "Skifte"
+      },
+      "minzoom": 0,
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "TYP"
+          ],
+          "EGENFV",
+          "rgba(0, 230, 0, 1)",
+          "SALDMARK",
+          "rgba(255, 0, 197, 1)",
+          "RESSALD",
+          "rgba(255, 0, 0, 1)",
+          "rgba(170, 170, 170, 1)"
+        ],
+        "fill-opacity": 0.5
+      },
+      "source": "Skifte",
+      "type": "fill"
+    },
+    {
+      "id": "Skifte_linje",
+      "layout": {
+        "visibility": "visible"
+      },
+      "maxzoom": 24,
+      "metadata": {
+        "maputnik:comment": "Skifte",
+        "springLayer": "Skifte"
+      },
+      "minzoom": 12,
+      "paint": {
+        "line-color": [
+          "match",
+          [
+            "get",
+            "TYP"
+          ],
+          "EGENFV",
+          "rgba(0, 230, 0, 1)",
+          "SALDMARK",
+          "rgba(255, 0, 197, 1)",
+          "RESSALD",
+          "rgba(255, 0, 0, 1)",
+          "rgba(170, 170, 170, 1)"
+        ],
+        "line-opacity": 0.7,
+        "line-width": 3
+      },
+      "source": "Skifte",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "all",
+        [
+          "==",
+          "agoslag",
+          "Skogsmark"
+        ]
+      ],
+      "id": "Avdelning_Utvecklingsklass",
+      "layout": {
+        "visibility": "none"
+      },
+      "metadata": {
+        "maputnik:comment": "Utvecklingsklass",
+        "springLayer": "Utvecklingsklass"
+      },
+      "minzoom": 10,
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "utvecklingsklass"
+          ],
+          "10",
+          "rgba(255, 255, 190, 1)",
+          "11",
+          "rgba(255, 255, 190, 1)",
+          "12",
+          "rgba(255, 255, 190, 1)",
+          "13",
+          "rgba(255, 255, 190, 1)",
+          "15",
+          "rgba(255, 255, 0, 1)",
+          "21",
+          "rgba(0, 197, 0, 1)",
+          "22",
+          "rgba(0, 112, 255, 1)",
+          "31",
+          "rgba(163, 255, 115, 1)",
+          "32",
+          "rgba(76, 230, 0, 1)",
+          "33",
+          "rgba(38, 115, 0, 1)",
+          "40",
+          "rgba(204, 204, 204, 1)",
+          "rgba(0, 0, 0, 0.5)"
+        ],
+        "fill-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          11.5,
+          0,
+          12,
+          0.6,
+          15,
+          0.2
+        ],
+        "fill-outline-color": "rgba(110, 110, 110, 1)"
+      },
+      "source": "Avdelning",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "all"
+      ],
+      "id": "Avdelning_Agoslag",
+      "layout": {
+        "visibility": "visible"
+      },
+      "metadata": {
+        "maputnik:comment": "Ägoslag",
+        "springLayer": "Agoslag"
+      },
+      "minzoom": 12,
+      "paint": {
+        "fill-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          14.5,
+          0,
+          15,
+          1
+        ],
+        "fill-pattern": [
+          "match",
+          [
+            "get",
+            "agoslag"
+          ],
+          "Berg",
+          "avdelning/agoslag/berg",
+          "Myr",
+          "avdelning/agoslag/myr",
+          "Skogsmark",
+          "avdelning/agoslag/skogsmark",
+          "Fjällbarrskog",
+          "avdelning/agoslag/fjallbarrskog",
+          "Betesmark",
+          "avdelning/agoslag/betesmark",
+          "Fjäll",
+          "avdelning/agoslag/fjall",
+          "Åker",
+          "avdelning/agoslag/aker",
+          "Annan_mark",
+          "avdelning/agoslag/annan_mark",
+          "Vatten",
+          "avdelning/agoslag/vatten",
+          "avdelning/agoslag/annan_mark"
+        ],
+        "fill-translate-anchor": "map"
+      },
+      "source": "Avdelning",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "all",
+        [
+          "==",
+          "agoslag",
+          "Skogsmark"
+        ],
+        [
+          "!=",
+          "malklass",
+          "PG"
+        ]
+      ],
+      "id": "Avdelning_Malklass",
+      "layout": {
+        "visibility": "visible"
+      },
+      "metadata": {
+        "maputnik:comment": "Målklass",
+        "springLayer": "Malklass"
+      },
+      "minzoom": 14,
+      "paint": {
+        "fill-color": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          17,
+          [
+            "match",
+            [
+              "get",
+              "malklass"
+            ],
+            "PG",
+            "rgba(255, 153, 204, 1)",
+            "PF",
+            "rgba(204, 0, 102, 1)",
+            "NS",
+            "rgba(250, 0, 0, 1)",
+            "NO",
+            "rgba(200, 0, 0, 1)",
+            "NO_NS",
+            "rgba(255, 0, 0, 1)",
+            "KVAL",
+            "rgba(255, 0, 0, 1)",
+            "rgba(0, 0, 0, 1)"
+          ]
+        ],
+        "fill-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          14.5,
+          0,
+          15,
+          0.5
+        ]
+      },
+      "source": "Avdelning",
+      "type": "fill"
+    },
+    {
+      "id": "Avdelning_linje_fill",
+      "layout": {
+        "visibility": "visible"
+      },
+      "metadata": {
+        "maputnik:comment": "Avdelningsytor som komplement till streckade linjer",
+        "springLayer": "Avdelning_linjer"
+      },
+      "minzoom": 12,
+      "paint": {
+        "fill-color": "rgba(255, 255, 255, 1)",
+        "fill-opacity": 0
+      },
+      "source": "Avdelning",
+      "type": "fill"
+    },
+    {
+      "id": "Avdelning_linje",
+      "layout": {
+        "visibility": "visible"
+      },
+      "metadata": {
+        "maputnik:comment": "Avdelningsgränser som vita streckade linjer",
+        "springLayer": "Avdelning_linjer"
+      },
+      "minzoom": 12,
+      "paint": {
+        "line-color": "rgba(192,192,192, 1)",
+        "line-dasharray": [
+          3,
+          2
+        ],
+        "line-opacity": 1,
+        "line-width": 2
+      },
+      "source": "Avdelning",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "all",
+        [
+          "==",
+          "planeringsstatus",
+          "Taktisk"
+        ]
+      ],
+      "id": "Atgard_taktisk",
+      "layout": {
+        "visibility": "visible"
+      },
+      "metadata": {
+        "maputnik:comment": "Åtgärd_taktisk",
+        "springLayer": "Atgard_taktisk"
+      },
+      "minzoom": 10,
+      "paint": {
+        "fill-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          14.5,
+          0,
+          15,
+          0.8
+        ],
+        "fill-pattern": "atgard/taktisk/taktisk"
+      },
+      "source": "Atgard",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "any",
+        [
+          "==",
+          "planeringsstatus",
+          "Under planering"
+        ],
+        [
+          "==",
+          "planeringsstatus",
+          "Tillgängligt"
+        ],
+        [
+          "==",
+          "planeringsstatus",
+          "Färdigplanerat"
+        ],
+        [
+          "==",
+          "planeringsstatus",
+          "Returnerad"
+        ]
+      ],
+      "id": "Atgard_planerad",
+      "layout": {
+        "visibility": "visible"
+      },
+      "metadata": {
+        "maputnik:comment": "Åtgärd_planerad",
+        "springLayer": "Atgard_planerad"
+      },
+      "minzoom": 12,
+      "paint": {
+        "fill-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          14.5,
+          0,
+          15,
+          0.8
+        ],
+        "fill-pattern": [
+          "match",
+          [
+            "get",
+            "grupp"
+          ],
+          "Avverkning",
+          "atgard/planerad/avverkning",
+          "Röjning",
+          "atgard/planerad/rojning",
+          "Inventering",
+          "atgard/planerad/inventering",
+          "Marberedning",
+          "atgard/planerad/markberedning",
+          "Produktionshöjande",
+          "atgard/planerad/produktionshojande",
+          "Föryngring",
+          "atgard/planerad/foryngring",
+          "atgard/planerad/ovrig"
+        ]
+      },
+      "source": "Atgard",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "any"
+      ],
+      "id": "Atgard_utford",
+      "layout": {
+        "visibility": "visible"
+      },
+      "metadata": {
+        "maputnik:comment": "Åtgärd_utförd",
+        "springLayer": "Atgard_utford"
+      },
+      "minzoom": 12,
+      "paint": {
+        "fill-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          14.5,
+          0,
+          15,
+          0.8
+        ],
+        "fill-pattern": [
+          "match",
+          [
+            "get",
+            "grupp"
+          ],
+          "Avverkning",
+          "atgard/utford/avverkning",
+          "Röjning",
+          "atgard/utford/rojning",
+          "Inventering",
+          "atgard/utford/inventering",
+          "Marberedning",
+          "atgard/utford/markberedning",
+          "Produktionshöjande",
+          "atgard/utford/produktionshojande",
+          "Föryngring",
+          "atgard/utford/foryngring",
+          "atgard/utford/ovrig"
+        ],
+        "fill-translate-anchor": "map"
+      },
+      "source": "Atgard",
+      "type": "fill"
+    },
+    {
+      "id": "Anmalan",
+      "layout": {
+        "visibility": "visible"
+      },
+      "metadata": {
+        "maputnik:comment": "Anmälan",
+        "springLayer": "Anmalan"
+      },
+      "minzoom": 0,
+      "paint": {
+        "fill-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          14.7,
+          0,
+          15,
+          1
+        ],
+        "fill-pattern": [
+          "match",
+          [
+            "get",
+            "anmalanstatus"
+          ],
+          "Får påbörjas",
+          "anmalan/far_paborjas",
+          "Ogiltig",
+          "anmalan/ogiltig",
+          "Återkallad",
+          "anmalan/aterkallad",
+          "anmalan/ogiltig"
+        ]
+      },
+      "source": "Anmalan",
+      "type": "fill"
+    },
+    {
+      "id": "RestriktionNaturvardSveaskog",
+      "layout": {
+        "visibility": "visible"
+      },
+      "metadata": {
+        "maputnik:comment": "Restriktion_NaturvårdSveaskog",
+        "springLayer": "RestriktionNaturvardSveaskog"
+      },
+      "minzoom": 12,
+      "paint": {
+        "fill-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          13.7,
+          0,
+          14,
+          1
+        ],
+        "fill-outline-color": "rgba(255, 255, 0, 1)",
+        "fill-pattern": "restriktion/naturvard_sveaskog/205"
+      },
+      "source": "RestriktionNaturvardSveaskog",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "any",
+        [
+          "==",
+          "TYP",
+          101
+        ],
+        [
+          "==",
+          "TYP",
+          102
+        ],
+        [
+          "==",
+          "TYP",
+          108
+        ],
+        [
+          "==",
+          "TYP",
+          109
+        ],
+        [
+          "==",
+          "TYP",
+          110
+        ],
+        [
+          "==",
+          "TYP",
+          115
+        ],
+        [
+          "==",
+          "TYP",
+          118
+        ]
+      ],
+      "id": "Restriktion_Externa1",
+      "layout": {
+        "visibility": "visible"
+      },
+      "metadata": {
+        "maputnik:comment": "Restriktion_Externa",
+        "springLayer": "Restriktion_Externa"
+      },
+      "minzoom": 10,
+      "paint": {
+        "fill-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          11.5,
+          0,
+          12,
+          1
+        ],
+        "fill-pattern": [
+          "match",
+          [
+            "get",
+            "TYP"
+          ],
+          101,
+          "restriktion/externa/100T/101",
+          102,
+          "restriktion/externa/100T/102",
+          108,
+          "restriktion/externa/100T/108",
+          109,
+          "restriktion/externa/100T/109",
+          118,
+          "restriktion/externa/100T/118",
+          "restriktion/externa/100T/XXX"
+        ]
+      },
+      "source": "RestriktionExterna",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "any",
+        [
+          "==",
+          "TYP",
+          103
+        ],
+        [
+          "==",
+          "TYP",
+          104
+        ],
+        [
+          "==",
+          "TYP",
+          105
+        ],
+        [
+          "==",
+          "TYP",
+          106
+        ],
+        [
+          "==",
+          "TYP",
+          107
+        ],
+        [
+          "==",
+          "TYP",
+          111
+        ],
+        [
+          "==",
+          "TYP",
+          112
+        ],
+        [
+          "==",
+          "TYP",
+          113
+        ],
+        [
+          "==",
+          "TYP",
+          114
+        ]
+      ],
+      "id": "Restriktion_Externa2",
+      "layout": {
+        "visibility": "visible"
+      },
+      "metadata": {
+        "maputnik:comment": "Restriktion_Externa",
+        "springLayer": "Restriktion_Externa"
+      },
+      "minzoom": 12,
+      "paint": {
+        "fill-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          13.7,
+          0,
+          14,
+          0.8
+        ],
+        "fill-pattern": [
+          "match",
+          [
+            "get",
+            "TYP"
+          ],
+          103,
+          "restriktion/externa/40T/103",
+          104,
+          "restriktion/externa/40T/104",
+          105,
+          "restriktion/externa/40T/105",
+          106,
+          "restriktion/externa/40T/106",
+          107,
+          "restriktion/externa/40T/107",
+          112,
+          "restriktion/externa/40T/112",
+          113,
+          "restriktion/externa/40T/113",
+          114,
+          "restriktion/externa/40T/114",
+          "restriktion/externa/40T/XXX"
+        ]
+      },
+      "source": "RestriktionExterna",
+      "type": "fill"
+    },
+    {
+      "id": "Fornlamningyta",
+      "layout": {
+        "visibility": "visible"
+      },
+      "metadata": {
+        "maputnik:comment": "Fornlämning_yta",
+        "springLayer": "Fornlamningyta"
+      },
+      "minzoom": 12,
+      "paint": {
+        "fill-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          12,
+          0.7,
+          15,
+          1
+        ],
+        "fill-outline-color": "rgba(230, 0, 0, 1)",
+        "fill-pattern": "fornminne_kultur/fornlamningyta"
+      },
+      "source": "Fornlamningyta",
+      "type": "fill"
+    },
+    {
+      "id": "Fornlamninglinje-linje",
+      "metadata": {
+        "maputnik:comment": "Fornlämning_linje",
+        "springLayer": "Fornlamninglinje"
+      },
+      "minzoom": 12,
+      "paint": {
+        "line-color": "rgba(253, 0, 0, 1)",
+        "line-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          12,
+          0.7,
+          15,
+          1
+        ],
+        "line-width": 4
+      },
+      "source": "Fornlamninglinje",
+      "type": "line"
+    },
+    {
+      "id": "Fornlamninglinje",
+      "metadata": {
+        "maputnik:comment": "Fornlämning_linje",
+        "springLayer": "Fornlamninglinje"
+      },
+      "minzoom": 12,
+      "paint": {
+        "line-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          12,
+          0.7,
+          15,
+          1
+        ],
+        "line-pattern": "fornminne_kultur/fornlamninglinje",
+        "line-width": 75
+      },
+      "source": "Fornlamninglinje",
+      "type": "line"
+    },
+    {
+      "id": "Fornlamningpkt",
+      "layout": {
+        "icon-image": "fornminne_kultur/fornlamningpunkt",
+        "icon-size": 0.35
+      },
+      "metadata": {
+        "maputnik:comment": "Fornlämning_punkt",
+        "springLayer": "Fornlamningpkt"
+      },
+      "minzoom": 12,
+      "paint": {
+        "icon-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          12,
+          0,
+          15,
+          1
+        ]
+      },
+      "source": "Fornlamningpkt",
+      "type": "symbol"
+    },
+    {
+      "id": "Kulturminneyta",
+      "metadata": {
+        "maputnik:comment": "Kulturminneyta",
+        "springLayer": "Kulturminneyta"
+      },
+      "minzoom": 12,
+      "paint": {
+        "fill-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          12,
+          0,
+          15,
+          1
+        ],
+        "fill-outline-color": "rgba(255, 0, 0, 1)",
+        "fill-pattern": "fornminne_kultur/kulturminneyta"
+      },
+      "source": "Kulturminneyta",
+      "type": "fill"
+    },
+    {
+      "id": "Kulturminnelinje",
+      "metadata": {
+        "maputnik:comment": "Kulturminnelinje",
+        "springLayer": "Kulturminnelinje"
+      },
+      "minzoom": 12,
+      "paint": {
+        "line-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          12,
+          0,
+          15,
+          1
+        ],
+        "line-pattern": "fornminne_kultur/kulturminnelinje",
+        "line-width": 75
+      },
+      "source": "Kulturminnelinje",
+      "type": "line"
+    },
+    {
+      "id": "Kulturminnepkt",
+      "layout": {
+        "icon-image": "fornminne_kultur/kulturminnepunkt",
+        "icon-size": 0.35
+      },
+      "metadata": {
+        "maputnik:comment": "Kulturminnepkt",
+        "springLayer": "Kulturminnepkt"
+      },
+      "minzoom": 12,
+      "paint": {
+        "icon-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          12,
+          0,
+          15,
+          1
+        ]
+      },
+      "source": "Kulturminnepkt",
+      "type": "symbol"
+    },
+    {
+      "id": "Hansynyta",
+      "metadata": {
+        "maputnik:comment": "Hänsyn_yta",
+        "springLayer": "Hansynyta"
+      },
+      "minzoom": 15,
+      "paint": {
+        "fill-color": "rgba(56, 168, 0, 1)",
+        "fill-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          0.7,
+          16,
+          0.1
+        ],
+        "fill-outline-color": "rgba(163, 255, 115, 1)"
+      },
+      "source": "Hansynyta",
+      "type": "fill"
+    },
+    {
+      "id": "Hansynyta-linje",
+      "metadata": {
+        "maputnik:comment": "Hänsyn_yta",
+        "springLayer": "Hansynyta"
+      },
+      "minzoom": 15,
+      "paint": {
+        "line-color": "rgba(163, 255, 115, 1)",
+        "line-opacity": 1
+      },
+      "source": "Hansynyta",
+      "type": "line"
+    },
+    {
+      "id": "Hansynlinje",
+      "layout": {
+        "visibility": "visible"
+      },
+      "metadata": {
+        "maputnik:comment": "Hänsyn_linje",
+        "springLayer": "Hansynlinje"
+      },
+      "minzoom": 15,
+      "paint": {
+        "line-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          0.7,
+          16,
+          1
+        ],
+        "line-pattern": "hansyn/hansynlinje",
+        "line-width": 70
+      },
+      "source": "Hansynlinje",
+      "type": "line"
+    },
+    {
+      "id": "Hansynlinje-linje",
+      "metadata": {
+        "maputnik:comment": "Hänsyn_yta",
+        "springLayer": "Hansynlinje"
+      },
+      "minzoom": 15,
+      "paint": {
+        "line-color": "rgba(56, 168, 0, 1)",
+        "line-opacity": 1,
+        "line-width": 4
+      },
+      "source": "Hansynlinje",
+      "type": "line"
+    },
+    {
+      "id": "Hansynpkt",
+      "layout": {
+        "icon-image": "hansyn/hansynpunkt",
+        "icon-size": 0.35
+      },
+      "metadata": {
+        "maputnik:comment": "Hänsyn_punkt",
+        "springLayer": "Hansynpkt"
+      },
+      "minzoom": 15,
+      "paint": {
+        "icon-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          0.7,
+          16,
+          1
+        ]
+      },
+      "source": "Hansynpkt",
+      "type": "symbol"
+    },
+    {
+      "id": "Vag_vinterbilbasväg",
+      "layout": {
+        "visibility": "visible"
+      },
+      "metadata": {
+        "maputnik:comment": "Väg_vinterbilbasväg",
+        "springLayer": "Vinterbilbasvag"
+      },
+      "minzoom": 12,
+      "paint": {
+        "line-color": [
+          "match",
+          [
+            "get",
+            "tillganglighet"
+          ],
+          "B",
+          "rgba(0, 0, 0, 1)",
+          "D",
+          "rgba(30, 30, 30, 1)",
+          "rgba(0, 0, 0, 1)"
+        ],
+        "line-dasharray": [
+          10,
+          1
+        ],
+        "line-gap-width": 2.5,
+        "line-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          14.5,
+          0,
+          15,
+          1
+        ],
+        "line-width": 1.5
+      },
+      "source": "Vinterbilbasvag",
+      "type": "line"
+    },
+    {
+      "id": "Vag_traktorväg",
+      "metadata": {
+        "maputnik:comment": "Väg_traktorväg",
+        "springLayer": "Traktorvag"
+      },
+      "minzoom": 12,
+      "paint": {
+        "line-color": [
+          "match",
+          [
+            "get",
+            "tillganglighet"
+          ],
+          "A",
+          "rgba(0, 0, 0, 1)",
+          "B",
+          "rgba(230, 0, 0, 1)",
+          "C",
+          "rgba(255, 100, 0, 1)",
+          "D",
+          "rgba(0, 0, 0, 1)",
+          "rgba(0, 0, 0, 1)"
+        ],
+        "line-dasharray": [
+          5,
+          1
+        ],
+        "line-gap-width": 2.5,
+        "line-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          14.5,
+          0,
+          15,
+          1
+        ]
+      },
+      "source": "Traktorvag",
+      "type": "line"
+    },
+    {
+      "id": "Drivningspkt",
+      "layout": {
+        "icon-image": [
+          "match",
+          [
+            "get",
+            "typ"
+          ],
+          "Larmpunkt",
+          "drivningspunkt/3_larmpunkt",
+          "Avlägg",
+          "drivningspunkt/1_avlagg",
+          "Drivningstext",
+          "drivningspunkt/5_drivningstext",
+          "Överfart",
+          "drivningspunkt/2_overfart",
+          "Kojplats",
+          "drivningspunkt/4_kojplats",
+          "drivningspunkt/fel_drivning"
+        ],
+        "icon-optional": false,
+        "icon-size": 0.4,
+        "visibility": "visible"
+      },
+      "metadata": {
+        "maputnik:comment": "Drivningspkt",
+        "springLayer": "Drivningspkt"
+      },
+      "minzoom": 14,
+      "paint": {
+        "icon-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          14.5,
+          0,
+          15,
+          1
+        ]
+      },
+      "source": "Drivningspkt",
+      "type": "symbol"
+    },
+    {
+      "id": "Restriktion_Artforekomster",
+      "layout": {
+        "icon-image": [
+          "match",
+          [
+            "get",
+            "typ"
+          ],
+          116,
+          "restriktion/artforekomster/116",
+          117,
+          "restriktion/artforekomster/117",
+          119,
+          "restriktion/artforekomster/119",
+          125,
+          "restriktion/artforekomster/125",
+          "restriktion/artforekomster/XXX"
+        ],
+        "icon-size": 0.35,
+        "visibility": "visible"
+      },
+      "metadata": {
+        "maputnik:comment": "Artförekomster",
+        "springLayer": "Artforekomster"
+      },
+      "minzoom": 2,
+      "paint": {
+        "icon-opacity": 0.7
+      },
+      "source": "RestriktionArtforekomst",
+      "type": "symbol"
+    },
+    {
+      "id": "Text_Avdelning",
+      "layout": {
+        "text-field": [
+          "format",
+          [
+            "get",
+            "beteckning"
+          ],
+          {
+            "font-scale": 1.2
+          },
+          "\n",
+          [
+            "concat",
+            "Målklass: ",
+            [
+              "get",
+              "malklass"
+            ]
+          ],
+          "\n",
+          [
+            "concat",
+            "Utvkl: ",
+            [
+              "get",
+              "utvecklingsklass"
+            ]
+          ]
+        ],
+        "text-font": [
+          "Open Sans Regular"
+        ],
+        "text-pitch-alignment": "auto",
+        "text-size": 12,
+        "visibility": "visible"
+      },
+      "metadata": {
+        "maputnik:comment": "Avdelningstext",
+        "springLayer": "Avdelning_text"
+      },
+      "minzoom": 16,
+      "paint": {
+        "text-color": "#ffffff",
+        "text-halo-color": "rgba(0, 0, 0, 1)",
+        "text-halo-width": 2
+      },
+      "source": "Avdelning",
+      "type": "symbol"
+    }
+  ],
+  "metadata": {
+    "maputnik:renderer": "mbgljs",
+    "springGroups": [
+      {
+        "collapsed": true,
+        "id": "Bakgrundskarta",
+        "name": "Bakgrundskarta",
+        "springLayers": [
+          {
+            "id": "Tradhojd",
+            "name": "Tradhojd",
+            "visible": false
+          },
+          {
+            "id": "Skuggadhojd",
+            "name": "Skuggadhojd",
+            "visible": false
+          },
+          {
+            "id": "Skuggad_kronmodell",
+            "name": "Skuggad_kronmodell",
+            "visible": false
+          },
+          {
+            "id": "Markskuggning",
+            "name": "Markskuggning",
+            "visible": false
+          },
+          {
+            "id": "Markfuktighet_SLU",
+            "name": "Markfuktighet_SLU",
+            "visible": false
+          },
+          {
+            "id": "Lutningsklass",
+            "name": "Lutningsklass",
+            "visible": false
+          },
+          {
+            "id": "Kronslutenhet",
+            "name": "Kronslutenhet",
+            "visible": false
+          },
+          {
+            "id": "Historiska_ortofoton_1975",
+            "name": "Orto 1975",
+            "visible": false
+          },
+          {
+            "id": "Historiska_ortofoton_1960",
+            "name": "Orto 1960",
+            "visible": false
+          },
+          {
+            "id": "Ortofoto",
+            "name": "Ortofoto",
+            "visible": true
+          },
+          {
+            "id": "Vagkarta",
+            "name": "Vagkarta",
+            "visible": false
+          }
+        ],
+        "visible": true,
+        "visible_single": true
+      },
+      {
+        "collapsed": true,
+        "id": "Skifte",
+        "name": "Skifte",
+        "springLayers": [
+          {
+            "id": "Skifte",
+            "name": "Skifte",
+            "visible": true
+          }
+        ],
+        "visible": true
+      },
+      {
+        "collapsed": true,
+        "id": "Avdelning",
+        "name": "Avdelning",
+        "springLayers": [
+          {
+            "id": "Avdelning_text",
+            "name": "Avdelning_text",
+            "visible": true
+          },
+          {
+            "id": "Avdelning_linjer",
+            "name": "Avdelning linjer",
+            "visible": true
+          },
+          {
+            "id": "Utvecklingsklass",
+            "name": "Utvecklingsklass",
+            "visible": false
+          },
+          {
+            "id": "Agoslag",
+            "name": "Ägoslag",
+            "visible": true
+          },
+          {
+            "id": "Malklass",
+            "name": "Målklass",
+            "visible": false
+          }
+        ],
+        "visible": true
+      },
+      {
+        "collapsed": true,
+        "id": "Atgard",
+        "name": "Åtgärd",
+        "springLayers": [
+          {
+            "id": "Atgard_planerad",
+            "name": "Planerad",
+            "visible": true
+          },
+          {
+            "id": "Atgard_utford",
+            "name": "Utförd",
+            "visible": true
+          },
+          {
+            "id": "Atgard_taktisk",
+            "name": "Taktiska",
+            "visible": true
+          }
+        ],
+        "visible": true
+      },
+      {
+        "collapsed": true,
+        "id": "Anmalan",
+        "name": "Anmalan",
+        "springLayers": [
+          {
+            "id": "Anmalan",
+            "name": "Anmalan",
+            "visible": false
+          }
+        ],
+        "visible": true
+      },
+      {
+        "collapsed": true,
+        "id": "Restriktion",
+        "name": "Restriktion",
+        "springLayers": [
+          {
+            "id": "RestriktionNaturvardSveaskog",
+            "name": "Naturvård Sveaskog",
+            "visible": true
+          },
+          {
+            "id": "Restriktion_Externa",
+            "name": "Externa restr.",
+            "visible": true
+          }
+        ],
+        "visible": false
+      },
+      {
+        "collapsed": true,
+        "id": "Fornlamning",
+        "name": "Fornlamning",
+        "springLayers": [
+          {
+            "id": "Fornlamningyta",
+            "name": "Fornlämning yta",
+            "visible": true
+          },
+          {
+            "id": "Fornlamninglinje",
+            "name": "Fornlämning linje",
+            "visible": true
+          },
+          {
+            "id": "Fornlamningpkt",
+            "name": "Fornlämning pkt",
+            "visible": true
+          }
+        ],
+        "visible": false
+      },
+      {
+        "collapsed": true,
+        "id": "Kulturminne",
+        "name": "Kulturminne",
+        "springLayers": [
+          {
+            "id": "Kulturminnepkt",
+            "name": "Kulturminne pkt",
+            "visible": true
+          },
+          {
+            "id": "Kulturminnelinje",
+            "name": "Kulturminne linje",
+            "visible": true
+          },
+          {
+            "id": "Kulturminneyta",
+            "name": "Kulturminne yta",
+            "visible": true
+          }
+        ],
+        "visible": false
+      },
+      {
+        "collapsed": true,
+        "id": "Hansyn",
+        "name": "Hänsyn",
+        "springLayers": [
+          {
+            "id": "Hansynpkt",
+            "name": "Hänsyn pkt",
+            "visible": true
+          },
+          {
+            "id": "Hansynlinje",
+            "name": "Hänsyn linje",
+            "visible": true
+          },
+          {
+            "id": "Hansynyta",
+            "name": "Hänsyn yta",
+            "visible": true
+          }
+        ],
+        "visible": true
+      },
+      {
+        "collapsed": true,
+        "id": "Drivning",
+        "name": "Drivning",
+        "springLayers": [
+          {
+            "id": "Vinterbilbasvag",
+            "name": "Vinterbilbasväg",
+            "visible": true
+          },
+          {
+            "id": "Traktorvag",
+            "name": "Traktorväg",
+            "visible": true
+          },
+          {
+            "id": "Drivningspkt",
+            "name": "Drivning pkt",
+            "visible": true
+          }
+        ],
+        "visible": true
+      },
+      {
+        "collapsed": true,
+        "id": "Artforekomster",
+        "name": "Artforekomster",
+        "springLayers": [
+          {
+            "id": "Artforekomster",
+            "name": "Artforekomster",
+            "visible": true
+          }
+        ],
+        "visible": true
+      }
+    ],
+    "springStyleOrder": 1,
+    "springStyleVersion": "0.1"
+  },
+  "name": "Mall",
+  "pitch": 0,
+  "sources": {
+    "Anmalan": {
+      "data": "http://localhost:4200/assets/springfield/geodatapackage/Anmalan.geojson",
+      "type": "geojson"
+    },
+    "Atgard": {
+      "data": "http://localhost:4200/assets/springfield/geodatapackage/Atgard.geojson",
+      "type": "geojson"
+    },
+    "Avdelning": {
+      "data": "http://localhost:4200/assets/springfield/geodatapackage/Avdelning.geojson",
+      "type": "geojson"
+    },
+    "Drivningspkt": {
+      "data": "http://localhost:4200/assets/springfield/geodatapackage/Drivningspunkt.geojson",
+      "type": "geojson"
+    },
+    "Fornlamninglinje": {
+      "data": "http://localhost:4200/assets/springfield/geodatapackage/Fornminne_linje.geojson",
+      "type": "geojson"
+    },
+    "Fornlamningpkt": {
+      "data": "http://localhost:4200/assets/springfield/geodatapackage/Fornminne_punkt.geojson",
+      "type": "geojson"
+    },
+    "Fornlamningyta": {
+      "data": "http://localhost:4200/assets/springfield/geodatapackage/Fornminne_yta.geojson",
+      "type": "geojson"
+    },
+    "Hansynlinje": {
+      "data": "http://localhost:4200/assets/springfield/geodatapackage/Hansynlinje.geojson",
+      "type": "geojson"
+    },
+    "Hansynpkt": {
+      "data": "http://localhost:4200/assets/springfield/geodatapackage/Hansynpunkt.geojson",
+      "type": "geojson"
+    },
+    "Hansynyta": {
+      "data": "http://localhost:4200/assets/springfield/geodatapackage/Hansynyta.geojson",
+      "type": "geojson"
+    },
+    "Historiska_ortofoton_1960": {
+      "maxzoom": 24,
+      "minzoom": 12,
+      "tiles": [
+        "http://localhost:4200/tiles/Historiska_ortofoton_1960/{z}/{x}/{y}.png"
+      ],
+      "type": "raster"
+    },
+    "Historiska_ortofoton_1975": {
+      "maxzoom": 24,
+      "minzoom": 12,
+      "tiles": [
+        "http://localhost:4200/tiles/Historiska_ortofoton_1975/{z}/{x}/{y}.png"
+      ],
+      "type": "raster"
+    },
+    "Kronslutenhet": {
+      "maxzoom": 24,
+      "minzoom": 12,
+      "tiles": [
+        "http://localhost:4200/tiles/Kronslutenhet/{z}/{x}/{y}.png"
+      ],
+      "type": "raster"
+    },
+    "Kulturminnelinje": {
+      "data": "http://localhost:4200/assets/springfield/geodatapackage/Kulturminne_linje.geojson",
+      "type": "geojson"
+    },
+    "Kulturminnepkt": {
+      "data": "http://localhost:4200/assets/springfield/geodatapackage/Kulturminne_punkt.geojson",
+      "type": "geojson"
+    },
+    "Kulturminneyta": {
+      "data": "http://localhost:4200/assets/springfield/geodatapackage/Kulturminne_yta.geojson",
+      "type": "geojson"
+    },
+    "Lutningsklass": {
+      "maxzoom": 24,
+      "minzoom": 12,
+      "tiles": [
+        "http://localhost:4200/tiles/Lutningsklass/{z}/{x}/{y}.png"
+      ],
+      "type": "raster"
+    },
+    "Markfuktighet_SLU": {
+      "maxzoom": 24,
+      "minzoom": 12,
+      "tiles": [
+        "http://localhost:4200/tiles/Markfuktighet_SLU/{z}/{x}/{y}.png"
+      ],
+      "type": "raster"
+    },
+    "Markskuggning": {
+      "maxzoom": 24,
+      "minzoom": 12,
+      "tiles": [
+        "http://localhost:4200/tiles/Markskuggning/{z}/{x}/{y}.png"
+      ],
+      "type": "raster"
+    },
+    "Ortofoto": {
+      "maxzoom": 24,
+      "minzoom": 7,
+      "tiles": [
+        "http://localhost:4200/tiles/Ortofoto/{z}/{x}/{y}.png"
+      ],
+      "type": "raster"
+    },
+    "RestriktionArtforekomst": {
+      "data": "http://localhost:4200/assets/springfield/geodatapackage/RestriktionArtforekomst.geojson",
+      "type": "geojson"
+    },
+    "RestriktionExterna": {
+      "data": "http://localhost:4200/assets/springfield/geodatapackage/RestriktionExterna.geojson",
+      "type": "geojson"
+    },
+    "RestriktionNaturvardSveaskog": {
+      "data": "http://localhost:4200/assets/springfield/geodatapackage/RestriktionNaturvardSveaskog.geojson",
+      "type": "geojson"
+    },
+    "RestriktionYta": {
+      "data": "http://localhost:4200/assets/springfield/geodatapackage/RestriktionYta.geojson",
+      "type": "geojson"
+    },
+    "Skifte": {
+      "data": "http://localhost:4200/assets/springfield/geodatapackage/Skifte.geojson",
+      "type": "geojson"
+    },
+    "Skuggad_kronmodell": {
+      "maxzoom": 24,
+      "minzoom": 12,
+      "tiles": [
+        "http://localhost:4200/tiles/Skuggad_kronmodell/{z}/{x}/{y}.png"
+      ],
+      "type": "raster"
+    },
+    "Skuggadhojd": {
+      "maxzoom": 24,
+      "minzoom": 12,
+      "tiles": [
+        "http://localhost:4200/tiles/Skuggadhojd/{z}/{x}/{y}.png"
+      ],
+      "type": "raster"
+    },
+    "Tradhojd": {
+      "maxzoom": 24,
+      "minzoom": 12,
+      "tiles": [
+        "http://localhost:4200/tiles/Tradhojd/{z}/{x}/{y}.png"
+      ],
+      "type": "raster"
+    },
+    "Traktorvag": {
+      "data": "http://localhost:4200/assets/springfield/geodatapackage/Traktorvag.geojson",
+      "type": "geojson"
+    },
+    "Vagkarta": {
+      "maxzoom": 24,
+      "minzoom": 12,
+      "tiles": [
+        "http://localhost:4200/tiles/Vagkarta/{z}/{x}/{y}.png"
+      ],
+      "type": "raster"
+    },
+    "Vinterbilbasvag": {
+      "data": "http://localhost:4200/assets/springfield/geodatapackage/Vinterbilbasvag.geojson",
+      "type": "geojson"
+    }
+  },
+  "sprite": "http://localhost:4200/assets/springfield/geodatapackage/sprite/spring_sprites",
+  "version": 8,
+  "zoom": 0.861983335785597
+}
