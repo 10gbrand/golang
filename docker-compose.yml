@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  app:
+    image: my-app:latest # Byt ut detta mot namnet på din Docker-image
+    build:
+      context: . # Bygg från den aktuella katalogen om du inte redan har byggt imagen
+    volumes:
+      - ./styles/result:/app/styles/result # Mappa den lokala katalogen till containerns katalog
+    restart: always # Starta om containern automatiskt vid behov

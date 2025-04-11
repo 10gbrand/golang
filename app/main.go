@@ -20,7 +20,7 @@ type CSVEntry struct {
 }
 
 func main() {
-	entries, err := readCSV("layer_styles/def/stylefiles.csv")
+	entries, err := readCSV("styles/def/stylefiles.csv")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -44,7 +44,7 @@ func processTarget(target string, entries []CSVEntry) {
 	mergedSpringGroups := mergeSpringGroups(sortedForGroups)
 
 	// Använd den fasta JSON-filen istället för sortedForLayers[0].SrcFile
-	baseData := getBaseJSON("mall4layer") // Ingen dynamisk fil, använder "mall4layer.json"
+	baseData := getBaseJSON("def/mall4layer") // Ingen dynamisk fil, använder "mall4layer.json"
 	updateJSONStructure(baseData, mergedLayers, mergedSources, mergedSpringGroups)
 
 	writeOutput(target, baseData)
@@ -165,7 +165,7 @@ func mergeSpringGroups(entries []CSVEntry) []interface{} {
 }
 
 func getBaseJSON(srcFile string) map[string]interface{} {
-	path := filepath.Join("layer_styles/def", srcFile+".json")
+	path := filepath.Join("styles", srcFile+".json")
 	data, err := os.ReadFile(path)
 	if err != nil {
 		log.Fatal(err)
@@ -185,7 +185,7 @@ func writeOutput(target string, data map[string]interface{}) {
 	// Lägg till GUID i JSON-strukturen
 	data["id"] = randomID
 
-	outputPath := filepath.Join("layer_styles/def/result", target+".json")
+	outputPath := filepath.Join("styles/result", target+".json")
 	err := os.MkdirAll(filepath.Dir(outputPath), os.ModePerm)
 	if err != nil {
 		log.Fatal(err)
