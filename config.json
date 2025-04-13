@@ -1,7 +1,6 @@
 {
     "csvPath": "styles/def/stylefiles.csv",
     "baseJSONPath": "styles",
-    "resultDir": "styles/result",
-    "defaultBaseJSON": "def/mall4layer"
+    "resultDir": "styles/result"
   }
   

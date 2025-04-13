@@ -12,7 +12,7 @@
   "metadata": {
     "maputnik:renderer": "mbgljs",
     "springGroups": [],
-    "springStyleOrder": 1,
+    "springStyleOrder": 2,
     "springStyleVersion": "0.1"
   },
     "sprite": "http://localhost:4200/assets/springfield/geodatapackage/sprite/spring_sprites",

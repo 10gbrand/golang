@@ -6,7 +6,7 @@
     62.91542224
   ],
   "glyphs": "http://localhost:4200/assets/springfield/geodatapackage/font-glyphs/glyphs/{fontstack}/{range}.pbf",
-  "id": "57838629-0958-44bf-b0de-94f4a2889e34",
+  "id": "23f3fadd-d008-4528-a474-f05ae39906ed",
   "layers": [
     {
       "id": "Vagkarta",
@@ -1665,7 +1665,7 @@
         "visible": true
       }
     ],
-    "springStyleOrder": 1,
+    "springStyleOrder": 2,
     "springStyleVersion": "0.1"
   },
   "name": "Mall",

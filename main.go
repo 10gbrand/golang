@@ -13,10 +13,9 @@ import (
 )
 
 type Config struct {
-	CSVPath         string `json:"csvPath"`
-	BaseJSONPath    string `json:"baseJSONPath"`
-	ResultDir       string `json:"resultDir"`
-	DefaultBaseJSON string `json:"defaultBaseJSON"`
+	CSVPath      string `json:"csvPath"`
+	BaseJSONPath string `json:"baseJSONPath"`
+	ResultDir    string `json:"resultDir"`
 }
 
 type CSVEntry struct {
@@ -70,7 +69,18 @@ func processTarget(target string, entries []CSVEntry) {
 	sortedForGroups := sortEntries(entries, false)
 	mergedSpringGroups := mergeSpringGroups(sortedForGroups)
 
-	baseData := getBaseJSON(config.DefaultBaseJSON)
+	//	baseData := getBaseJSON(config.DefaultBaseJSON)
+	//
+	// Strip ".json" om det redan finns
+	targetBase := target
+	if filepath.Ext(targetBase) == ".json" {
+		targetBase = targetBase[:len(targetBase)-len(".json")]
+	}
+
+	// T.ex. mall_springfield_geodatapackage_style
+	baseFile := filepath.Join("def", "mall_"+targetBase)
+	baseData := getBaseJSON(baseFile)
+
 	updateJSONStructure(baseData, mergedLayers, mergedSources, mergedSpringGroups)
 
 	writeOutput(target, baseData)
