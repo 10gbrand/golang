@@ -9,8 +9,15 @@ import (
 	"sort"
 	"strconv"
 
-	"github.com/google/uuid" // Importera uuid-paketet
+	"github.com/google/uuid"
 )
+
+type Config struct {
+	CSVPath         string `json:"csvPath"`
+	BaseJSONPath    string `json:"baseJSONPath"`
+	ResultDir       string `json:"resultDir"`
+	DefaultBaseJSON string `json:"defaultBaseJSON"`
+}
 
 type CSVEntry struct {
 	Aktiv      int
@@ -19,8 +26,16 @@ type CSVEntry struct {
 	Order      float64
 }
 
+var config Config
+
 func main() {
-	entries, err := readCSV("styles/def/stylefiles.csv")
+	var err error
+	config, err = loadConfig("config.json")
+	if err != nil {
+		log.Fatalf("Kunde inte läsa konfigurationsfil: %v", err)
+	}
+
+	entries, err := readCSV(config.CSVPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -30,6 +45,18 @@ func main() {
 	for target, entries := range targets {
 		processTarget(target, entries)
 	}
+}
+
+func loadConfig(path string) (Config, error) {
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return Config{}, err
+	}
+	var cfg Config
+	if err := json.Unmarshal(data, &cfg); err != nil {
+		return Config{}, err
+	}
+	return cfg, nil
 }
 
 func processTarget(target string, entries []CSVEntry) {
@@ -43,8 +70,7 @@ func processTarget(target string, entries []CSVEntry) {
 	sortedForGroups := sortEntries(entries, false)
 	mergedSpringGroups := mergeSpringGroups(sortedForGroups)
 
-	// Använd den fasta JSON-filen istället för sortedForLayers[0].SrcFile
-	baseData := getBaseJSON("def/mall4layer") // Ingen dynamisk fil, använder "mall4layer.json"
+	baseData := getBaseJSON(config.DefaultBaseJSON)
 	updateJSONStructure(baseData, mergedLayers, mergedSources, mergedSpringGroups)
 
 	writeOutput(target, baseData)
@@ -58,8 +84,6 @@ func updateJSONStructure(base map[string]interface{}, layers []interface{}, sour
 		metadata["springGroups"] = groups
 	}
 }
-
-// Implementerade hjälpfunktioner
 
 func readCSV(path string) ([]CSVEntry, error) {
 	file, err := os.Open(path)
@@ -77,7 +101,7 @@ func readCSV(path string) ([]CSVEntry, error) {
 
 	var entries []CSVEntry
 	for i, record := range records {
-		if i == 0 { // Skip header
+		if i == 0 {
 			continue
 		}
 		if len(record) != 4 {
@@ -127,12 +151,10 @@ func mergeLayersAndSources(entries []CSVEntry) ([]interface{}, map[string]interf
 	for _, entry := range entries {
 		data := getBaseJSON(entry.SrcFile)
 
-		// Lägg till layers
 		if l, ok := data["layers"].([]interface{}); ok {
 			layers = append(layers, l...)
 		}
 
-		// Merge sources
 		if s, ok := data["sources"].(map[string]interface{}); ok {
 			for k, v := range s {
 				sources[k] = v
@@ -156,7 +178,6 @@ func mergeSpringGroups(entries []CSVEntry) []interface{} {
 		}
 	}
 
-	// Reverse order for springGroups
 	for i, j := 0, len(groups)-1; i < j; i, j = i+1, j-1 {
 		groups[i], groups[j] = groups[j], groups[i]
 	}
@@ -165,7 +186,7 @@ func mergeSpringGroups(entries []CSVEntry) []interface{} {
 }
 
 func getBaseJSON(srcFile string) map[string]interface{} {
-	path := filepath.Join("styles", srcFile+".json")
+	path := filepath.Join(config.BaseJSONPath, srcFile+".json")
 	data, err := os.ReadFile(path)
 	if err != nil {
 		log.Fatal(err)
@@ -179,13 +200,10 @@ func getBaseJSON(srcFile string) map[string]interface{} {
 }
 
 func writeOutput(target string, data map[string]interface{}) {
-	// Generera ett slumpmässigt GUID
 	randomID := uuid.New().String()
-
-	// Lägg till GUID i JSON-strukturen
 	data["id"] = randomID
 
-	outputPath := filepath.Join("styles/result", target+".json")
+	outputPath := filepath.Join(config.ResultDir, target+".json")
 	err := os.MkdirAll(filepath.Dir(outputPath), os.ModePerm)
 	if err != nil {
 		log.Fatal(err)
