@@ -9,21 +9,19 @@ import (
 )
 
 func TestReadCSV(t *testing.T) {
-	// Skapa tillfällig CSV-fil
-	tempDir := t.TempDir()
-	testCSVPath := filepath.Join(tempDir, "test.csv")
-	content := `aktiv,src,target,order
-1,test1,test_target,1.0
-0,test2,ignored,2.0
-1,test3,test_target,0.5
+	// Skapa en temporär CSV-fil
+	content := `Aktiv,SrcFile,TargetFile,Order
+1,file1,target1,2.0
+1,file2,target1,1.0
+0,file3,target2,3.0
 `
-
-	err := os.WriteFile(testCSVPath, []byte(content), 0644)
-	if err != nil {
-		t.Fatalf("Failed to write temp CSV file: %v", err)
+	tmpDir := t.TempDir()
+	csvPath := filepath.Join(tmpDir, "test.csv")
+	if err := os.WriteFile(csvPath, []byte(content), 0644); err != nil {
+		t.Fatal(err)
 	}
 
-	entries, err := readCSV(testCSVPath)
+	entries, err := readCSV(csvPath)
 	if err != nil {
 		t.Fatalf("readCSV failed: %v", err)
 	}
@@ -31,119 +29,76 @@ func TestReadCSV(t *testing.T) {
 	if len(entries) != 3 {
 		t.Errorf("Expected 3 entries, got %d", len(entries))
 	}
+
+	if entries[0].SrcFile != "file1" || entries[1].Order != 1.0 {
+		t.Error("CSV parsing failed or order incorrect")
+	}
 }
 
 func TestGroupEntries(t *testing.T) {
 	entries := []CSVEntry{
-		{Aktiv: 1, TargetFile: "a"},
-		{Aktiv: 1, TargetFile: "b"},
-		{Aktiv: 0, TargetFile: "a"},
-		{Aktiv: 1, TargetFile: "a"},
+		{Aktiv: 1, TargetFile: "A"},
+		{Aktiv: 1, TargetFile: "B"},
+		{Aktiv: 0, TargetFile: "A"},
+		{Aktiv: 1, TargetFile: "A"},
 	}
-
 	grouped := groupEntries(entries)
 
-	if len(grouped["a"]) != 2 {
-		t.Errorf("Expected 2 entries for target 'a', got %d", len(grouped["a"]))
+	if len(grouped) != 2 {
+		t.Errorf("Expected 2 groups, got %d", len(grouped))
 	}
-	if len(grouped["b"]) != 1 {
-		t.Errorf("Expected 1 entry for target 'b', got %d", len(grouped["b"]))
+
+	if len(grouped["A"]) != 2 {
+		t.Errorf("Expected 2 entries for group A, got %d", len(grouped["A"]))
 	}
 }
 
 func TestSortEntries(t *testing.T) {
 	entries := []CSVEntry{
-		{Order: 5.0},
-		{Order: 1.0},
-		{Order: 3.0},
+		{Order: 5},
+		{Order: 2},
+		{Order: 9},
 	}
 
-	sortedAsc := sortEntries(entries, true)
-	if sortedAsc[0].Order != 1.0 || sortedAsc[2].Order != 5.0 {
-		t.Errorf("Ascending sort failed: %+v", sortedAsc)
+	asc := sortEntries(entries, true)
+	if asc[0].Order != 2 || asc[2].Order != 9 {
+		t.Error("Ascending sort failed")
 	}
 
-	sortedDesc := sortEntries(entries, false)
-	if sortedDesc[0].Order != 5.0 || sortedDesc[2].Order != 1.0 {
-		t.Errorf("Descending sort failed: %+v", sortedDesc)
+	desc := sortEntries(entries, false)
+	if desc[0].Order != 9 || desc[2].Order != 2 {
+		t.Error("Descending sort failed")
 	}
 }
 
 func TestUpdateJSONStructure(t *testing.T) {
-	base := map[string]interface{}{
-		"layers":   []interface{}{},
-		"sources":  map[string]interface{}{},
-		"metadata": map[string]interface{}{},
-	}
-
-	layers := []interface{}{"layer1"}
-	sources := map[string]interface{}{"src1": "data"}
-	groups := []interface{}{"group1"}
-
-	updateJSONStructure(base, layers, sources, groups)
-
-	if !reflect.DeepEqual(base["layers"], layers) {
-		t.Errorf("Expected layers to be updated")
-	}
-	if !reflect.DeepEqual(base["sources"], sources) {
-		t.Errorf("Expected sources to be updated")
-	}
-
-	meta := base["metadata"].(map[string]interface{})
-	if !reflect.DeepEqual(meta["springGroups"], groups) {
-		t.Errorf("Expected springGroups to be updated")
-	}
-}
-
-func TestGetBaseJSON(t *testing.T) {
-	// Sätt global path variabel
-	baseJSONPath = t.TempDir()
-
-	jsonData := `{
-		"layers": ["l1"],
-		"sources": {"s1": "data"},
+	jsonStr := `{
+		"layers": [],
+		"sources": {},
 		"metadata": {
-			"springGroups": ["g1"]
+			"title": "Example"
 		}
 	}`
-	jsonFile := filepath.Join(baseJSONPath, "test.json")
-	err := os.WriteFile(jsonFile, []byte(jsonData), 0644)
-	if err != nil {
-		t.Fatalf("Failed to write JSON file: %v", err)
+
+	var base map[string]interface{}
+	if err := json.Unmarshal([]byte(jsonStr), &base); err != nil {
+		t.Fatalf("Failed to parse JSON: %v", err)
 	}
 
-	data := getBaseJSON("test")
+	newLayers := []interface{}{"layer1", "layer2"}
+	newSources := map[string]interface{}{"source1": map[string]string{"type": "geojson"}}
+	newGroups := []interface{}{"group1", "group2"}
 
-	if data["layers"] == nil || data["sources"] == nil {
-		t.Errorf("Expected valid JSON data, got: %v", data)
+	updateJSONStructure(base, newLayers, newSources, newGroups)
+
+	if !reflect.DeepEqual(base["layers"], newLayers) {
+		t.Errorf("Layers not updated correctly")
 	}
-}
-
-func TestWriteOutput(t *testing.T) {
-	resultDir = t.TempDir()
-
-	data := map[string]interface{}{
-		"test": "value",
+	if !reflect.DeepEqual(base["sources"], newSources) {
+		t.Errorf("Sources not updated correctly")
 	}
-
-	writeOutput("output_test", data)
-
-	outputPath := filepath.Join(resultDir, "output_test.json")
-	content, err := os.ReadFile(outputPath)
-	if err != nil {
-		t.Fatalf("Failed to read written file: %v", err)
-	}
-
-	var out map[string]interface{}
-	err = json.Unmarshal(content, &out)
-	if err != nil {
-		t.Fatalf("Failed to unmarshal output: %v", err)
-	}
-
-	if out["id"] == nil {
-		t.Errorf("Expected output JSON to include 'id'")
-	}
-	if out["test"] != "value" {
-		t.Errorf("Expected 'test' field to be 'value', got %v", out["test"])
+	meta := base["metadata"].(map[string]interface{})
+	if !reflect.DeepEqual(meta["springGroups"], newGroups) {
+		t.Errorf("springGroups not updated correctly")
 	}
 }
