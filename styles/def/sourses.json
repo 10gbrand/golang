@@ -17,6 +17,10 @@
         "app": {
             "type": "vector",
             "data": "/springfield/geodatapackage/Atgard.fgb"
+        },
+        "online": {
+            "type": "vector",
+            "tiles": ["https://springadmin-preprod.sveaskog.se/pgtileservgeo/geodata.atgard/{z}/{x}/{y}.pbf"]
         }
     },
     "Avdelning": {
@@ -27,6 +31,10 @@
         "app": {
             "type": "vector",
             "data": "/springfield/geodatapackage/Atgard.fgb"
+        },
+        "online": {
+            "type": "vector",
+            "tiles": ["https://springadmin-preprod.sveaskog.se/pgtileservgeo/geodata.avdelning/{z}/{x}/{y}.pbf"]
         }
     },
     "Drivningspkt": {
@@ -37,6 +45,10 @@
         "app": {
             "type": "vector",
             "data": "/springfield/geodatapackage/Drivningspunkt.fgb"
+        },
+        "online": {
+            "type": "vector",
+            "tiles": ["https://springadmin-preprod.sveaskog.se/pgtileservgeo/geodata.drivningspunkt/{z}/{x}/{y}.pbf"]
         }
     },
     "Fornlamninglinje": {
@@ -77,6 +89,10 @@
         "app": {
             "type": "vector",
             "data": "/springfield/geodatapackage/Hansynlinje.fgb"
+        },
+        "online": {
+            "type": "vector",
+            "tiles": ["https://springadmin-preprod.sveaskog.se/pgtileservgeo/geodata.hansynslinje/{z}/{x}/{y}.pbf"]
         }
     },
     "Hansynpkt": {
@@ -87,6 +103,10 @@
         "app": {
             "type": "vector",
             "data": "/springfield/geodatapackage/Hansynpunkt.fgb"
+        },
+        "online": {
+            "type": "vector",
+            "tiles": ["https://springadmin-preprod.sveaskog.se/pgtileservgeo/geodata.hansynspunkt/{z}/{x}/{y}.pbf"]
         }
     },
     "Hansynyta": {
@@ -97,6 +117,10 @@
         "app": {
             "type": "vector",
             "data": "/springfield/geodatapackage/Hansynyta.fgb"
+        },
+        "online": {
+            "type": "vector",
+            "tiles": ["https://springadmin-preprod.sveaskog.se/pgtileservgeo/geodata.hansynsyta/{z}/{x}/{y}.pbf"]
         }
     },
     "Historiska_ortofoton_1960": {
@@ -165,7 +189,12 @@
         "app": {
             "type": "vector",
             "data": "/springfield/geodatapackage/Kulturminne_punkt.fgb"
+        },
+        "online": {
+            "type": "vector",
+            "data": ["https://springadmin-preprod.sveaskog.se/geoserver/ogc/features/v1/collections/spring:GSKOGHISTPKT"]
         }
+        
     },
     "Kulturminneyta": {
         "localhost": {
@@ -175,6 +204,10 @@
         "app": {
             "type": "vector",
             "data": "/springfield/geodatapackage/Fornminne_yta.fgb"
+        },
+        "online": {
+            "type": "vector",
+            "data": ["https://springadmin-preprod.sveaskog.se/geoserver/ogc/features/v1/collections/spring:GSKOGHISTYTA"]
         }
     },
     "Lutningsklass": {
@@ -289,6 +322,10 @@
         "app": {
             "type": "vector",
             "data": "/springfield/geodatapackage/Skifte.fgb"
+        },
+        "online": {
+            "type": "vector",
+            "tiles": ["https://springadmin-preprod.sveaskog.se/pgtileservgeo/geodata.skifte/{z}/{x}/{y}.pbf"]
         }
     },
     "Skuggad_kronmodell": {
@@ -347,6 +384,10 @@
         "app": {
             "type": "vector",
             "data": "/springfield/geodatapackage/Traktorvag.fgb"
+        },
+        "online": {
+            "type": "vector",
+            "tiles": ["https://springadmin-preprod.sveaskog.se/pgtileservgeo/geodata.traktorvag/{z}/{x}/{y}.pbf"]
         }
     },
     "Vagkarta": {
@@ -373,6 +414,10 @@
         "app": {
             "type": "vector",
             "data": "/springfield/geodatapackage/Vinterbilbasvag.fgb"
+        },
+        "online": {
+            "type": "vector",
+            "tiles": ["https://springadmin-preprod.sveaskog.se/pgtileservgeo/geodata.vinterbilbasvag/{z}/{x}/{y}.pbf"]
         }
     },
     "geonotes": {
