@@ -1,0 +1,388 @@
+{
+    "Anmalan": {
+        "localhost": {
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Anmalan.geojson",
+            "type": "geojson"
+        },
+        "app": {
+            "type": "vector",
+            "data": "/springfield/geodatapackage/Anmalan.fgb"
+        }
+    },
+    "Atgard": {
+        "localhost": {
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Atgard.geojson",
+            "type": "geojson"
+        },
+        "app": {
+            "type": "vector",
+            "data": "/springfield/geodatapackage/Atgard.fgb"
+        }
+    },
+    "Avdelning": {
+        "localhost": {
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Avdelning.geojson",
+            "type": "geojson"
+        },
+        "app": {
+            "type": "vector",
+            "data": "/springfield/geodatapackage/Atgard.fgb"
+        }
+    },
+    "Drivningspkt": {
+        "localhost": {
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Drivningspunkt.geojson",
+            "type": "geojson"
+        },
+        "app": {
+            "type": "vector",
+            "data": "/springfield/geodatapackage/Drivningspunkt.fgb"
+        }
+    },
+    "Fornlamninglinje": {
+        "localhost": {
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Fornminne_linje.geojson",
+            "type": "geojson"
+        },
+        "app": {
+            "type": "vector",
+            "data": "/springfield/geodatapackage/Fornminne_linje.fgb"
+        }
+    },
+    "Fornlamningpkt": {
+        "localhost": {
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Fornminne_punkt.geojson",
+            "type": "geojson"
+        },
+        "app": {
+            "type": "vector",
+            "data": "/springfield/geodatapackage/Fornminne_punkt.fgb"
+        }
+    },
+    "Fornlamningyta": {
+        "localhost": {
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Fornminne_yta.geojson",
+            "type": "geojson"
+        },
+        "app": {
+            "type": "vector",
+            "data": "/springfield/geodatapackage/Fornminne_yta.fgb"
+        }
+    },
+    "Hansynlinje": {
+        "localhost": {
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Hansynlinje.geojson",
+            "type": "geojson"
+        },
+        "app": {
+            "type": "vector",
+            "data": "/springfield/geodatapackage/Hansynlinje.fgb"
+        }
+    },
+    "Hansynpkt": {
+        "localhost": {
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Hansynpunkt.geojson",
+            "type": "geojson"
+        },
+        "app": {
+            "type": "vector",
+            "data": "/springfield/geodatapackage/Hansynpunkt.fgb"
+        }
+    },
+    "Hansynyta": {
+        "localhost": {
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Hansynyta.geojson",
+            "type": "geojson"
+        },
+        "app": {
+            "type": "vector",
+            "data": "/springfield/geodatapackage/Hansynyta.fgb"
+        }
+    },
+    "Historiska_ortofoton_1960": {
+        "localhost": {
+            "maxzoom": 24,
+            "minzoom": 12,
+            "tiles": [
+                "http://localhost:4200/tiles/Historiska_ortofoton_1960/{z}/{x}/{y}.png"
+            ],
+            "type": "raster"
+        },
+        "app": {
+            "type": "raster",
+            "minzoom": 12,
+            "maxzoom": 24,
+            "url": "/Historiska_ortofoton_1960.tif"
+        }
+    },
+    "Historiska_ortofoton_1975": {
+        "localhost": {
+            "maxzoom": 24,
+            "minzoom": 12,
+            "tiles": [
+                "http://localhost:4200/tiles/Historiska_ortofoton_1975/{z}/{x}/{y}.png"
+            ],
+            "type": "raster"
+        },
+        "app": {
+            "type": "raster",
+            "minzoom": 12,
+            "maxzoom": 24,
+            "url": "/Historiska_ortofoton_1975.tif"
+        }
+    },
+    "Kronslutenhet": {
+        "localhost": {
+            "maxzoom": 24,
+            "minzoom": 12,
+            "tiles": [
+                "http://localhost:4200/tiles/Kronslutenhet/{z}/{x}/{y}.png"
+            ],
+            "type": "raster"
+        },
+        "app": {
+            "type": "raster",
+            "minzoom": 12,
+            "maxzoom": 24,
+            "url": "/Kronslutenhet.tif"
+        }
+    },
+    "Kulturminnelinje": {
+        "localhost": {
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Kulturminne_linje.geojson",
+            "type": "geojson"
+        },
+        "app": {
+            "type": "vector",
+            "data": "/springfield/geodatapackage/Kulturminne_linje.fgb"
+        }
+    },
+    "Kulturminnepkt": {
+        "localhost": {
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Kulturminne_punkt.geojson",
+            "type": "geojson"
+        },
+        "app": {
+            "type": "vector",
+            "data": "/springfield/geodatapackage/Kulturminne_punkt.fgb"
+        }
+    },
+    "Kulturminneyta": {
+        "localhost": {
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Kulturminne_yta.geojson",
+            "type": "geojson"
+        },
+        "app": {
+            "type": "vector",
+            "data": "/springfield/geodatapackage/Fornminne_yta.fgb"
+        }
+    },
+    "Lutningsklass": {
+        "localhost": {
+            "maxzoom": 24,
+            "minzoom": 12,
+            "tiles": [
+                "http://localhost:4200/tiles/Lutningsklass/{z}/{x}/{y}.png"
+            ],
+            "type": "raster"
+        },
+        "app": {
+            "type": "raster",
+            "minzoom": 12,
+            "maxzoom": 24,
+            "url": "/Lutningsklass.tif"
+        }
+    },
+    "Markfuktighet_SLU": {
+        "localhost": {
+            "maxzoom": 24,
+            "minzoom": 12,
+            "tiles": [
+                "http://localhost:4200/tiles/Markfuktighet_SLU/{z}/{x}/{y}.png"
+            ],
+            "type": "raster"
+        },
+        "app": {
+            "type": "raster",
+            "minzoom": 12,
+            "maxzoom": 24,
+            "url": "/Markfuktighet_SLU.tif"
+        }
+    },
+    "Markskuggning": {
+        "localhost": {
+            "maxzoom": 24,
+            "minzoom": 12,
+            "tiles": [
+                "http://localhost:4200/tiles/Markskuggning/{z}/{x}/{y}.png"
+            ],
+            "type": "raster"
+        },
+        "app": {
+            "type": "raster",
+            "minzoom": 12,
+            "maxzoom": 24,
+            "url": "/Markskuggning.tif"
+        }
+    },
+    "Ortofoto": {
+        "localhost": {
+            "maxzoom": 24,
+            "minzoom": 7,
+            "tiles": [
+                "http://localhost:4200/tiles/Ortofoto/{z}/{x}/{y}.png"
+            ],
+            "type": "raster"
+        },
+        "app": {
+            "type": "raster",
+            "minzoom": 7,
+            "maxzoom": 24,
+            "url": "/Ortofoto.tif"
+        }
+    },
+    "RestriktionArtforekomst": {
+        "localhost": {
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/RestriktionArtforekomst.geojson",
+            "type": "geojson"
+        },
+        "app": {
+            "type": "vector",
+            "data": "/springfield/geodatapackage/RestriktionArtforekomst.fgb"
+        }
+    },
+    "RestriktionExterna": {
+        "localhost": {
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/RestriktionExterna.geojson",
+            "type": "geojson"
+        },
+        "app": {
+            "type": "vector",
+            "data": "/springfield/geodatapackage/RestriktionExterna.fgb"
+        }
+    },
+    "RestriktionNaturvardSveaskog": {
+        "localhost": {
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/RestriktionNaturvardSveaskog.geojson",
+            "type": "geojson"
+        },
+        "app": {
+            "type": "vector",
+            "data": "/springfield/geodatapackage/RestriktionNaturvardSveaskog.fgb"
+        }
+    },
+    "RestriktionYta": {
+        "localhost": {
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/RestriktionYta.geojson",
+            "type": "geojson"
+        },
+        "app": {
+            "type": "vector",
+            "data": "/springfield/geodatapackage/RestriktionYta.fgb"
+        }
+    },
+    "Skifte": {
+        "localhost": {
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Skifte.geojson",
+            "type": "geojson"
+        },
+        "app": {
+            "type": "vector",
+            "data": "/springfield/geodatapackage/Skifte.fgb"
+        }
+    },
+    "Skuggad_kronmodell": {
+        "localhost": {
+            "maxzoom": 24,
+            "minzoom": 12,
+            "tiles": [
+                "http://localhost:4200/tiles/Skuggad_kronmodell/{z}/{x}/{y}.png"
+            ],
+            "type": "raster"
+        },
+        "app": {
+            "type": "raster",
+            "minzoom": 12,
+            "maxzoom": 24,
+            "url": "/Skuggad_kronmodell.tif"
+        }
+    },
+    "Skuggadhojd": {
+        "localhost": {
+            "maxzoom": 24,
+            "minzoom": 12,
+            "tiles": [
+                "http://localhost:4200/tiles/Skuggadhojd/{z}/{x}/{y}.png"
+            ],
+            "type": "raster"
+        },
+        "app": {
+            "type": "raster",
+            "minzoom": 12,
+            "maxzoom": 24,
+            "url": "/Skuggadhojd.tif"
+        }
+    },
+    "Tradhojd": {
+        "localhost": {
+            "maxzoom": 24,
+            "minzoom": 12,
+            "tiles": [
+                "http://localhost:4200/tiles/Tradhojd/{z}/{x}/{y}.png"
+            ],
+            "type": "raster"
+        },
+        "app": {
+            "type": "raster",
+            "minzoom": 12,
+            "maxzoom": 24,
+            "url": "/Tradhojd.tif"
+        }
+    },
+    "Traktorvag": {
+        "localhost": {
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Traktorvag.geojson",
+            "type": "geojson"
+        },
+        "app": {
+            "type": "vector",
+            "data": "/springfield/geodatapackage/Traktorvag.fgb"
+        }
+    },
+    "Vagkarta": {
+        "localhost": {
+            "maxzoom": 24,
+            "minzoom": 12,
+            "tiles": [
+                "http://localhost:4200/tiles/Vagkarta/{z}/{x}/{y}.png"
+            ],
+            "type": "raster"
+        },
+        "app": {
+            "type": "raster",
+            "minzoom": 12,
+            "maxzoom": 24,
+            "url": "/Vagkarta.tif"
+        }
+    },
+    "Vinterbilbasvag": {
+        "localhost": {
+            "data": "http://localhost:4200/assets/springfield/geodatapackage/Vinterbilbasvag.geojson",
+            "type": "geojson"
+        },
+        "app": {
+            "type": "vector",
+            "data": "/springfield/geodatapackage/Vinterbilbasvag.fgb"
+        }
+    },
+    "geonotes": {
+        "localhost": {
+            "data": "http://localhost:4200/assets/springfield/geonote/geonotes.geojson",
+            "type": "geojson"
+        },
+        "app": {
+            "type": "vector",
+            "data": "/springfield/geonote/geonotes"
+        }
+    }
+}

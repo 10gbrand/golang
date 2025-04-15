@@ -1,12 +1,148 @@
 {
-  "$schema": "../spring_style_schema.json",
-  "bearing": 0,
-  "center": [
-    17.3145660472,
-    62.91542224
-  ],
-  "glyphs": "http://localhost:4200/assets/springfield/geodatapackage/font-glyphs/glyphs/{fontstack}/{range}.pbf",
-  "id": "6172eb87-cd1b-4a04-8a46-0fcaf43779b1",
+  "sources": {
+    "Anmalan": {
+      "data": "/springfield/geodatapackage/Anmalan.fgb",
+      "type": "vector"
+    },
+    "Atgard": {
+      "data": "/springfield/geodatapackage/Atgard.fgb",
+      "type": "vector"
+    },
+    "Avdelning": {
+      "data": "/springfield/geodatapackage/Atgard.fgb",
+      "type": "vector"
+    },
+    "Drivningspkt": {
+      "data": "/springfield/geodatapackage/Drivningspunkt.fgb",
+      "type": "vector"
+    },
+    "Fornlamninglinje": {
+      "data": "/springfield/geodatapackage/Fornminne_linje.fgb",
+      "type": "vector"
+    },
+    "Fornlamningpkt": {
+      "data": "/springfield/geodatapackage/Fornminne_punkt.fgb",
+      "type": "vector"
+    },
+    "Fornlamningyta": {
+      "data": "/springfield/geodatapackage/Fornminne_yta.fgb",
+      "type": "vector"
+    },
+    "Hansynlinje": {
+      "data": "/springfield/geodatapackage/Hansynlinje.fgb",
+      "type": "vector"
+    },
+    "Hansynpkt": {
+      "data": "/springfield/geodatapackage/Hansynpunkt.fgb",
+      "type": "vector"
+    },
+    "Hansynyta": {
+      "data": "/springfield/geodatapackage/Hansynyta.fgb",
+      "type": "vector"
+    },
+    "Historiska_ortofoton_1960": {
+      "maxzoom": 24,
+      "minzoom": 12,
+      "type": "raster",
+      "url": "/Historiska_ortofoton_1960.tif"
+    },
+    "Historiska_ortofoton_1975": {
+      "maxzoom": 24,
+      "minzoom": 12,
+      "type": "raster",
+      "url": "/Historiska_ortofoton_1975.tif"
+    },
+    "Kronslutenhet": {
+      "maxzoom": 24,
+      "minzoom": 12,
+      "type": "raster",
+      "url": "/Kronslutenhet.tif"
+    },
+    "Kulturminnelinje": {
+      "data": "/springfield/geodatapackage/Kulturminne_linje.fgb",
+      "type": "vector"
+    },
+    "Kulturminnepkt": {
+      "data": "/springfield/geodatapackage/Kulturminne_punkt.fgb",
+      "type": "vector"
+    },
+    "Kulturminneyta": {
+      "data": "/springfield/geodatapackage/Fornminne_yta.fgb",
+      "type": "vector"
+    },
+    "Lutningsklass": {
+      "maxzoom": 24,
+      "minzoom": 12,
+      "type": "raster",
+      "url": "/Lutningsklass.tif"
+    },
+    "Markfuktighet_SLU": {
+      "maxzoom": 24,
+      "minzoom": 12,
+      "type": "raster",
+      "url": "/Markfuktighet_SLU.tif"
+    },
+    "Markskuggning": {
+      "maxzoom": 24,
+      "minzoom": 12,
+      "type": "raster",
+      "url": "/Markskuggning.tif"
+    },
+    "Ortofoto": {
+      "maxzoom": 24,
+      "minzoom": 7,
+      "type": "raster",
+      "url": "/Ortofoto.tif"
+    },
+    "RestriktionArtforekomst": {
+      "data": "/springfield/geodatapackage/RestriktionArtforekomst.fgb",
+      "type": "vector"
+    },
+    "RestriktionExterna": {
+      "data": "/springfield/geodatapackage/RestriktionExterna.fgb",
+      "type": "vector"
+    },
+    "RestriktionNaturvardSveaskog": {
+      "data": "/springfield/geodatapackage/RestriktionNaturvardSveaskog.fgb",
+      "type": "vector"
+    },
+    "Skifte": {
+      "data": "/springfield/geodatapackage/Skifte.fgb",
+      "type": "vector"
+    },
+    "Skuggad_kronmodell": {
+      "maxzoom": 24,
+      "minzoom": 12,
+      "type": "raster",
+      "url": "/Skuggad_kronmodell.tif"
+    },
+    "Skuggadhojd": {
+      "maxzoom": 24,
+      "minzoom": 12,
+      "type": "raster",
+      "url": "/Skuggadhojd.tif"
+    },
+    "Tradhojd": {
+      "maxzoom": 24,
+      "minzoom": 12,
+      "type": "raster",
+      "url": "/Tradhojd.tif"
+    },
+    "Traktorvag": {
+      "data": "/springfield/geodatapackage/Traktorvag.fgb",
+      "type": "vector"
+    },
+    "Vagkarta": {
+      "maxzoom": 24,
+      "minzoom": 12,
+      "type": "raster",
+      "url": "/Vagkarta.tif"
+    },
+    "Vinterbilbasvag": {
+      "data": "/springfield/geodatapackage/Vinterbilbasvag.fgb",
+      "type": "vector"
+    }
+  },
   "layers": [
     {
       "id": "Vagkarta",
@@ -1391,456 +1527,5 @@
       "source": "Avdelning",
       "type": "symbol"
     }
-  ],
-  "metadata": {
-    "maputnik:renderer": "mbgljs",
-    "springGroups": [
-      {
-        "collapsed": true,
-        "id": "Bakgrundskarta",
-        "name": "Bakgrundskarta",
-        "springLayers": [
-          {
-            "id": "Tradhojd",
-            "name": "Tradhojd",
-            "visible": false
-          },
-          {
-            "id": "Skuggadhojd",
-            "name": "Skuggadhojd",
-            "visible": false
-          },
-          {
-            "id": "Skuggad_kronmodell",
-            "name": "Skuggad_kronmodell",
-            "visible": false
-          },
-          {
-            "id": "Markskuggning",
-            "name": "Markskuggning",
-            "visible": false
-          },
-          {
-            "id": "Markfuktighet_SLU",
-            "name": "Markfuktighet_SLU",
-            "visible": false
-          },
-          {
-            "id": "Lutningsklass",
-            "name": "Lutningsklass",
-            "visible": false
-          },
-          {
-            "id": "Kronslutenhet",
-            "name": "Kronslutenhet",
-            "visible": false
-          },
-          {
-            "id": "Historiska_ortofoton_1975",
-            "name": "Orto 1975",
-            "visible": false
-          },
-          {
-            "id": "Historiska_ortofoton_1960",
-            "name": "Orto 1960",
-            "visible": false
-          },
-          {
-            "id": "Ortofoto",
-            "name": "Ortofoto",
-            "visible": true
-          },
-          {
-            "id": "Vagkarta",
-            "name": "Vagkarta",
-            "visible": false
-          }
-        ],
-        "visible": true,
-        "visible_single": true
-      },
-      {
-        "collapsed": true,
-        "id": "Skifte",
-        "name": "Skifte",
-        "springLayers": [
-          {
-            "id": "Skifte",
-            "name": "Skifte",
-            "visible": true
-          }
-        ],
-        "visible": true
-      },
-      {
-        "collapsed": true,
-        "id": "Avdelning",
-        "name": "Avdelning",
-        "springLayers": [
-          {
-            "id": "Avdelning_text",
-            "name": "Avdelning_text",
-            "visible": true
-          },
-          {
-            "id": "Avdelning_linjer",
-            "name": "Avdelning linjer",
-            "visible": true
-          },
-          {
-            "id": "Utvecklingsklass",
-            "name": "Utvecklingsklass",
-            "visible": false
-          },
-          {
-            "id": "Agoslag",
-            "name": "Ägoslag",
-            "visible": true
-          },
-          {
-            "id": "Malklass",
-            "name": "Målklass",
-            "visible": false
-          }
-        ],
-        "visible": true
-      },
-      {
-        "collapsed": true,
-        "id": "Atgard",
-        "name": "Åtgärd",
-        "springLayers": [
-          {
-            "id": "Atgard_planerad",
-            "name": "Planerad",
-            "visible": true
-          },
-          {
-            "id": "Atgard_utford",
-            "name": "Utförd",
-            "visible": true
-          },
-          {
-            "id": "Atgard_taktisk",
-            "name": "Taktiska",
-            "visible": true
-          }
-        ],
-        "visible": true
-      },
-      {
-        "collapsed": true,
-        "id": "Anmalan",
-        "name": "Anmalan",
-        "springLayers": [
-          {
-            "id": "Anmalan",
-            "name": "Anmalan",
-            "visible": false
-          }
-        ],
-        "visible": true
-      },
-      {
-        "collapsed": true,
-        "id": "Restriktion",
-        "name": "Restriktion",
-        "springLayers": [
-          {
-            "id": "RestriktionNaturvardSveaskog",
-            "name": "Naturvård Sveaskog",
-            "visible": true
-          },
-          {
-            "id": "Restriktion_Externa",
-            "name": "Externa restr.",
-            "visible": true
-          }
-        ],
-        "visible": false
-      },
-      {
-        "collapsed": true,
-        "id": "Fornlamning",
-        "name": "Fornlamning",
-        "springLayers": [
-          {
-            "id": "Fornlamningyta",
-            "name": "Fornlämning yta",
-            "visible": true
-          },
-          {
-            "id": "Fornlamninglinje",
-            "name": "Fornlämning linje",
-            "visible": true
-          },
-          {
-            "id": "Fornlamningpkt",
-            "name": "Fornlämning pkt",
-            "visible": true
-          }
-        ],
-        "visible": false
-      },
-      {
-        "collapsed": true,
-        "id": "Kulturminne",
-        "name": "Kulturminne",
-        "springLayers": [
-          {
-            "id": "Kulturminnepkt",
-            "name": "Kulturminne pkt",
-            "visible": true
-          },
-          {
-            "id": "Kulturminnelinje",
-            "name": "Kulturminne linje",
-            "visible": true
-          },
-          {
-            "id": "Kulturminneyta",
-            "name": "Kulturminne yta",
-            "visible": true
-          }
-        ],
-        "visible": false
-      },
-      {
-        "collapsed": true,
-        "id": "Hansyn",
-        "name": "Hänsyn",
-        "springLayers": [
-          {
-            "id": "Hansynpkt",
-            "name": "Hänsyn pkt",
-            "visible": true
-          },
-          {
-            "id": "Hansynlinje",
-            "name": "Hänsyn linje",
-            "visible": true
-          },
-          {
-            "id": "Hansynyta",
-            "name": "Hänsyn yta",
-            "visible": true
-          }
-        ],
-        "visible": true
-      },
-      {
-        "collapsed": true,
-        "id": "Drivning",
-        "name": "Drivning",
-        "springLayers": [
-          {
-            "id": "Vinterbilbasvag",
-            "name": "Vinterbilbasväg",
-            "visible": true
-          },
-          {
-            "id": "Traktorvag",
-            "name": "Traktorväg",
-            "visible": true
-          },
-          {
-            "id": "Drivningspkt",
-            "name": "Drivning pkt",
-            "visible": true
-          }
-        ],
-        "visible": true
-      },
-      {
-        "collapsed": true,
-        "id": "Artforekomster",
-        "name": "Artforekomster",
-        "springLayers": [
-          {
-            "id": "Artforekomster",
-            "name": "Artforekomster",
-            "visible": true
-          }
-        ],
-        "visible": true
-      }
-    ],
-    "springStyleOrder": 2,
-    "springStyleVersion": "0.1"
-  },
-  "name": "Mall",
-  "pitch": 0,
-  "sources": {
-    "Anmalan": {
-      "data": "http://localhost:4200/assets/springfield/geodatapackage/Anmalan.geojson",
-      "type": "geojson"
-    },
-    "Atgard": {
-      "data": "http://localhost:4200/assets/springfield/geodatapackage/Atgard.geojson",
-      "type": "geojson"
-    },
-    "Avdelning": {
-      "data": "http://localhost:4200/assets/springfield/geodatapackage/Avdelning.geojson",
-      "type": "geojson"
-    },
-    "Drivningspkt": {
-      "data": "http://localhost:4200/assets/springfield/geodatapackage/Drivningspunkt.geojson",
-      "type": "geojson"
-    },
-    "Fornlamninglinje": {
-      "data": "http://localhost:4200/assets/springfield/geodatapackage/Fornminne_linje.geojson",
-      "type": "geojson"
-    },
-    "Fornlamningpkt": {
-      "data": "http://localhost:4200/assets/springfield/geodatapackage/Fornminne_punkt.geojson",
-      "type": "geojson"
-    },
-    "Fornlamningyta": {
-      "data": "http://localhost:4200/assets/springfield/geodatapackage/Fornminne_yta.geojson",
-      "type": "geojson"
-    },
-    "Hansynlinje": {
-      "data": "http://localhost:4200/assets/springfield/geodatapackage/Hansynlinje.geojson",
-      "type": "geojson"
-    },
-    "Hansynpkt": {
-      "data": "http://localhost:4200/assets/springfield/geodatapackage/Hansynpunkt.geojson",
-      "type": "geojson"
-    },
-    "Hansynyta": {
-      "data": "http://localhost:4200/assets/springfield/geodatapackage/Hansynyta.geojson",
-      "type": "geojson"
-    },
-    "Historiska_ortofoton_1960": {
-      "maxzoom": 24,
-      "minzoom": 12,
-      "tiles": [
-        "http://localhost:4200/tiles/Historiska_ortofoton_1960/{z}/{x}/{y}.png"
-      ],
-      "type": "raster"
-    },
-    "Historiska_ortofoton_1975": {
-      "maxzoom": 24,
-      "minzoom": 12,
-      "tiles": [
-        "http://localhost:4200/tiles/Historiska_ortofoton_1975/{z}/{x}/{y}.png"
-      ],
-      "type": "raster"
-    },
-    "Kronslutenhet": {
-      "maxzoom": 24,
-      "minzoom": 12,
-      "tiles": [
-        "http://localhost:4200/tiles/Kronslutenhet/{z}/{x}/{y}.png"
-      ],
-      "type": "raster"
-    },
-    "Kulturminnelinje": {
-      "data": "http://localhost:4200/assets/springfield/geodatapackage/Kulturminne_linje.geojson",
-      "type": "geojson"
-    },
-    "Kulturminnepkt": {
-      "data": "http://localhost:4200/assets/springfield/geodatapackage/Kulturminne_punkt.geojson",
-      "type": "geojson"
-    },
-    "Kulturminneyta": {
-      "data": "http://localhost:4200/assets/springfield/geodatapackage/Kulturminne_yta.geojson",
-      "type": "geojson"
-    },
-    "Lutningsklass": {
-      "maxzoom": 24,
-      "minzoom": 12,
-      "tiles": [
-        "http://localhost:4200/tiles/Lutningsklass/{z}/{x}/{y}.png"
-      ],
-      "type": "raster"
-    },
-    "Markfuktighet_SLU": {
-      "maxzoom": 24,
-      "minzoom": 12,
-      "tiles": [
-        "http://localhost:4200/tiles/Markfuktighet_SLU/{z}/{x}/{y}.png"
-      ],
-      "type": "raster"
-    },
-    "Markskuggning": {
-      "maxzoom": 24,
-      "minzoom": 12,
-      "tiles": [
-        "http://localhost:4200/tiles/Markskuggning/{z}/{x}/{y}.png"
-      ],
-      "type": "raster"
-    },
-    "Ortofoto": {
-      "maxzoom": 24,
-      "minzoom": 7,
-      "tiles": [
-        "http://localhost:4200/tiles/Ortofoto/{z}/{x}/{y}.png"
-      ],
-      "type": "raster"
-    },
-    "RestriktionArtforekomst": {
-      "data": "http://localhost:4200/assets/springfield/geodatapackage/RestriktionArtforekomst.geojson",
-      "type": "geojson"
-    },
-    "RestriktionExterna": {
-      "data": "http://localhost:4200/assets/springfield/geodatapackage/RestriktionExterna.geojson",
-      "type": "geojson"
-    },
-    "RestriktionNaturvardSveaskog": {
-      "data": "http://localhost:4200/assets/springfield/geodatapackage/RestriktionNaturvardSveaskog.geojson",
-      "type": "geojson"
-    },
-    "RestriktionYta": {
-      "data": "http://localhost:4200/assets/springfield/geodatapackage/RestriktionYta.geojson",
-      "type": "geojson"
-    },
-    "Skifte": {
-      "data": "http://localhost:4200/assets/springfield/geodatapackage/Skifte.geojson",
-      "type": "geojson"
-    },
-    "Skuggad_kronmodell": {
-      "maxzoom": 24,
-      "minzoom": 12,
-      "tiles": [
-        "http://localhost:4200/tiles/Skuggad_kronmodell/{z}/{x}/{y}.png"
-      ],
-      "type": "raster"
-    },
-    "Skuggadhojd": {
-      "maxzoom": 24,
-      "minzoom": 12,
-      "tiles": [
-        "http://localhost:4200/tiles/Skuggadhojd/{z}/{x}/{y}.png"
-      ],
-      "type": "raster"
-    },
-    "Tradhojd": {
-      "maxzoom": 24,
-      "minzoom": 12,
-      "tiles": [
-        "http://localhost:4200/tiles/Tradhojd/{z}/{x}/{y}.png"
-      ],
-      "type": "raster"
-    },
-    "Traktorvag": {
-      "data": "http://localhost:4200/assets/springfield/geodatapackage/Traktorvag.geojson",
-      "type": "geojson"
-    },
-    "Vagkarta": {
-      "maxzoom": 24,
-      "minzoom": 12,
-      "tiles": [
-        "http://localhost:4200/tiles/Vagkarta/{z}/{x}/{y}.png"
-      ],
-      "type": "raster"
-    },
-    "Vinterbilbasvag": {
-      "data": "http://localhost:4200/assets/springfield/geodatapackage/Vinterbilbasvag.geojson",
-      "type": "geojson"
-    }
-  },
-  "sprite": "http://localhost:4200/assets/springfield/geodatapackage/sprite/spring_sprites",
-  "version": 8,
-  "zoom": 0.861983335785597
+  ]
 }
