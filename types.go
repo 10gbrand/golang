@@ -4,6 +4,7 @@ type Config struct {
 	CSVPath      string `json:"csvPath"`
 	BaseJSONPath string `json:"baseJSONPath"`
 	ResultDir    string `json:"resultDir"`
+	SourceConfig string `json:"sourceConfig"`
 }
 
 type CSVEntry struct {

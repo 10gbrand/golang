@@ -16,3 +16,4 @@ aktiv,src_file,target_file,order
 0,vag_style,springfield_geodatapackage_style,6
 1,drivning_style,springfield_geodatapackage_style,7
 1,text_style,springfield_geodatapackage_style,99
+1,skifte_style,springfield_test_style,1

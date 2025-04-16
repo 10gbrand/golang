@@ -39,7 +39,7 @@ Exempel json geonote_basvag_style.json:
 
 ```json
 {
-  "$schema": "../spring_style_schema.json",
+  "$schema": "./spring_style_schema.json",
   "id": "0b11a362d0e44047a2ef65a3850fc867",
   "name": "Mall",
   "version": 8,

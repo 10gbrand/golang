@@ -1,0 +1,130 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "version": { "type": "number" },
+    "name": { "type": "string" },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "maputnik:renderer": { "type": "string" },
+        "springStyleVersion": { "type": "string" },
+        "springStyleOrder": { "type": "number",
+        "description": "Specifies the order in which the style should be applied or displayed in the Spring-client. Relative to other stilefiles. Counts in draw-order where higer number drawes on top of lower number" },
+        "springGroups": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "name": { "type": "string" },
+              "collapsed": { "type": "boolean" },
+              "visible": { "type": "boolean" },
+              "visible_single": { "type": "boolean" },
+              "springLayers": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": { "type": "string" },
+                    "name": { "type": "string" },
+                    "visible": { "type": "boolean" }
+                  },
+                  "required": ["id", "name", "visible"]
+                }
+              }
+            },
+            "required": ["id", "name", "collapsed", "visible", "springLayers"]
+          }
+        }
+      },
+      "required": ["maputnik:renderer", "springStyleVersion", "springStyleOrder", "springGroups"]
+    },
+    "light": {
+      "type": "object",
+      "properties": {
+        "anchor": { "type": "string" }
+      },
+      "required": ["anchor"]
+    },
+   "sources": {
+    "type": "object",
+    "patternProperties": {
+      "^.*$": {
+        "type": "object",
+        "properties": {
+          "type": { 
+            "type": "string",
+            "enum": ["raster", "geojson","vector"],
+            "description": "Type of source"
+          },
+          "tiles": { 
+            "type": "array", 
+            "items": { "type": "string" }
+          },
+          "data": { 
+            "type": "string",
+            "pattern": "^http://localhost",
+            "description": "Should start with '/'"
+          },
+          "minzoom": { "type": "number" },
+          "maxzoom": { "type": "number" }
+        },
+        "required": ["type"],
+        "additionalProperties": false
+      }
+    }
+  },
+    "sprite": { "type": "string" },
+    "glyphs": { "type": "string" },
+    "layers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": ["raster", "background", "fill", "line", "symbol", "circle"],
+            "description": "Type of layer"
+          },
+          "metadata": {
+            "type": "object",
+            "properties": {
+              "maputnik:comment": { "type": "string" },
+              "springLayer": { "type": "string" }
+            }
+          },
+          "source": { "type": "string" },
+          "layout": {
+            "type": "object",
+            "properties": {
+              "visibility": {
+                "type": "string",
+                "enum": ["visible", "none"],
+                "description": "Determines whether this layer is displayed"
+              }
+            }
+          },
+          "paint": { "type": "object" },
+          "minzoom": { "type": "number" },
+          "maxzoom": { "type": "number" },
+          "filter": { "type": "array" }
+        },
+        "required": ["id", "type", "metadata"],
+        "if": {
+          "properties": { "id": { "const": "temp_bakgrund" } }
+        },
+        "then": {},
+        "else": {
+          "properties": {
+            "metadata": {
+              "required": ["maputnik:comment", "springLayer"]
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": ["version", "name", "metadata", "sources", "sprite", "glyphs", "layers"]
+}

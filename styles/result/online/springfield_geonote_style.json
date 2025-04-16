@@ -1,12 +1,5 @@
 {
-  "$schema": "./spring_style_schema.json",
-  "bearing": 0,
-  "center": [
-    17.3145660472,
-    62.91542224
-  ],
-  "glyphs": "http://localhost:4200/assets/springfield/geodatapackage/font-glyphs/glyphs/{fontstack}/{range}.pbf",
-  "id": "bdca8318-898c-4d18-bc21-a2d500be2bf3",
+  "sources": {},
   "layers": [
     {
       "filter": [
@@ -787,90 +780,5 @@
       "source": "geonotes",
       "type": "symbol"
     }
-  ],
-  "metadata": {
-    "maputnik:renderer": "mbgljs",
-    "springGroups": [
-      {
-        "collapsed": true,
-        "id": "geonote_avdelning",
-        "name": "Geonote Avdelning",
-        "springLayers": [
-          {
-            "id": "geonote_avdelning",
-            "name": "Avdelning",
-            "visible": true
-          }
-        ],
-        "visible": true
-      },
-      {
-        "collapsed": true,
-        "id": "geonoteHansyn",
-        "name": "Geonote hänsyn",
-        "springLayers": [
-          {
-            "id": "geonoteHansynTxt",
-            "name": "Hänsyn text",
-            "visible": true
-          },
-          {
-            "id": "geonoteHansyn",
-            "name": "Hänsyn",
-            "visible": true
-          }
-        ],
-        "visible": true
-      },
-      {
-        "collapsed": true,
-        "id": "geonote_basvag",
-        "name": "Geonote basväg",
-        "springLayers": [
-          {
-            "id": "geonote_basvag",
-            "name": "Basväg",
-            "visible": true
-          },
-          {
-            "id": "geonote_avlagg_line",
-            "name": "Avlägg",
-            "visible": true
-          }
-        ],
-        "visible": true
-      },
-      {
-        "collapsed": true,
-        "id": "geonoteOvrigt",
-        "name": "Geonote Övrigt",
-        "springLayers": [
-          {
-            "id": "geonoteOvrigtTxt",
-            "name": "Övrig text",
-            "visible": true
-          },
-          {
-            "id": "geonoteOvrigt",
-            "name": "Övrigt",
-            "visible": true
-          }
-        ],
-        "visible": true
-      }
-    ],
-    "springStyleOrder": 1,
-    "springStyleVersion": "0.1"
-  },
-  "name": "Mall",
-  "pitch": 0,
-  "sources": {
-    "geonotes": {
-      "data": "http://localhost:4200/assets/springfield/geonote/geonotes.geojson",
-      "type": "geojson"
-    }
-  },
-  "sprite": "http://localhost:4200/assets/springfield/geodatapackage/sprite/spring_sprites",
-  "version": 8,
-  "zoom": 0.861983335785597
+  ]
 }

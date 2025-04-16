@@ -1,0 +1,75 @@
+{
+  "sources": {
+    "Skifte": {
+      "tiles": [
+        "https://springadmin-preprod.sveaskog.se/pgtileservgeo/geodata.skifte/{z}/{x}/{y}.pbf"
+      ],
+      "type": "vector"
+    }
+  },
+  "layers": [
+    {
+      "id": "Skifte",
+      "layout": {
+        "visibility": "visible"
+      },
+      "maxzoom": 12,
+      "metadata": {
+        "maputnik:comment": "Skifte",
+        "springLayer": "Skifte"
+      },
+      "minzoom": 0,
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "TYP"
+          ],
+          "EGENFV",
+          "rgba(0, 230, 0, 1)",
+          "SALDMARK",
+          "rgba(255, 0, 197, 1)",
+          "RESSALD",
+          "rgba(255, 0, 0, 1)",
+          "rgba(170, 170, 170, 1)"
+        ],
+        "fill-opacity": 0.5
+      },
+      "source": "Skifte",
+      "type": "fill"
+    },
+    {
+      "id": "Skifte_linje",
+      "layout": {
+        "visibility": "visible"
+      },
+      "maxzoom": 24,
+      "metadata": {
+        "maputnik:comment": "Skifte",
+        "springLayer": "Skifte"
+      },
+      "minzoom": 12,
+      "paint": {
+        "line-color": [
+          "match",
+          [
+            "get",
+            "TYP"
+          ],
+          "EGENFV",
+          "rgba(0, 230, 0, 1)",
+          "SALDMARK",
+          "rgba(255, 0, 197, 1)",
+          "RESSALD",
+          "rgba(255, 0, 0, 1)",
+          "rgba(170, 170, 170, 1)"
+        ],
+        "line-opacity": 0.7,
+        "line-width": 3
+      },
+      "source": "Skifte",
+      "type": "line"
+    }
+  ]
+}

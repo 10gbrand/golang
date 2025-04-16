@@ -7,6 +7,10 @@
         "app": {
             "type": "vector",
             "data": "/springfield/geodatapackage/Anmalan.fgb"
+        },
+        "online": {
+            "type": "vector",
+            "tiles": ["https://springadmin-preprod.sveaskog.se/pgtileservgeo/geodata.anmalan/{z}/{x}/{y}.pbf"]
         }
     },
     "Atgard": {
@@ -59,6 +63,10 @@
         "app": {
             "type": "vector",
             "data": "/springfield/geodatapackage/Fornminne_linje.fgb"
+        },
+        "online": {
+            "type": "vector",
+            "tiles": ["https://springadmin-preprod.sveaskog.se/geoserver/ogc/features/v1/collections/spring:GFORNLIN"]
         }
     },
     "Fornlamningpkt": {
@@ -428,6 +436,26 @@
         "app": {
             "type": "vector",
             "data": "/springfield/geonote/geonotes"
+        }
+    },
+    "temp_bakgrund": {
+        "localhost": {
+            "type": "raster",
+            "tiles": [
+                "https://kartor.sveaskog.se/tokenproxy/metriatiles/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=metria:orto_farg&STYLE=sverige&FORMAT=image/jpeg&TILEMATRIXSET=EPSG:3857&TILEMATRIX=EPSG:3857:{z}&TILEROW={y}&TILECOL={x}"
+            ]
+        },
+        "app": {
+            "type": "raster",
+            "tiles": [
+                "https://kartor.sveaskog.se/tokenproxy/metriatiles/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=metria:orto_farg&STYLE=sverige&FORMAT=image/jpeg&TILEMATRIXSET=EPSG:3857&TILEMATRIX=EPSG:3857:{z}&TILEROW={y}&TILECOL={x}"
+            ]
+        },
+        "online": {
+            "type": "raster",
+            "tiles": [
+                "https://kartor.sveaskog.se/tokenproxy/metriatiles/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=metria:orto_farg&STYLE=sverige&FORMAT=image/jpeg&TILEMATRIXSET=EPSG:3857&TILEMATRIX=EPSG:3857:{z}&TILEROW={y}&TILECOL={x}"
+            ]
         }
     }
 }

@@ -1,6 +1,7 @@
 {
     "csvPath": "styles/def/stylefiles.csv",
     "baseJSONPath": "styles",
-    "resultDir": "styles/result"
+    "resultDir": "styles/result",
+    "sourceConfig": "styles/def/sourses.json"
   }
   

@@ -1,5 +1,5 @@
 {
-    "$schema": "../spring_style_schema.json",
+    "$schema": "./spring_style_schema.json",
     "id": "e2624da52cdb485a9648c0ddacbd81c4",
     "name": "Mall",
     "version": 8,
