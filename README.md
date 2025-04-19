@@ -1,17 +1,18 @@
 ---
-title: Testar Golang
+title: Stil admin
 tags:
- - Golang
- - Go
- - Programering
- - Testar
+ - golang
+ - mapbox
+ - maplibre
+ - style
 ---
 
 [![Built with Devbox](https://www.jetify.com/img/devbox/shield_galaxy.svg)](https://www.jetify.com/devbox/docs/contributor-quickstart/)
 
 
-# Testar Golang
-testar golang
+# Stil admin
+Hanterar stiladministration. 
+Sammanfogar lera stilfiler till en eller flera större.
 
 ## Förutsättningar
 
